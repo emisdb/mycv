@@ -1,0 +1,295 @@
+div.w3-main {
+    background-color: #cbd5e0;
+}
+.fa {
+    color:#6b7280;
+    background-color: #cbd5e0;
+    padding: 3px;
+}
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #474e5d;
+    font-family: Helvetica, sans-serif;
+}
+body, h1, h2, h3, h4, h5, h6 {
+    font-family: "Montserrat", sans-serif
+}
+
+.w3-row-padding img {
+    margin-bottom: 12px
+}
+
+.bgimg {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: url('img/my_batum_2.jpg');
+    min-height: 100%;
+}
+.skill {
+    background-image: url('img/myimg.jpg');
+}
+.time {
+    background-image: url('img/my_batum.jpg');
+}
+.team {
+    background-image: url('img/gang.jpg');
+}
+.team-over {
+    background-image: url('img/gang_on_rails.jpg');
+}
+.contact {
+    background-image: url('img/grin.jpg');
+}
+.toes {
+    background-image: url('img/toes.jpg');
+}
+.legs {
+    background-image: url('img/legs.jpg');
+}
+.dear {
+    background-image: url('img/dear.jpg');
+}
+.dear2 {
+    background-image: url('img/dear2.jpg');
+}
+/* The actual timeline (the vertical ruler) */
+.timeline {
+    position: relative;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* The actual timeline (the vertical ruler) */
+.timeline::after {
+    content: '';
+    position: absolute;
+    width: 6px;
+    background-color: white;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    margin-left: -3px;
+}
+
+/* Container around content */
+.time-container {
+    padding: 10px 40px;
+    position: relative;
+    background-color: inherit;
+    width: 50%;
+}
+
+/* The circles on the timeline */
+.time-container::after {
+    content: '';
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    right: -17px;
+    background-color: white;
+    border: 4px solid #FF9F55;
+    top: 15px;
+    border-radius: 50%;
+    z-index: 1;
+}
+
+/* Place the container to the left */
+.time-left {
+    left: 0;
+}
+
+/* Place the container to the right */
+.time-right {
+    left: 50%;
+}
+
+/* Add arrows to the left container (pointing right) */
+.time-left::before {
+    content: " ";
+    height: 0;
+    position: absolute;
+    top: 22px;
+    width: 0;
+    z-index: 1;
+    right: 30px;
+    border: medium solid white;
+    border-width: 10px 0 10px 10px;
+    border-color: transparent transparent transparent white;
+}
+
+/* Add arrows to the right container (pointing left) */
+.time-right::before {
+    content: " ";
+    height: 0;
+    position: absolute;
+    top: 22px;
+    width: 0;
+    z-index: 1;
+    left: 30px;
+    border: medium solid white;
+    border-width: 10px 10px 10px 0;
+    border-color: transparent white transparent transparent;
+}
+
+/* Fix the circle for containers on the right side */
+.time-right::after {
+    left: -16px;
+}
+
+/* The actual content */
+.time-content {
+    padding: 20px 30px;
+    background-color: white;
+    position: relative;
+    border-radius: 6px;
+}
+.flip-box {
+    background-color: transparent;
+    /*    width: 300px; */
+    height: 100%;
+    border: 1px solid #f1f1f1;
+    perspective: 1000px;
+}
+
+.flip-box-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+}
+
+.flip-box:hover .flip-box-inner {
+    transform: rotateX(180deg);
+}
+
+.flip-box-front, .flip-box-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+
+.flip-box-front {
+    background-color: #bbb;
+    color: white;
+}
+
+.flip-box-back {
+    background-color: dodgerblue;
+    color: white;
+    transform: rotateX(180deg);
+}
+.tech-term {
+    font-style: italic;
+    font-weight: bold;
+}
+table.w3-card-4 td,table.w3-card-4 th {
+    padding: 4px 16px;
+    border-bottom: 1px solid #ddd;
+}
+.flex-container{
+    display: flex;
+    justify-content: left;
+}
+div.flex-container>div {
+    padding: 2px 10px;
+    border-left: solid #cbd5e0 1px;
+}
+div.flex-container>div.flex-left {
+    margin-right: auto;
+    border: none;
+}
+div.flex-dd {
+    font-style:italic;
+    font-size: .8em;
+}
+div.flex-dd {
+    font-weight: bold;
+    margin-right: auto;
+}
+div.flex-definition i {
+    margin:2px 5px;
+}
+div.flex-container i {
+    margin-right: 5px;
+}
+.fontawesomesvg {
+    width: 34px;
+    margin-right: 5px;
+   background-color: #cbd5e0;
+    vertical-align: text-bottom;
+}
+
+
+/* Tables
+================================== */
+.Rtable {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 0 3em 0;
+    padding: 0;
+}
+.Rtable-cell {
+    box-sizing: border-box;
+    flex-grow: 1;
+    width: 100%;
+    padding: 0.8em 1.2em;
+    overflow: hidden;
+    list-style: none;
+    border: solid 3px white;
+}
+.Rtable-cell> h1, > h2, > h3, > h4, > h5, > h6 { margin: 0; }
+
+
+/* Table column sizing
+================================== */
+.Rtable--2cols > .Rtable-cell  { width: 50%; }
+.Rtable--3cols > .Rtable-cell.rc-first  { width: 30%; }
+.Rtable--3cols > .Rtable-cell.rc-second  { width: 60%; }
+.Rtable--3cols > .Rtable-cell.rc-third  { width: 10%; }
+.Rtable--4cols > .Rtable-cell  { width: 25%; }
+.Rtable--5cols > .Rtable-cell  { width: 20%; }
+.Rtable--6cols > .Rtable-cell  { width: 16.6%; }
+
+
+
+/* Media queries - Responsive timeline on screens less than 600px wide */
+@media screen and (max-width: 600px) {
+    /* Place the timelime to the left */
+    .timeline::after {
+        left: 31px;
+    }
+
+    /* Full-width containers */
+    .time-container {
+        width: 100%;
+        padding-left: 70px;
+        padding-right: 25px;
+    }
+
+    /* Make sure that all arrows are pointing leftwards */
+    .time-container::before {
+        left: 60px;
+        border: medium solid white;
+        border-width: 10px 10px 10px 0;
+        border-color: transparent white transparent transparent;
+    }
+
+    /* Make sure all circles are at the same spot */
+    .time-left::after, .time-right::after {
+        left: 15px;
+    }
+
+    /* Make all right containers behave like the left ones */
+    .time-right {
+        left: 0%;
+    }
+
+}
