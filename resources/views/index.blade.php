@@ -28,40 +28,76 @@
         <div class="w3-padding-32 w3-content" id="portfolio">
             <h2 class="w3-text-grey">About me</h2>
             <p>I am a web programmer from Russia currently located in Batumi, Republic of Georgia.</p>
-            <p>The professional programmer with the experience of 25 years.</p>
-            <p>During last 10 years I specialize in the field of <a href="/skills">web-programming</a>.</p>
+            <p>The professional programmer with the experience of <span class="badge">25 years</span>.</p>
+            <p>During last 15 years I specialize at the field of web-programming.</p>
             <p>My tech stack is Backend development on
                 <button  onclick="openDialog('gray')"
                          class="w3-button w3-white w3-hover-gray w3-border w3-border-gray w3-hover-text-white w3-round-large w3-padding-small wow wobble animated">
-                    <i>PHP</i>
+                    <i>PHP <span class="badge">15 years</span></i>
                 </button>
-                (16 years) with the use of
+                with the use of
                 <button  onclick="openDialog('blue')"
                          class="w3-button w3-white w3-hover-blue w3-border w3-border-blue w3-round-large w3-padding-small  wow wobble animated">
-                <i>Yii and Yii2 framework</i>
+                <i>Yii and Yii2 framework<span class="badge">8 years</span></i>
             </button>
-                (8 years).</p>
+            .
+            </p>
             <p>Good knowledge of
                 <button  onclick="openDialog('pink')"
                          class="w3-button w3-white w3-hover-pink w3-border w3-border-pink w3-round-large w3-padding-small wow wobble animated">
-                    <i>Laravel</i>
+                    <i>Laravel <span class="badge">2 years</span></i>
                 </button>
-                (2 years).</p>
+                .
+            </p>
             <p>
-                Frontend development is on the traditional basis:
+                Frontend development is based on the traditional basis:
                 <button  onclick="openDialog('yellow')"
                          class="w3-button w3-white w3-hover-yellow  w3-hover-text-gray w3-border w3-border-yellow w3-round-large w3-padding-small  wow wobble animated">
                     <i>HTML, CSS, JS with jQuery and Bootstrap framework</i>
                 </button>
-                I had some practice in
+                I have some practice in
                 <button  onclick="openDialog('green')"
                          class="w3-button w3-white w3-hover-green w3-border w3-border-green w3-round-large w3-padding-small  wow wobble animated">
-                    <i>Vue.js</i>
+                    <i>Vue.js <span class="badge">2 years</span></i>
                 </button>
-                for 3 years.
+               .
             </p>
             <p>
-                Numerous projects were implemented both by the individual efforts and as a part of the team.
+                Numerous projects were implemented both by
+                <a href="{{ route('timeline') }}">
+                    the individual efforts
+                </a>
+                and as
+                <a href="{{ route('team') }}">
+                    a part of the team
+                </a>
+                .
+            </p>
+            <p>
+                My development practice is built on the SOLID principles and based on the design patterns accepted as the common practice in contemporary programming.
+                The use of MVC pattern in the framework allows to create a clear and easily adopted code. It also leaves open the possibility to preserve the flexibility of the technology.
+            </p>
+            <p>
+                During my extensive practice as the software engineer I handled many different
+                <button  onclick="openDialog('pink')"
+                         class="w3-button w3-white w3-hover-pink w3-border w3-border-pink w3-round-large w3-padding-small wow wobble animated">
+                    <i>common tasks and problems</i>
+                </button>
+                .
+            </p>
+            <p>
+                In many team projects I had experience to work with the Legacy systems and handled quite tangled technological solutions.
+            </p>
+             <p>
+                I have experience in creating and editing existing sites based on CMS Joomla and Wordpress.
+            </p>
+            <p>
+                Big experience in REST API development and other side API integration.
+            <p>
+                The project development basically is conducted in local environment provided by the Docker with the extensive use of Git flow and CI/CD tools.
+            </p>
+                For last 7 years I was involved in the team work based on the Agile principles with the Scrum style process. Wide variety of project management tools (Gira, Rally, Trello, Redmine) and communication tools (Slack, Google and Office 365) were practiced during this period.
+
             </p>
             <hr class="w3-opacity">
         </div>

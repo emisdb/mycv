@@ -23,10 +23,10 @@ Route::get('/login', function () {
 });
 Route::get('/timeline', function () {
     return view('timeline');
-});
+})->name('timeline');
 Route::get('/team', function () {
     return view('team');
-});
+})->name('team');
 Route::get('/skills', function () {
     return view('skills');
 });
