@@ -536,8 +536,9 @@ class ComposerStaticInit48828b645fe917d1a270773a15a8ce0f
     );
 
     public static $classMap = array (
-        'App\\Components\\FormDispatcher' => __DIR__ . '/../..' . '/app/Components/FormDispatcher.php',
+        'App\\Components\\FormFactory' => __DIR__ . '/../..' . '/app/Components/FormFactory.php',
         'App\\Components\\ListFactory' => __DIR__ . '/../..' . '/app/Components/ListFactory.php',
+        'App\\Components\\RepDispatcher' => __DIR__ . '/../..' . '/app/Components/RepDispatcher.php',
         'App\\Console\\Kernel' => __DIR__ . '/../..' . '/app/Console/Kernel.php',
         'App\\Exceptions\\Handler' => __DIR__ . '/../..' . '/app/Exceptions/Handler.php',
         'App\\Http\\Controllers\\Auth\\AuthenticatedSessionController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/AuthenticatedSessionController.php',
@@ -553,6 +554,7 @@ class ComposerStaticInit48828b645fe917d1a270773a15a8ce0f
         'App\\Http\\Controllers\\IdeaController' => __DIR__ . '/../..' . '/app/Http/Controllers/IdeaController.php',
         'App\\Http\\Controllers\\LanguageController' => __DIR__ . '/../..' . '/app/Http/Controllers/LanguageController.php',
         'App\\Http\\Controllers\\MainController' => __DIR__ . '/../..' . '/app/Http/Controllers/MainController.php',
+        'App\\Http\\Controllers\\ProjectController' => __DIR__ . '/../..' . '/app/Http/Controllers/ProjectController.php',
         'App\\Http\\Controllers\\PublishController' => __DIR__ . '/../..' . '/app/Http/Controllers/PublishController.php',
         'App\\Http\\Controllers\\SketchController' => __DIR__ . '/../..' . '/app/Http/Controllers/SketchController.php',
         'App\\Http\\Controllers\\TopicController' => __DIR__ . '/../..' . '/app/Http/Controllers/TopicController.php',
@@ -572,6 +574,8 @@ class ComposerStaticInit48828b645fe917d1a270773a15a8ce0f
         'App\\Models\\Feature' => __DIR__ . '/../..' . '/app/Models/Feature.php',
         'App\\Models\\Idea' => __DIR__ . '/../..' . '/app/Models/Idea.php',
         'App\\Models\\Language' => __DIR__ . '/../..' . '/app/Models/Language.php',
+        'App\\Models\\Project' => __DIR__ . '/../..' . '/app/Models/Project.php',
+        'App\\Models\\ProjectToIdea' => __DIR__ . '/../..' . '/app/Models/ProjectToIdea.php',
         'App\\Models\\Publish' => __DIR__ . '/../..' . '/app/Models/Publish.php',
         'App\\Models\\Repositories\\FeatureRepository' => __DIR__ . '/../..' . '/app/Models/Repositories/FeatureRepository.php',
         'App\\Models\\Repositories\\LanguageRepository' => __DIR__ . '/../..' . '/app/Models/Repositories/LanguageRepository.php',

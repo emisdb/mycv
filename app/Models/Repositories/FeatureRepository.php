@@ -18,7 +18,7 @@ class FeatureRepository implements RepositoryInterface
     {
         $this->model = new Feature();
         if($id) {
-            return $this->model->find($id)->toArry();
+            return $this->model->find($id)->toArray();
         } else {
             return $this->model->all()->toArray();
         }

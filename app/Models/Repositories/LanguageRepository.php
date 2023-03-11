@@ -18,7 +18,7 @@ class LanguageRepository implements RepositoryInterface
     {
         $this->model = new Language();
         if($id) {
-            return $this->model->find($id)->toArry();
+            return $this->model->find($id)->toArray();
         } else {
             return $this->model->all()->toArray();
         }

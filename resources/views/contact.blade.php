@@ -27,10 +27,10 @@
         <table  class="w3-card-4 w3-margin-bottom">
             <tr><th>currently resided</th><td>Batumi</td><td>Georgia</td></tr>
             <tr><th>nationality</th><td>Saint Petersburg</td><td>Russia</td></tr>
-            <tr><th>WhatsApp:</th><td><a href="whatsapp:emisdb">emisdb</a></td><td>prefered</td></tr>
+            <tr><th>WhatsApp:</th><td><a href="https://wa.me/79219428310">emisdb</a></td><td>prefered</td></tr>
             <tr><th>Telegram:</th><td><a href="https://t.me/dentsi">@dentsi</a></td><td>prefered</td></tr>
             <tr><th>Skype:</th><td><a href="skype:denis_emis">denis_emis</a></td><td></td></tr>
-            <tr><th>Phone:</th><td>+7 (921) 942-8310</td><td></td></tr>
+            <tr><th>Phone:</th><td>+7 (921) 942-8310</td><td><b>use WhatsApp or Telegram</b></td></tr>
             <tr><th>E - mail:</th><td><a href="mailto:dentsi@yahoo.com" >dentsi@yahoo.com</a></td><td></td></tr>
             <tr><th>Web-site</th><td><a href="http://www.emisdb.ru" target="_blank">www.emisdb.ru</a></td><td>corp.</td></tr>
         </table>

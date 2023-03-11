@@ -6,8 +6,9 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
-    'App\\Components\\FormDispatcher' => $baseDir . '/app/Components/FormDispatcher.php',
+    'App\\Components\\FormFactory' => $baseDir . '/app/Components/FormFactory.php',
     'App\\Components\\ListFactory' => $baseDir . '/app/Components/ListFactory.php',
+    'App\\Components\\RepDispatcher' => $baseDir . '/app/Components/RepDispatcher.php',
     'App\\Console\\Kernel' => $baseDir . '/app/Console/Kernel.php',
     'App\\Exceptions\\Handler' => $baseDir . '/app/Exceptions/Handler.php',
     'App\\Http\\Controllers\\Auth\\AuthenticatedSessionController' => $baseDir . '/app/Http/Controllers/Auth/AuthenticatedSessionController.php',
@@ -23,6 +24,7 @@ return array(
     'App\\Http\\Controllers\\IdeaController' => $baseDir . '/app/Http/Controllers/IdeaController.php',
     'App\\Http\\Controllers\\LanguageController' => $baseDir . '/app/Http/Controllers/LanguageController.php',
     'App\\Http\\Controllers\\MainController' => $baseDir . '/app/Http/Controllers/MainController.php',
+    'App\\Http\\Controllers\\ProjectController' => $baseDir . '/app/Http/Controllers/ProjectController.php',
     'App\\Http\\Controllers\\PublishController' => $baseDir . '/app/Http/Controllers/PublishController.php',
     'App\\Http\\Controllers\\SketchController' => $baseDir . '/app/Http/Controllers/SketchController.php',
     'App\\Http\\Controllers\\TopicController' => $baseDir . '/app/Http/Controllers/TopicController.php',
@@ -42,6 +44,8 @@ return array(
     'App\\Models\\Feature' => $baseDir . '/app/Models/Feature.php',
     'App\\Models\\Idea' => $baseDir . '/app/Models/Idea.php',
     'App\\Models\\Language' => $baseDir . '/app/Models/Language.php',
+    'App\\Models\\Project' => $baseDir . '/app/Models/Project.php',
+    'App\\Models\\ProjectToIdea' => $baseDir . '/app/Models/ProjectToIdea.php',
     'App\\Models\\Publish' => $baseDir . '/app/Models/Publish.php',
     'App\\Models\\Repositories\\FeatureRepository' => $baseDir . '/app/Models/Repositories/FeatureRepository.php',
     'App\\Models\\Repositories\\LanguageRepository' => $baseDir . '/app/Models/Repositories/LanguageRepository.php',

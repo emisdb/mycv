@@ -49,8 +49,9 @@ Route::resource('topic', TopicController::class);
 
 Route::controller(DictController::class)->group(function () {
     Route::get('/dict/{tab}', 'index');
-    Route::get('/dict/{tab}/{id}', 'form');
-    Route::post('/dict/{tab}/{id}', 'store');
+    Route::get('/dict/edit/{tab}/{id}', 'form')->name('dict-edit');
+    Route::get('/dict/delete/{tab}/{id}', 'form')->name('dict-delete');
+    Route::post('/dict/store/{tab}/{id}', 'store')->name('dict-store');
 });
 
 
