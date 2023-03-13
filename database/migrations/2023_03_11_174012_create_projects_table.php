@@ -15,7 +15,14 @@ class CreateProjectsTable extends Migration
     {
         Schema::create('projects', function (Blueprint $table) {
             $table->id();
+            $table->string('name', 32)->nullable;
+            $table->unsignedInteger('start')->comment('start month from December 1989');
+            $table->unsignedInteger('finish');
             $table->timestamps();
+        });
+        Schema::table('publishes', function (Blueprint $table) {
+
+            $table->renameColumn('feature','name')->rename;
         });
     }
 

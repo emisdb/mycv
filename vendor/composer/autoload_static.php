@@ -555,6 +555,7 @@ class ComposerStaticInit48828b645fe917d1a270773a15a8ce0f
         'App\\Http\\Controllers\\LanguageController' => __DIR__ . '/../..' . '/app/Http/Controllers/LanguageController.php',
         'App\\Http\\Controllers\\MainController' => __DIR__ . '/../..' . '/app/Http/Controllers/MainController.php',
         'App\\Http\\Controllers\\ProjectController' => __DIR__ . '/../..' . '/app/Http/Controllers/ProjectController.php',
+        'App\\Http\\Controllers\\ProjectToIdeaController' => __DIR__ . '/../..' . '/app/Http/Controllers/ProjectToIdeaController.php',
         'App\\Http\\Controllers\\PublishController' => __DIR__ . '/../..' . '/app/Http/Controllers/PublishController.php',
         'App\\Http\\Controllers\\SketchController' => __DIR__ . '/../..' . '/app/Http/Controllers/SketchController.php',
         'App\\Http\\Controllers\\TopicController' => __DIR__ . '/../..' . '/app/Http/Controllers/TopicController.php',

@@ -25,6 +25,7 @@ return array(
     'App\\Http\\Controllers\\LanguageController' => $baseDir . '/app/Http/Controllers/LanguageController.php',
     'App\\Http\\Controllers\\MainController' => $baseDir . '/app/Http/Controllers/MainController.php',
     'App\\Http\\Controllers\\ProjectController' => $baseDir . '/app/Http/Controllers/ProjectController.php',
+    'App\\Http\\Controllers\\ProjectToIdeaController' => $baseDir . '/app/Http/Controllers/ProjectToIdeaController.php',
     'App\\Http\\Controllers\\PublishController' => $baseDir . '/app/Http/Controllers/PublishController.php',
     'App\\Http\\Controllers\\SketchController' => $baseDir . '/app/Http/Controllers/SketchController.php',
     'App\\Http\\Controllers\\TopicController' => $baseDir . '/app/Http/Controllers/TopicController.php',

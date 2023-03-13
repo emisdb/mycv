@@ -16313,3 +16313,201 @@ Did you mean one of these?
 #53 /home/denis/projects/my/web/mycv/server.php(21): require_once('/home/denis/pro...')
 #54 {main}
 "} 
+[2023-03-12 20:08:49] local.ERROR: Method Illuminate\Database\Schema\Blueprint::unsiignedInteger does not exist. {"exception":"[object] (BadMethodCallException(code: 0): Method Illuminate\\Database\\Schema\\Blueprint::unsiignedInteger does not exist. at /home/denis/projects/my/web/mycv/vendor/laravel/framework/src/Illuminate/Macroable/Traits/Macroable.php:113)
+[stacktrace]
+#0 /home/denis/projects/my/web/mycv/database/migrations/2023_03_11_174012_create_projects_table.php(19): Illuminate\\Database\\Schema\\Blueprint->__call()
+#1 /home/denis/projects/my/web/mycv/vendor/laravel/framework/src/Illuminate/Database/Schema/Builder.php(226): CreateProjectsTable->{closure}()
+#2 /home/denis/projects/my/web/mycv/vendor/laravel/framework/src/Illuminate/Support/helpers.php(263): Illuminate\\Database\\Schema\\Builder->Illuminate\\Database\\Schema\\{closure}()
+#3 /home/denis/projects/my/web/mycv/vendor/laravel/framework/src/Illuminate/Database/Schema/Builder.php(227): tap()
+#4 /home/denis/projects/my/web/mycv/vendor/laravel/framework/src/Illuminate/Support/Facades/Facade.php(261): Illuminate\\Database\\Schema\\Builder->create()
+#5 /home/denis/projects/my/web/mycv/database/migrations/2023_03_11_174012_create_projects_table.php(22): Illuminate\\Support\\Facades\\Facade::__callStatic()
+#6 /home/denis/projects/my/web/mycv/vendor/laravel/framework/src/Illuminate/Database/Migrations/Migrator.php(472): CreateProjectsTable->up()
+#7 /home/denis/projects/my/web/mycv/vendor/laravel/framework/src/Illuminate/Database/Migrations/Migrator.php(394): Illuminate\\Database\\Migrations\\Migrator->runMethod()
+#8 /home/denis/projects/my/web/mycv/vendor/laravel/framework/src/Illuminate/Database/Migrations/Migrator.php(403): Illuminate\\Database\\Migrations\\Migrator->Illuminate\\Database\\Migrations\\{closure}()
+#9 /home/denis/projects/my/web/mycv/vendor/laravel/framework/src/Illuminate/Database/Migrations/Migrator.php(202): Illuminate\\Database\\Migrations\\Migrator->runMigration()
+#10 /home/denis/projects/my/web/mycv/vendor/laravel/framework/src/Illuminate/Database/Migrations/Migrator.php(167): Illuminate\\Database\\Migrations\\Migrator->runUp()
+#11 /home/denis/projects/my/web/mycv/vendor/laravel/framework/src/Illuminate/Database/Migrations/Migrator.php(112): Illuminate\\Database\\Migrations\\Migrator->runPending()
+#12 /home/denis/projects/my/web/mycv/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/MigrateCommand.php(86): Illuminate\\Database\\Migrations\\Migrator->run()
+#13 /home/denis/projects/my/web/mycv/vendor/laravel/framework/src/Illuminate/Database/Migrations/Migrator.php(606): Illuminate\\Database\\Console\\Migrations\\MigrateCommand->Illuminate\\Database\\Console\\Migrations\\{closure}()
+#14 /home/denis/projects/my/web/mycv/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/MigrateCommand.php(98): Illuminate\\Database\\Migrations\\Migrator->usingConnection()
+#15 /home/denis/projects/my/web/mycv/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(36): Illuminate\\Database\\Console\\Migrations\\MigrateCommand->handle()
+#16 /home/denis/projects/my/web/mycv/vendor/laravel/framework/src/Illuminate/Container/Util.php(40): Illuminate\\Container\\BoundMethod::Illuminate\\Container\\{closure}()
+#17 /home/denis/projects/my/web/mycv/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(93): Illuminate\\Container\\Util::unwrapIfClosure()
+#18 /home/denis/projects/my/web/mycv/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(37): Illuminate\\Container\\BoundMethod::callBoundMethod()
+#19 /home/denis/projects/my/web/mycv/vendor/laravel/framework/src/Illuminate/Container/Container.php(653): Illuminate\\Container\\BoundMethod::call()
+#20 /home/denis/projects/my/web/mycv/vendor/laravel/framework/src/Illuminate/Console/Command.php(136): Illuminate\\Container\\Container->call()
+#21 /home/denis/projects/my/web/mycv/vendor/symfony/console/Command/Command.php(298): Illuminate\\Console\\Command->execute()
+#22 /home/denis/projects/my/web/mycv/vendor/laravel/framework/src/Illuminate/Console/Command.php(121): Symfony\\Component\\Console\\Command\\Command->run()
+#23 /home/denis/projects/my/web/mycv/vendor/symfony/console/Application.php(1040): Illuminate\\Console\\Command->run()
+#24 /home/denis/projects/my/web/mycv/vendor/symfony/console/Application.php(301): Symfony\\Component\\Console\\Application->doRunCommand()
+#25 /home/denis/projects/my/web/mycv/vendor/symfony/console/Application.php(171): Symfony\\Component\\Console\\Application->doRun()
+#26 /home/denis/projects/my/web/mycv/vendor/laravel/framework/src/Illuminate/Console/Application.php(94): Symfony\\Component\\Console\\Application->run()
+#27 /home/denis/projects/my/web/mycv/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(129): Illuminate\\Console\\Application->run()
+#28 /home/denis/projects/my/web/mycv/artisan(37): Illuminate\\Foundation\\Console\\Kernel->handle()
+#29 {main}
+"} 
+[2023-03-12 20:13:54] local.ERROR: Command "make:mugration" is not defined.
+
+Did you mean one of these?
+    make:cast
+    make:channel
+    make:command
+    make:component
+    make:controller
+    make:event
+    make:exception
+    make:factory
+    make:job
+    make:listener
+    make:mail
+    make:middleware
+    make:migration
+    make:model
+    make:notification
+    make:observer
+    make:policy
+    make:provider
+    make:request
+    make:resource
+    make:rule
+    make:seeder
+    make:test {"exception":"[object] (Symfony\\Component\\Console\\Exception\\CommandNotFoundException(code: 0): Command \"make:mugration\" is not defined.
+
+Did you mean one of these?
+    make:cast
+    make:channel
+    make:command
+    make:component
+    make:controller
+    make:event
+    make:exception
+    make:factory
+    make:job
+    make:listener
+    make:mail
+    make:middleware
+    make:migration
+    make:model
+    make:notification
+    make:observer
+    make:policy
+    make:provider
+    make:request
+    make:resource
+    make:rule
+    make:seeder
+    make:test at /home/denis/projects/my/web/mycv/vendor/symfony/console/Application.php:720)
+[stacktrace]
+#0 /home/denis/projects/my/web/mycv/vendor/symfony/console/Application.php(259): Symfony\\Component\\Console\\Application->find()
+#1 /home/denis/projects/my/web/mycv/vendor/symfony/console/Application.php(171): Symfony\\Component\\Console\\Application->doRun()
+#2 /home/denis/projects/my/web/mycv/vendor/laravel/framework/src/Illuminate/Console/Application.php(94): Symfony\\Component\\Console\\Application->run()
+#3 /home/denis/projects/my/web/mycv/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(129): Illuminate\\Console\\Application->run()
+#4 /home/denis/projects/my/web/mycv/artisan(37): Illuminate\\Foundation\\Console\\Kernel->handle()
+#5 {main}
+"} 
+[2023-03-12 20:14:16] local.ERROR: Too many arguments to "make:migration" command, expected arguments "name". {"exception":"[object] (Symfony\\Component\\Console\\Exception\\RuntimeException(code: 0): Too many arguments to \"make:migration\" command, expected arguments \"name\". at /home/denis/projects/my/web/mycv/vendor/symfony/console/Input/ArgvInput.php:193)
+[stacktrace]
+#0 /home/denis/projects/my/web/mycv/vendor/symfony/console/Input/ArgvInput.php(86): Symfony\\Component\\Console\\Input\\ArgvInput->parseArgument()
+#1 /home/denis/projects/my/web/mycv/vendor/symfony/console/Input/ArgvInput.php(71): Symfony\\Component\\Console\\Input\\ArgvInput->parseToken()
+#2 /home/denis/projects/my/web/mycv/vendor/symfony/console/Input/Input.php(55): Symfony\\Component\\Console\\Input\\ArgvInput->parse()
+#3 /home/denis/projects/my/web/mycv/vendor/symfony/console/Command/Command.php(257): Symfony\\Component\\Console\\Input\\Input->bind()
+#4 /home/denis/projects/my/web/mycv/vendor/laravel/framework/src/Illuminate/Console/Command.php(121): Symfony\\Component\\Console\\Command\\Command->run()
+#5 /home/denis/projects/my/web/mycv/vendor/symfony/console/Application.php(1040): Illuminate\\Console\\Command->run()
+#6 /home/denis/projects/my/web/mycv/vendor/symfony/console/Application.php(301): Symfony\\Component\\Console\\Application->doRunCommand()
+#7 /home/denis/projects/my/web/mycv/vendor/symfony/console/Application.php(171): Symfony\\Component\\Console\\Application->doRun()
+#8 /home/denis/projects/my/web/mycv/vendor/laravel/framework/src/Illuminate/Console/Application.php(94): Symfony\\Component\\Console\\Application->run()
+#9 /home/denis/projects/my/web/mycv/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(129): Illuminate\\Console\\Application->run()
+#10 /home/denis/projects/my/web/mycv/artisan(37): Illuminate\\Foundation\\Console\\Kernel->handle()
+#11 {main}
+"} 
+[2023-03-12 20:23:58] local.ERROR: A CreateForigrnKeyForProjectToIdeas class already exists. {"exception":"[object] (InvalidArgumentException(code: 0): A CreateForigrnKeyForProjectToIdeas class already exists. at /home/denis/projects/my/web/mycv/vendor/laravel/framework/src/Illuminate/Database/Migrations/MigrationCreator.php:102)
+[stacktrace]
+#0 /home/denis/projects/my/web/mycv/vendor/laravel/framework/src/Illuminate/Database/Migrations/MigrationCreator.php(59): Illuminate\\Database\\Migrations\\MigrationCreator->ensureMigrationDoesntAlreadyExist()
+#1 /home/denis/projects/my/web/mycv/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/MigrateMakeCommand.php(110): Illuminate\\Database\\Migrations\\MigrationCreator->create()
+#2 /home/denis/projects/my/web/mycv/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/MigrateMakeCommand.php(94): Illuminate\\Database\\Console\\Migrations\\MigrateMakeCommand->writeMigration()
+#3 /home/denis/projects/my/web/mycv/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(36): Illuminate\\Database\\Console\\Migrations\\MigrateMakeCommand->handle()
+#4 /home/denis/projects/my/web/mycv/vendor/laravel/framework/src/Illuminate/Container/Util.php(40): Illuminate\\Container\\BoundMethod::Illuminate\\Container\\{closure}()
+#5 /home/denis/projects/my/web/mycv/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(93): Illuminate\\Container\\Util::unwrapIfClosure()
+#6 /home/denis/projects/my/web/mycv/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(37): Illuminate\\Container\\BoundMethod::callBoundMethod()
+#7 /home/denis/projects/my/web/mycv/vendor/laravel/framework/src/Illuminate/Container/Container.php(653): Illuminate\\Container\\BoundMethod::call()
+#8 /home/denis/projects/my/web/mycv/vendor/laravel/framework/src/Illuminate/Console/Command.php(136): Illuminate\\Container\\Container->call()
+#9 /home/denis/projects/my/web/mycv/vendor/symfony/console/Command/Command.php(298): Illuminate\\Console\\Command->execute()
+#10 /home/denis/projects/my/web/mycv/vendor/laravel/framework/src/Illuminate/Console/Command.php(121): Symfony\\Component\\Console\\Command\\Command->run()
+#11 /home/denis/projects/my/web/mycv/vendor/symfony/console/Application.php(1040): Illuminate\\Console\\Command->run()
+#12 /home/denis/projects/my/web/mycv/vendor/symfony/console/Application.php(301): Symfony\\Component\\Console\\Application->doRunCommand()
+#13 /home/denis/projects/my/web/mycv/vendor/symfony/console/Application.php(171): Symfony\\Component\\Console\\Application->doRun()
+#14 /home/denis/projects/my/web/mycv/vendor/laravel/framework/src/Illuminate/Console/Application.php(94): Symfony\\Component\\Console\\Application->run()
+#15 /home/denis/projects/my/web/mycv/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(129): Illuminate\\Console\\Application->run()
+#16 /home/denis/projects/my/web/mycv/artisan(37): Illuminate\\Foundation\\Console\\Kernel->handle()
+#17 {main}
+"} 
+[2023-03-12 20:27:28] local.ERROR: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`mycv`.`#sql-42eca_7f`, CONSTRAINT `project_to_ideas_project_id_fk` FOREIGN KEY (`project_id`) REFERENCES `projects` (`id`)) (SQL: alter table `project_to_ideas` add constraint `project_to_ideas_project_id_fk` foreign key (`project_id`) references `projects` (`id`)) {"exception":"[object] (Illuminate\\Database\\QueryException(code: 23000): SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`mycv`.`#sql-42eca_7f`, CONSTRAINT `project_to_ideas_project_id_fk` FOREIGN KEY (`project_id`) REFERENCES `projects` (`id`)) (SQL: alter table `project_to_ideas` add constraint `project_to_ideas_project_id_fk` foreign key (`project_id`) references `projects` (`id`)) at /home/denis/projects/my/web/mycv/vendor/laravel/framework/src/Illuminate/Database/Connection.php:712)
+[stacktrace]
+#0 /home/denis/projects/my/web/mycv/vendor/laravel/framework/src/Illuminate/Database/Connection.php(672): Illuminate\\Database\\Connection->runQueryCallback()
+#1 /home/denis/projects/my/web/mycv/vendor/laravel/framework/src/Illuminate/Database/Connection.php(502): Illuminate\\Database\\Connection->run()
+#2 /home/denis/projects/my/web/mycv/vendor/laravel/framework/src/Illuminate/Database/Schema/Blueprint.php(109): Illuminate\\Database\\Connection->statement()
+#3 /home/denis/projects/my/web/mycv/vendor/laravel/framework/src/Illuminate/Database/Schema/Builder.php(364): Illuminate\\Database\\Schema\\Blueprint->build()
+#4 /home/denis/projects/my/web/mycv/vendor/laravel/framework/src/Illuminate/Database/Schema/Builder.php(211): Illuminate\\Database\\Schema\\Builder->build()
+#5 /home/denis/projects/my/web/mycv/vendor/laravel/framework/src/Illuminate/Support/Facades/Facade.php(261): Illuminate\\Database\\Schema\\Builder->table()
+#6 /home/denis/projects/my/web/mycv/database/migrations/2023_03_12_201542_create_forigrn_key_for_project_to_ideas.php(19): Illuminate\\Support\\Facades\\Facade::__callStatic()
+#7 /home/denis/projects/my/web/mycv/vendor/laravel/framework/src/Illuminate/Database/Migrations/Migrator.php(472): CreateForigrnKeyForProjectToIdeas->up()
+#8 /home/denis/projects/my/web/mycv/vendor/laravel/framework/src/Illuminate/Database/Migrations/Migrator.php(394): Illuminate\\Database\\Migrations\\Migrator->runMethod()
+#9 /home/denis/projects/my/web/mycv/vendor/laravel/framework/src/Illuminate/Database/Migrations/Migrator.php(403): Illuminate\\Database\\Migrations\\Migrator->Illuminate\\Database\\Migrations\\{closure}()
+#10 /home/denis/projects/my/web/mycv/vendor/laravel/framework/src/Illuminate/Database/Migrations/Migrator.php(202): Illuminate\\Database\\Migrations\\Migrator->runMigration()
+#11 /home/denis/projects/my/web/mycv/vendor/laravel/framework/src/Illuminate/Database/Migrations/Migrator.php(167): Illuminate\\Database\\Migrations\\Migrator->runUp()
+#12 /home/denis/projects/my/web/mycv/vendor/laravel/framework/src/Illuminate/Database/Migrations/Migrator.php(112): Illuminate\\Database\\Migrations\\Migrator->runPending()
+#13 /home/denis/projects/my/web/mycv/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/MigrateCommand.php(86): Illuminate\\Database\\Migrations\\Migrator->run()
+#14 /home/denis/projects/my/web/mycv/vendor/laravel/framework/src/Illuminate/Database/Migrations/Migrator.php(606): Illuminate\\Database\\Console\\Migrations\\MigrateCommand->Illuminate\\Database\\Console\\Migrations\\{closure}()
+#15 /home/denis/projects/my/web/mycv/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/MigrateCommand.php(98): Illuminate\\Database\\Migrations\\Migrator->usingConnection()
+#16 /home/denis/projects/my/web/mycv/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(36): Illuminate\\Database\\Console\\Migrations\\MigrateCommand->handle()
+#17 /home/denis/projects/my/web/mycv/vendor/laravel/framework/src/Illuminate/Container/Util.php(40): Illuminate\\Container\\BoundMethod::Illuminate\\Container\\{closure}()
+#18 /home/denis/projects/my/web/mycv/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(93): Illuminate\\Container\\Util::unwrapIfClosure()
+#19 /home/denis/projects/my/web/mycv/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(37): Illuminate\\Container\\BoundMethod::callBoundMethod()
+#20 /home/denis/projects/my/web/mycv/vendor/laravel/framework/src/Illuminate/Container/Container.php(653): Illuminate\\Container\\BoundMethod::call()
+#21 /home/denis/projects/my/web/mycv/vendor/laravel/framework/src/Illuminate/Console/Command.php(136): Illuminate\\Container\\Container->call()
+#22 /home/denis/projects/my/web/mycv/vendor/symfony/console/Command/Command.php(298): Illuminate\\Console\\Command->execute()
+#23 /home/denis/projects/my/web/mycv/vendor/laravel/framework/src/Illuminate/Console/Command.php(121): Symfony\\Component\\Console\\Command\\Command->run()
+#24 /home/denis/projects/my/web/mycv/vendor/symfony/console/Application.php(1040): Illuminate\\Console\\Command->run()
+#25 /home/denis/projects/my/web/mycv/vendor/symfony/console/Application.php(301): Symfony\\Component\\Console\\Application->doRunCommand()
+#26 /home/denis/projects/my/web/mycv/vendor/symfony/console/Application.php(171): Symfony\\Component\\Console\\Application->doRun()
+#27 /home/denis/projects/my/web/mycv/vendor/laravel/framework/src/Illuminate/Console/Application.php(94): Symfony\\Component\\Console\\Application->run()
+#28 /home/denis/projects/my/web/mycv/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(129): Illuminate\\Console\\Application->run()
+#29 /home/denis/projects/my/web/mycv/artisan(37): Illuminate\\Foundation\\Console\\Kernel->handle()
+#30 {main}
+
+[previous exception] [object] (PDOException(code: 23000): SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`mycv`.`#sql-42eca_7f`, CONSTRAINT `project_to_ideas_project_id_fk` FOREIGN KEY (`project_id`) REFERENCES `projects` (`id`)) at /home/denis/projects/my/web/mycv/vendor/laravel/framework/src/Illuminate/Database/Connection.php:501)
+[stacktrace]
+#0 /home/denis/projects/my/web/mycv/vendor/laravel/framework/src/Illuminate/Database/Connection.php(501): PDOStatement->execute()
+#1 /home/denis/projects/my/web/mycv/vendor/laravel/framework/src/Illuminate/Database/Connection.php(705): Illuminate\\Database\\Connection->Illuminate\\Database\\{closure}()
+#2 /home/denis/projects/my/web/mycv/vendor/laravel/framework/src/Illuminate/Database/Connection.php(672): Illuminate\\Database\\Connection->runQueryCallback()
+#3 /home/denis/projects/my/web/mycv/vendor/laravel/framework/src/Illuminate/Database/Connection.php(502): Illuminate\\Database\\Connection->run()
+#4 /home/denis/projects/my/web/mycv/vendor/laravel/framework/src/Illuminate/Database/Schema/Blueprint.php(109): Illuminate\\Database\\Connection->statement()
+#5 /home/denis/projects/my/web/mycv/vendor/laravel/framework/src/Illuminate/Database/Schema/Builder.php(364): Illuminate\\Database\\Schema\\Blueprint->build()
+#6 /home/denis/projects/my/web/mycv/vendor/laravel/framework/src/Illuminate/Database/Schema/Builder.php(211): Illuminate\\Database\\Schema\\Builder->build()
+#7 /home/denis/projects/my/web/mycv/vendor/laravel/framework/src/Illuminate/Support/Facades/Facade.php(261): Illuminate\\Database\\Schema\\Builder->table()
+#8 /home/denis/projects/my/web/mycv/database/migrations/2023_03_12_201542_create_forigrn_key_for_project_to_ideas.php(19): Illuminate\\Support\\Facades\\Facade::__callStatic()
+#9 /home/denis/projects/my/web/mycv/vendor/laravel/framework/src/Illuminate/Database/Migrations/Migrator.php(472): CreateForigrnKeyForProjectToIdeas->up()
+#10 /home/denis/projects/my/web/mycv/vendor/laravel/framework/src/Illuminate/Database/Migrations/Migrator.php(394): Illuminate\\Database\\Migrations\\Migrator->runMethod()
+#11 /home/denis/projects/my/web/mycv/vendor/laravel/framework/src/Illuminate/Database/Migrations/Migrator.php(403): Illuminate\\Database\\Migrations\\Migrator->Illuminate\\Database\\Migrations\\{closure}()
+#12 /home/denis/projects/my/web/mycv/vendor/laravel/framework/src/Illuminate/Database/Migrations/Migrator.php(202): Illuminate\\Database\\Migrations\\Migrator->runMigration()
+#13 /home/denis/projects/my/web/mycv/vendor/laravel/framework/src/Illuminate/Database/Migrations/Migrator.php(167): Illuminate\\Database\\Migrations\\Migrator->runUp()
+#14 /home/denis/projects/my/web/mycv/vendor/laravel/framework/src/Illuminate/Database/Migrations/Migrator.php(112): Illuminate\\Database\\Migrations\\Migrator->runPending()
+#15 /home/denis/projects/my/web/mycv/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/MigrateCommand.php(86): Illuminate\\Database\\Migrations\\Migrator->run()
+#16 /home/denis/projects/my/web/mycv/vendor/laravel/framework/src/Illuminate/Database/Migrations/Migrator.php(606): Illuminate\\Database\\Console\\Migrations\\MigrateCommand->Illuminate\\Database\\Console\\Migrations\\{closure}()
+#17 /home/denis/projects/my/web/mycv/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/MigrateCommand.php(98): Illuminate\\Database\\Migrations\\Migrator->usingConnection()
+#18 /home/denis/projects/my/web/mycv/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(36): Illuminate\\Database\\Console\\Migrations\\MigrateCommand->handle()
+#19 /home/denis/projects/my/web/mycv/vendor/laravel/framework/src/Illuminate/Container/Util.php(40): Illuminate\\Container\\BoundMethod::Illuminate\\Container\\{closure}()
+#20 /home/denis/projects/my/web/mycv/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(93): Illuminate\\Container\\Util::unwrapIfClosure()
+#21 /home/denis/projects/my/web/mycv/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(37): Illuminate\\Container\\BoundMethod::callBoundMethod()
+#22 /home/denis/projects/my/web/mycv/vendor/laravel/framework/src/Illuminate/Container/Container.php(653): Illuminate\\Container\\BoundMethod::call()
+#23 /home/denis/projects/my/web/mycv/vendor/laravel/framework/src/Illuminate/Console/Command.php(136): Illuminate\\Container\\Container->call()
+#24 /home/denis/projects/my/web/mycv/vendor/symfony/console/Command/Command.php(298): Illuminate\\Console\\Command->execute()
+#25 /home/denis/projects/my/web/mycv/vendor/laravel/framework/src/Illuminate/Console/Command.php(121): Symfony\\Component\\Console\\Command\\Command->run()
+#26 /home/denis/projects/my/web/mycv/vendor/symfony/console/Application.php(1040): Illuminate\\Console\\Command->run()
+#27 /home/denis/projects/my/web/mycv/vendor/symfony/console/Application.php(301): Symfony\\Component\\Console\\Application->doRunCommand()
+#28 /home/denis/projects/my/web/mycv/vendor/symfony/console/Application.php(171): Symfony\\Component\\Console\\Application->doRun()
+#29 /home/denis/projects/my/web/mycv/vendor/laravel/framework/src/Illuminate/Console/Application.php(94): Symfony\\Component\\Console\\Application->run()
+#30 /home/denis/projects/my/web/mycv/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(129): Illuminate\\Console\\Application->run()
+#31 /home/denis/projects/my/web/mycv/artisan(37): Illuminate\\Foundation\\Console\\Kernel->handle()
+#32 {main}
+"} 
