@@ -2,14 +2,14 @@
 
 namespace App\Models\Repositories;
 
-use App\Models\Language;
+use App\Models\Idea;
 use Illuminate\Http\Request;
 
-class LanguageRepository extends  DictRepository
+class IdeaRepository extends  DictRepository
 {
-    const DICT_ID = "lang";
-    const DICT_LABEL_LIST = "Languages";
-    const DICT_LABEL_FORM = "Language";
+    const DICT_ID = "idea";
+    const DICT_LABEL_LIST = "Ideas";
+    const DICT_LABEL_FORM = "Idea";
 
     protected $model;
     public function getId() : array
@@ -19,7 +19,7 @@ class LanguageRepository extends  DictRepository
 
     public function getData($id = 0) : array
     {
-        $this->model = new Language();
+        $this->model = new Idea();
         if($id) {
             return $this->model->find($id)->toArray();
         } else {
@@ -29,36 +29,31 @@ class LanguageRepository extends  DictRepository
     public function setData(Request $request, $id = 0) : bool
     {
         $request->validate($this->getValidation());
-        $this->model = new Language();
+        $this->model = new Idea();
         if($id) {
             return $this->model->find($id)->update($request->all());
-        } else {
+       } else {
             return is_object($this->model->create($request->all()));
         }
     }
 
-    public function test()
-    {
-        return $this->getValidation();
-    }
-
     public function columns() : array
     {
-  /*
-   * parameter length must sum up 9 in the end
-   */
+        /*
+         * parameter length must sum up 9 in the end
+         */
         return [
-             [
+            [
                 'name' => 'name',
-                'label' => 'Language',
-                'validation' =>  ['required','string','max:32'],
-                'length' => 6
-            ],
-             [
-                'name' => 'locale',
-                'label' => 'Locale',
-                'validation' => ['required','string','max:5'],
+                'label' => 'Name',
+                'validation' =>  ['required','string','max:64'],
                 'length' => 3
+            ],
+            [
+                'name' => 'description',
+                'label' => 'Description',
+                'validation' => ['required','string','max:256'],
+                'length' => 6
             ],
         ];
     }

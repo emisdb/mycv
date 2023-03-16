@@ -3,17 +3,20 @@
 namespace App\Models\Repositories;
 
 use App\Models\Feature;
+use Illuminate\Http\Request;
 
-class FeatureRepository implements RepositoryInterface
+class FeatureRepository extends  DictRepository
 {
     const DICT_ID = "feat";
-    const DICT_LABEL = "Feature";
+    const DICT_LABEL_LIST = "Features";
+    const DICT_LABEL_FORM = "Feature";
 
     protected $model;
     public function getId() : array
     {
-        return [self::DICT_ID, self::DICT_LABEL];
+        return [self::DICT_ID, self::DICT_LABEL_LIST, self::DICT_LABEL_FORM];
     }
+
     public function getData($id = 0) : array
     {
         $this->model = new Feature();
@@ -23,37 +26,17 @@ class FeatureRepository implements RepositoryInterface
             return $this->model->all()->toArray();
         }
     }
-    private function labels()
+    public function setData(Request $request, $id = 0) : bool
     {
-        return [
-            'name' => 'Name',
-            'description' => 'Description'
-        ];
-    }
-    private function validations()
-    {
-        return [
-            'name' => ['required','string','max:32'],
-            'description' => ['required','string','max:128'],
-        ];
+        $request->validate($this->getValidation());
+        $this->model = new Feature();
+        if($id) {
+            return $this->model->find($id)->update($request->all());
+       } else {
+            return is_object($this->model->create($request->all()));
+        }
     }
 
-    private function fields()
-    {
-        return [
-            'name',
-            'description'
-        ];
-    }
-
-    public function params() : array
-    {
-        return [
-            'fields' => $this->fields(),
-            'labels' => $this->labels(),
-            'validations' => $this->validations(),
-        ];
-    }
     public function columns() : array
     {
         /*
@@ -62,7 +45,7 @@ class FeatureRepository implements RepositoryInterface
         return [
             [
                 'name' => 'name',
-                'label' => 'Language',
+                'label' => 'Feature',
                 'validation' =>  ['required','string','max:32'],
                 'length' => 3
             ],

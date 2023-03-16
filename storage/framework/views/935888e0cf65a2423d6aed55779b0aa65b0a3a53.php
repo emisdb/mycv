@@ -27,18 +27,18 @@
             <?php $__currentLoopData = $model['params']; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $field): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                 <div class="Rtable-cell" style="width:<?php echo e($field['length']); ?>0%; background-color: #4a5568; color:#f1f1f1;"><?php echo e($field['label']); ?></div>
             <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
-            <div class="Rtable-cell rc-third" style="background-color: #4a5568; color:#f1f1f1;">
-                <a href="<?php echo e(route("dict-edit",[$model['title'][0],0])); ?>"><i
+            <div class="Rtable-cell rc-last" style="background-color: #4a5568; color:#f1f1f1;">
+                <a href="<?php echo e(route("dict.edit",[$model['title'][0],0])); ?>"><i
                         class="fa fa-plus w3-medium"></i></a>
             </div>
             <?php $__currentLoopData = $model['dataset']; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $rec): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                     <?php $__currentLoopData = $model['params']; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $field): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                        <div class="Rtable-cell" style="width:<?php echo e($field['length']); ?>0%;"><?php echo e($rec[$field['name']]); ?></div>
+                        <div class="Rtable-cell" style="width:<?php echo e($field['length']); ?>0%;"><?php echo $rec[$field['name']]; ?></div>
                     <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
-                     <div class="Rtable-cell rc-third">
-                        <a href="<?php echo e(route("dict-edit",[$model['title'][0],$rec['id']])); ?>"><i
+                     <div class="Rtable-cell rc-last">
+                        <a href="<?php echo e(route("dict.edit",[$model['title'][0],$rec['id']])); ?>"><i
                                 class="fa fa-edit w3-medium"></i></a>
-                        <a href="<?php echo e(route("dict-delete",[$model['title'][0],$rec['id']])); ?>"><i
+                        <a href="<?php echo e(route("dict.delete",[$model['title'][0],$rec['id']])); ?>"><i
                                 class="fa fa-remove w3-medium"></i></a>
                     </div>
                 <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>

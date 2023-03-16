@@ -22,13 +22,30 @@
         @include('inc.messages')
         <!-- Form Section -->
         <div class="w3-padding-32 w3-content" id="portfolio">
-            <form method="POST" action="/store/{{$model['title'][0]}}/{{$model['dataset']['id']}}">
+            <form method="POST"
+                  <?php
+                  if(isset($model['dataset']['id'])){
+                      echo "action='/dict/store/".$model['title'][0]."/".$model['dataset']['id']."'";
+                  } else {
+                      echo "action='/dict/store/".$model['title'][0]."/0'";
+                  }
+                  ?>
+                 />
+
                 @csrf
-                <input type="hidden" name="id" id="id" value="{{$model['dataset']['id']}}" />
+                <input type="hidden" name="id" id="id"
+                      @if(isset($model['dataset']['id']))
+                            value="{{$model['dataset']['id']}}"
+                        @endif
+                />
                @foreach($model['params'] as $field)
                     <div class="form-group">
                         <label for="{{$field['name']}}">{{$field['label']}}</label>
-                       <input type="text" name="{{$field['name']}}" id="{{$field['name']}}" value="{{$model['dataset'][$field['name']]}}" placeholder="{{$field['label']}}" class="form-control" />
+                       <input type="text" name="{{$field['name']}}" id="{{$field['name']}}"
+                              @if(isset($model['dataset']['id']))
+                                value="{{$model['dataset'][$field['name']]}}"
+                              @endif
+                              placeholder="{{$field['label']}}" class="form-control" />
                         @error($field['name'])
                         <div class="alert alert-danger">{{$message}}</div>
                         @enderror

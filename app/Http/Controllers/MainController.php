@@ -31,15 +31,15 @@ class MainController extends Controller
     public function topic($id)
     {
         $topic = Topic::query()->with(['topic'
-        => function($query){
+        => function ($query) {
                 $query->select('name');
-    }])->find($id);
+            }])->find($id);
         if ($topic) {
             var_dump($topic->toArray());
-            if($topic->topic) {
+            if ($topic->topic) {
                 var_dump($topic->topic->toArray());
             }
-         }
+        }
         return "<h3>TOPIC</h3>";
     }
 

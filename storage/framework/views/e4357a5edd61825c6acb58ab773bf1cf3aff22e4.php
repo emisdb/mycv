@@ -128,9 +128,11 @@
             with the Scrum style process.
 
             Wide variety of project management tools (Gira, Rally, Trello, Redmine) and communication tools (Slack, Google and Office 365) were practiced during this period.
-
-
+           </p>
+            <p>
+                Desktop application on C++ and Visual Basic. Embedded systems and equipment control system on C++ in UNIX and QNX environment;
             </p>
+            <p>Fluent English. Registered as an individual entrepreneur in Georgia and have multicurrency account in Georgian Bank. </p>
             <hr class="w3-opacity">
         </div>
     </div>

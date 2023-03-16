@@ -28,9 +28,9 @@
                     <div class="Rtable-cell rc-first">{{$rec[$model['params']['fields'][0]]}}</div>
                     <div class="Rtable-cell rc-second">{{$rec[$model['params']['fields'][1]]}}</div>
                     <div class="Rtable-cell rc-third">
-                        <a href="{{route("dict-edit",[$model['title'][0],$rec['id']])}}"><i
+                        <a href="{{route("dict.edit",[$model['title'][0],$rec['id']])}}"><i
                                 class="fa fa-edit w3-medium"></i></a>
-                        <a href="{{route("dict-delete",[$model['title'][0],$rec['id']])}}"><i
+                        <a href="{{route("dict.delete",[$model['title'][0],$rec['id']])}}"><i
                                 class="fa fa-remove w3-medium"></i></a>
                     </div>
                 @endforeach

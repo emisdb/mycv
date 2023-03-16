@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use App\Models\Topic;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
-use function MongoDB\BSON\toJSON;
 
 class TopicController extends Controller
 {
@@ -15,7 +14,7 @@ class TopicController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index() : Response
     {
         return response(json_encode(Topic::all()->toArray()), 200)
             ->header('Content-Type', 'application/json');

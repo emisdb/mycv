@@ -28,9 +28,9 @@
                     <div class="Rtable-cell rc-first"><?php echo e($rec[$params['fields'][0]]); ?></div>
                     <div class="Rtable-cell rc-second"><?php echo e($rec[$params['fields'][1]]); ?></div>
                     <div class="Rtable-cell rc-third">
-                        <a href="<?php echo e(route("dict-edit",[$params['title'][1],$rec['id']])); ?>"><i
+                        <a href="<?php echo e(route("dict.edit",[$params['title'][1],$rec['id']])); ?>"><i
                                 class="fa fa-edit w3-medium"></i></a>
-                        <a href="<?php echo e(route("dict-delete",[$params['title'][1],$rec['id']])); ?>"><i
+                        <a href="<?php echo e(route("dict.delete",[$params['title'][1],$rec['id']])); ?>"><i
                                 class="fa fa-remove w3-medium"></i></a>
                     </div>
                 <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>

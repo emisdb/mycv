@@ -20,10 +20,6 @@ class CreateProjectsTable extends Migration
             $table->unsignedInteger('finish');
             $table->timestamps();
         });
-        Schema::table('publishes', function (Blueprint $table) {
-
-            $table->renameColumn('feature','name')->rename;
-        });
     }
 
     /**

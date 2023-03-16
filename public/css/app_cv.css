@@ -261,8 +261,11 @@ div.flex-container i {
 .Rtable--4cols > .Rtable-cell  { width: 25%; }
 .Rtable--5cols > .Rtable-cell  { width: 20%; }
 .Rtable--6cols > .Rtable-cell  { width: 16.6%; }
-
-
+.Rtable > .Rtable-cell.rc-last  { width: 10%; }
+.Rtable > .Rtable-cell.rc-last > a > .fa:hover {
+    color: #cbd5e0;
+    background-color: #6b7280;
+}
 
 /* Media queries - Responsive timeline on screens less than 600px wide */
 @media screen and (max-width: 600px) {
