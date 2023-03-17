@@ -18,7 +18,13 @@
         <!-- Header -->
         <header class="w3-container w3-center" style="padding:98px 16px" id="home">
             <h1 class="w3-jumbo"><b>List {{$model['title'][1]}}</b></h1>
-            <p>List dictionary.</p>
+            @if(isset($path))
+                @include('inc.breadcrumb')
+            @else
+                <p>List dictionary.</p>
+            @endif
+
+
         </header>
     @include('inc.messages')
     <!-- Form Section -->
@@ -33,13 +39,21 @@
             </div>
             @foreach($model['dataset'] as $rec)
                     @foreach($model['params'] as $field)
-                        <div class="Rtable-cell" style="width:{{$field['length']}}0%;">{!! $rec[$field['name']] !!}</div>
+                        <div class="Rtable-cell" style="width:{{$field['length']}}0%;">
+                            @if(is_array($rec[$field['name']]))
+                                @include('inc.dd',['var'=>$rec[$field['name']]])
+                            @else
+                                {{ $rec[$field['name']] }}
+                            @endif
+                        </div>
                     @endforeach
                      <div class="Rtable-cell rc-last">
-                        <a href="{{route("dict.edit",[$model['title'][0],$rec['id']])}}"><i
-                                class="fa fa-edit w3-medium"></i></a>
-                        <a href="{{route("dict.delete",[$model['title'][0],$rec['id']])}}"><i
-                                class="fa fa-remove w3-medium"></i></a>
+                        <a href="{{route("dict.edit",[$model['title'][0],$rec['id']])}}">
+                            <i  class="fa fa-edit w3-medium"></i>
+                        </a>
+                        <a href="{{route("dict.delete",[$model['title'][0],$rec['id']])}}">
+                            <i class="fa fa-remove w3-medium"></i>
+                        </a>
                     </div>
                 @endforeach
             </div>

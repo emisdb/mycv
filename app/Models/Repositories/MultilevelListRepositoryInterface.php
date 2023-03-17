@@ -11,4 +11,10 @@ interface MultilevelListRepositoryInterface
      * @return array
      */
     public function getSubList(int $id): array;
-}
+    /**
+     * @param int $id
+     * @return array
+     */
+    public function getPath(int $id) : array;
+
+ }

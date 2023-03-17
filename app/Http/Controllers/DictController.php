@@ -17,8 +17,8 @@ class DictController extends Controller
 
     public function subindex($tab,$id)
     {
-        $class = RepDispatcher::dispatch($tab);
-        return view('dict.list',['model'=>$class->getSubList($id)]);
+        $class = RepDispatcher::ml_dispatch($tab);
+        return view('dict.list',['model'=>$class->getSubList($id),'path'=>$class->getPath($id)]);
     }
 
     public function form($tab, $id)

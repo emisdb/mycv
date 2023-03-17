@@ -12,6 +12,8 @@ class TopicRepository extends  MultiLevelDictRepository
     const DICT_LABEL_FORM = "Topic";
 
     protected $model;
+    protected $path;
+
     public function getId() : array
     {
         return [self::DICT_ID, self::DICT_LABEL_LIST, self::DICT_LABEL_FORM];
@@ -22,11 +24,29 @@ class TopicRepository extends  MultiLevelDictRepository
         return ['dataset' => $this->getSubData($id), 'params' => $this->columns(), 'title' => $this->getId()];
     }
 
+    protected function makePath(Topic $topic)
+    {
+        $topic_p = $topic->topic;
+        if($topic_p){
+            array_unshift($this->path, $this->makeLink($topic_p->id,$topic_p->name));
+            $this->makePath($topic_p);
+       }
+   }
+
+    protected function makeLink(int $id, string $name): array
+    {
+        return [
+                'type'      => 'link',
+                'route'     => 'dict.six',
+                'params'    => [self::DICT_ID,$id],
+                'name'      => $name
+                ];
+   }
     protected function setLink(array $arr): array
     {
-        $arr['name'] = '<a href="'.route('dict.six',[self::DICT_ID,$arr['id']]).'">' . $arr['name'] . "</a>";
+        $arr['name'] = $this->makeLink($arr['id'],$arr['name']);
         if(isset($arr['topic'])) {
-            $arr['parent'] = '<a href="'.route('dict.six',[self::DICT_ID,$arr['id']]).'">' . $arr['topic']['name'] . "</a>";
+            $arr['parent'] = $this->makeLink($arr['id'],$arr['topic']['name']);
         }
         return $arr;
     }
@@ -38,7 +58,17 @@ class TopicRepository extends  MultiLevelDictRepository
          }
          return $res;
     }
-    public function getSubData($id) : array
+    public function getPath($id) : array
+    {
+        $this->path = [];
+        if($topic=Topic::find($id)) {
+            $this->path = [$topic->name];
+            $this->makePath($topic);
+        }
+        return $this->path;
+     }
+
+        public function getSubData($id) : array
     {
         $this->model = Topic::query()
             ->with(['topic' => function ($query) {
@@ -56,11 +86,15 @@ class TopicRepository extends  MultiLevelDictRepository
             }]);
 
         if($id) {
-            return $this->setLink($this->model->find($id)->toArray());
+            return $this->model->find($id)->toArray();
         } else {
-            return $this->setLinks($this->model->whereNull('parent')->get()->toArray());
+            return $this->getDataForUpperLevel();
         }
     }
+    protected function getDataForUpperLevel(): array
+    {
+        return $this->setLinks($this->model->whereNull('parent')->get()->toArray());
+   }
 
     public function setData(Request $request, $id = 0) : bool
     {
@@ -94,12 +128,9 @@ class TopicRepository extends  MultiLevelDictRepository
         ];
     }
     public function test() {
-        $this->model = Topic::query()
-            ->with(['topic' => function ($query) {
-                $query->select('id', 'name');
-            }]);
-
-        dd($this->model->find(4)->toArray());
+        $this->path = [];
+        $this->makePath(Topic::find(5));
+        dd($this->path);
     }
 
 

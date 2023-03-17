@@ -11,7 +11,5 @@ abstract class MultiLevelDictRepository extends DictRepository implements Reposi
     const DICT_LABEL_FORM = "Multilevel Dictionary";
 
     public abstract function getSubData($id) : array;
-
-
-
+    public abstract function getPath(int $id) : array;
 }

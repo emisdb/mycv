@@ -48,7 +48,7 @@ Route::resource('lang', 'LanguageController');
 Route::resource('topic', TopicController::class);
 
 Route::controller(DictController::class)->group(function () {
-    Route::get('/dict/{tab}', 'index');
+    Route::get('/dict/{tab}', 'index')->name('dict.uix');
     Route::get('/dict/test/{tab}', 'test');
     Route::get('/dict/{tab}/{id}', 'subindex')->name('dict.six');
     Route::get('/dict/edit/{tab}/{id}', 'form')->name('dict.edit');

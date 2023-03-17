@@ -18,7 +18,13 @@
         <!-- Header -->
         <header class="w3-container w3-center" style="padding:98px 16px" id="home">
             <h1 class="w3-jumbo"><b>List <?php echo e($model['title'][1]); ?></b></h1>
-            <p>List dictionary.</p>
+            <?php if(isset($path)): ?>
+                <?php echo $__env->make('inc.breadcrumb', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
+            <?php else: ?>
+                <p>List dictionary.</p>
+            <?php endif; ?>
+
+
         </header>
     <?php echo $__env->make('inc.messages', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
     <!-- Form Section -->
@@ -33,13 +39,22 @@
             </div>
             <?php $__currentLoopData = $model['dataset']; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $rec): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                     <?php $__currentLoopData = $model['params']; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $field): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                        <div class="Rtable-cell" style="width:<?php echo e($field['length']); ?>0%;"><?php echo $rec[$field['name']]; ?></div>
+                        <div class="Rtable-cell" style="width:<?php echo e($field['length']); ?>0%;">
+                            <?php if(is_array($rec[$field['name']])): ?>
+                                <?php echo $__env->make('inc.dd',['var'=>$rec[$field['name']]], \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
+                            <?php else: ?>
+                                <?php echo e($rec[$field['name']]); ?>
+
+                            <?php endif; ?>
+                        </div>
                     <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                      <div class="Rtable-cell rc-last">
-                        <a href="<?php echo e(route("dict.edit",[$model['title'][0],$rec['id']])); ?>"><i
-                                class="fa fa-edit w3-medium"></i></a>
-                        <a href="<?php echo e(route("dict.delete",[$model['title'][0],$rec['id']])); ?>"><i
-                                class="fa fa-remove w3-medium"></i></a>
+                        <a href="<?php echo e(route("dict.edit",[$model['title'][0],$rec['id']])); ?>">
+                            <i  class="fa fa-edit w3-medium"></i>
+                        </a>
+                        <a href="<?php echo e(route("dict.delete",[$model['title'][0],$rec['id']])); ?>">
+                            <i class="fa fa-remove w3-medium"></i>
+                        </a>
                     </div>
                 <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
             </div>
