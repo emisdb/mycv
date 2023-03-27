@@ -7,6 +7,7 @@ use App\Models\Repositories\LanguageRepository;
 use App\Models\Repositories\FeatureRepository;
 use App\Models\Repositories\IdeaRepository;
 use App\Models\Repositories\TopicRepository;
+use App\Models\Repositories\ProjectRepository;
 
 class RepDispatcher
 {
@@ -16,9 +17,11 @@ class RepDispatcher
         'feat' => FeatureRepository::class,
         'idea' => IdeaRepository::class,
         'topic' => TopicRepository::class,
+        'proj' => ProjectRepository::class,
     ];
     public static $mlreps = [
         'topic' => TopicRepository::class,
+        'idea' => IdeaRepository::class,
     ];
     public static function dispatch($tab) : RepositoryInterface
     {

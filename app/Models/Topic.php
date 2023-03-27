@@ -13,11 +13,11 @@ class Topic extends Model
 
     public function topics()
     {
-        return $this->hasMany(Topic::class, 'parent','id');
+        return $this->hasMany(Topic::class, 'topic_id','id');
     }
 
     public function topic()
     {
-        return $this->belongsTo(Topic::class, 'parent', 'id');
+        return $this->belongsTo(Topic::class, 'topic_id', 'id');
     }
 }

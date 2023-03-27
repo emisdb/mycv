@@ -12,12 +12,7 @@ class LanguageRepository extends  DictRepository
     const DICT_LABEL_FORM = "Language";
 
     protected $model;
-    public function getId() : array
-    {
-        return [self::DICT_ID, self::DICT_LABEL_LIST, self::DICT_LABEL_FORM];
-    }
-
-    public function getData($id = 0) : array
+     public function getData($id = 0) : array
     {
         $this->model = new Language();
         if($id) {
@@ -52,14 +47,16 @@ class LanguageRepository extends  DictRepository
                 'name' => 'name',
                 'label' => 'Language',
                 'validation' =>  ['required','string','max:32'],
-                'length' => 6
-            ],
+                'length' => 6,
+                  'type' => 'text',
+           ],
              [
                 'name' => 'locale',
                 'label' => 'Locale',
                 'validation' => ['required','string','max:5'],
-                'length' => 3
-            ],
+                'length' => 3,
+                  'type' => 'text',
+           ],
         ];
     }
 

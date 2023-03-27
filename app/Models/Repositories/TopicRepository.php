@@ -10,13 +10,14 @@ class TopicRepository extends  MultiLevelDictRepository
     const DICT_ID = "topic";
     const DICT_LABEL_LIST = "Topics";
     const DICT_LABEL_FORM = "Topic";
+    const DICT_SUBDICT = "idea";
+    const DICT_PARENT_ID = "topic_id";
 
     protected $model;
     protected $path;
-
-    public function getId() : array
+    public function getSubForm($id) : array
     {
-        return [self::DICT_ID, self::DICT_LABEL_LIST, self::DICT_LABEL_FORM];
+        return ['dataset' => ['topic_id'=>$id], 'params' => $this->columns(), 'title' => $this->getId()];
     }
 
     public function getSubList($id): array
@@ -32,19 +33,10 @@ class TopicRepository extends  MultiLevelDictRepository
             $this->makePath($topic_p);
        }
    }
-
-    protected function makeLink(int $id, string $name): array
-    {
-        return [
-                'type'      => 'link',
-                'route'     => 'dict.six',
-                'params'    => [self::DICT_ID,$id],
-                'name'      => $name
-                ];
-   }
     protected function setLink(array $arr): array
     {
         $arr['name'] = $this->makeLink($arr['id'],$arr['name']);
+        $arr['subdict'] = $this->makeLink($arr['id'],"",static::DICT_SUBDICT);
         if(isset($arr['topic'])) {
             $arr['parent'] = $this->makeLink($arr['id'],$arr['topic']['name']);
         }
@@ -75,7 +67,7 @@ class TopicRepository extends  MultiLevelDictRepository
                 $query->select('id', 'name');
             }]);
 
-           return $this->setLinks($this->model->where('parent', '=', $id)->get()->toArray());
+           return $this->setLinks($this->model->where('topic_id', '=', $id)->get()->toArray());
      }
 
     public function getData($id = 0) : array
@@ -86,27 +78,45 @@ class TopicRepository extends  MultiLevelDictRepository
             }]);
 
         if($id) {
-            return $this->model->find($id)->toArray();
+            return $this->getFormData($id);
         } else {
             return $this->getDataForUpperLevel();
         }
     }
+    protected function getFormData($id): array
+    {
+        $arr = $this->model->find($id)->toArray();
+        if(isset($arr['topic'])) {
+            $arr['parent'] = $arr['topic']['id'];
+        }
+        return $arr;
+
+    }
     protected function getDataForUpperLevel(): array
     {
-        return $this->setLinks($this->model->whereNull('parent')->get()->toArray());
+        return $this->setLinks($this->model->whereNull('topic_id')->get()->toArray());
    }
 
     public function setData(Request $request, $id = 0) : bool
     {
-        $request->validate($this->getValidation());
+        $data = $request->validate($this->getValidation());
+        if($data['topic_id'] == 0) $data['topic_id'] = null;
         $this->model = new Topic();
         if($id) {
-            return $this->model->find($id)->update($request->all());
+            return $this->model->find($id)->update($data);
        } else {
-            return is_object($this->model->create($request->all()));
+            return is_object($this->model->create($data));
         }
     }
 
+    public function delete($id) : array
+    {
+        $this->model = new Topic();
+        $rec = $this->model->find($id);
+        $result['parent'] = $rec->topic_id;
+        $result['success'] = $rec->delete();
+        return $result;
+    }
     public function columns() : array
     {
         /*
@@ -117,13 +127,23 @@ class TopicRepository extends  MultiLevelDictRepository
                 'name' => 'name',
                 'label' => 'Name',
                 'validation' =>  ['required','string','max:32'],
-                'length' => 3
+                'length' => 3,
+                'type' => 'text'
             ],
             [
                 'name' => 'description',
                 'label' => 'Description',
                 'validation' => ['required','string','max:128'],
-                'length' => 6
+                'length' => 6,
+                'type' => 'text'
+            ],
+            [
+                'name' => 'topic_id',
+                'parent' => true,
+                'label' => 'Parent',
+                'validation' => [],
+                'length' => 0,
+                'type' => 'hidden'
             ],
         ];
     }

@@ -3,20 +3,55 @@
 namespace App\Models\Repositories;
 
 use App\Models\Idea;
+use App\Models\Topic;
 use Illuminate\Http\Request;
 
-class IdeaRepository extends  DictRepository
+class IdeaRepository extends  MultiLevelDictRepository
 {
     const DICT_ID = "idea";
+    const DICT_PARENT = "topic";
     const DICT_LABEL_LIST = "Ideas";
     const DICT_LABEL_FORM = "Idea";
+    const DICT_PARENT_ID = "topic_id";
+    const DICT_LIST_PICT = "dear";
+    const DICT_FORM_PICT = "legs";
 
     protected $model;
-    public function getId() : array
+    protected $path;
+
+    public function getSubForm($id) : array
     {
-        return [self::DICT_ID, self::DICT_LABEL_LIST, self::DICT_LABEL_FORM];
+        return ['dataset' => ['topic_id'=>$id], 'params' => $this->columns(), 'title' => $this->getId()];
+    }
+    public function getSubList($id): array
+    {
+        return ['dataset' => $this->getSubData($id), 'params' => $this->columns(), 'title' => $this->getId()];
     }
 
+    protected function makePath(Topic $topic)
+    {
+        $topic_p = $topic->topic;
+        if($topic_p){
+            array_unshift($this->path, $this->makeLink($topic_p->id,$topic_p->name,self::DICT_PARENT));
+            $this->makePath($topic_p);
+        }
+    }
+    public function getPath($id) : array
+    {
+        $this->path = [];
+        if($topic=Topic::find($id)) {
+            $this->path = [$topic->name];
+            $this->makePath($topic);
+        }
+        return $this->path;
+    }
+
+    public function getSubData($id) : array
+    {
+        $this->model = Idea::query();
+
+        return $this->model->where('topic_id', '=', $id)->get()->toArray();
+    }
     public function getData($id = 0) : array
     {
         $this->model = new Idea();
@@ -37,6 +72,15 @@ class IdeaRepository extends  DictRepository
         }
     }
 
+    public function delete($id) : array
+    {
+        $this->model = new Idea();
+        $rec = $this->model->find($id);
+        $result['parent'] = $rec->topic_id;
+        $result['success'] = $rec->delete();
+        return $result;
+    }
+
     public function columns() : array
     {
         /*
@@ -47,13 +91,23 @@ class IdeaRepository extends  DictRepository
                 'name' => 'name',
                 'label' => 'Name',
                 'validation' =>  ['required','string','max:64'],
-                'length' => 3
-            ],
+                'length' => 3,
+                   'type' => 'text',
+          ],
             [
                 'name' => 'description',
                 'label' => 'Description',
                 'validation' => ['required','string','max:256'],
-                'length' => 6
+                'length' => 6,
+                   'type' => 'text',
+          ],
+            [
+                'name' => 'topic_id',
+                'parent' => true,
+                'label' => 'Topic',
+                'validation' => [],
+                'length' => 0,
+                'type' => 'hidden'
             ],
         ];
     }

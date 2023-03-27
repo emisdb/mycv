@@ -8,9 +8,17 @@
 
     </div>
 <?php endif; ?>
-<?php if(session('status')): ?>
+<?php if(session('success')): ?>
     <div class="alert alert-success alert-dismissible fade in show" role="alert">
-        <strong>Success!</strong> <?php echo e(session('status')); ?>.
+        <strong>Success!</strong> <?php echo e(session('success')); ?>.
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+<?php endif; ?>
+<?php if(session('failure')): ?>
+    <div class="alert alert-danger alert-dismissible fade in show" role="alert">
+        <strong>Failure!</strong> <?php echo e(session('failure')); ?>.
         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
             <span aria-hidden="true">&times;</span>
         </button>

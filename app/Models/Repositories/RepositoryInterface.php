@@ -27,6 +27,11 @@ interface RepositoryInterface
      */
     public function getData($id): array;
     /**
+     * @param int $id
+     * @return array
+     */
+    public function delete($id): array;
+    /**
      * @return array
      */
     public function columns() : array;

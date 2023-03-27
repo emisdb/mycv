@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MainController;
+//use App\Http\Controllers\DictController;
 use App\Http\Controllers\LanguageController;
 
 /*
@@ -35,7 +36,7 @@ Route::get('/contact', function () {
 });
 
 Route::get('/greet', function () {
-    return 'Hello World';
+    return view('greet');
 });
 Route::get('/skills/{type}', [MainController::class,'skills'])->name('skill');
 Route::get('/edit/{tab}/{id}', [MainController::class,'edit'])->name('dict.edit');
@@ -45,15 +46,17 @@ Route::get('/topic/{id}', [MainController::class,'topic']);
 Route::post('/edit/features', [MainController::class,'features']);
 Route::resource('main', 'MainController')->only(['index', 'store']);
 Route::resource('lang', 'LanguageController');
-Route::resource('topic', TopicController::class);
+//Route::resource('topic', TopicController::class);
 
 Route::controller(DictController::class)->group(function () {
     Route::get('/dict/{tab}', 'index')->name('dict.uix');
     Route::get('/dict/test/{tab}', 'test');
     Route::get('/dict/{tab}/{id}', 'subindex')->name('dict.six');
     Route::get('/dict/edit/{tab}/{id}', 'form')->name('dict.edit');
-    Route::get('/dict/delete/{tab}/{id}', 'form')->name('dict.delete');
+    Route::get('/dict/create/{tab}/{id}', 'subform')->name('dict.create');
+    Route::get('/dict/delete/{tab}/{id}', 'destroy')->name('dict.delete');
     Route::post('/dict/store/{tab}/{id}', 'store')->name('dict.store');
+    Route::post('/dict/substore/{tab}/{id}/{parent}', 'substore')->name('dict.substore');
 });
 
 

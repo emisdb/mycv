@@ -285,13 +285,22 @@ ul.breadcrumb li a:hover {
 .Rtable--4cols > .Rtable-cell  { width: 25%; }
 .Rtable--5cols > .Rtable-cell  { width: 20%; }
 .Rtable--6cols > .Rtable-cell  { width: 16.6%; }
-.Rtable > .Rtable-cell.rc-last  { width: 10%; }
+.Rtable > .Rtable-cell.rc-last  {
+    width: 10%;
+    padding: .8em .2em;
+}
 
+.Rtable > .Rtable-cell.Rtable-header  {
+    background-color: #4a5568;
+    color:#f1f1f1;
+}
+.Rtable > .Rtable-cell.Rtable-header.rc-last  {
+    text-align: center;
+}
 .Rtable > .Rtable-cell.rc-last > a  {
     color: inherit;
     background-color: transparent;
 }
-
 .Rtable > .Rtable-cell.rc-last > a > .fa:hover {
     color: #cbd5e0;
     background-color: #6b7280;

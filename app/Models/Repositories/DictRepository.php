@@ -3,26 +3,33 @@
 namespace App\Models\Repositories;
 
 use Illuminate\Http\Request;
+use App\Components\DateFormat;
 
 abstract class DictRepository implements RepositoryInterface
 {
     const DICT_ID = "dict";
     const DICT_LABEL_LIST = "Dictionaries";
     const DICT_LABEL_FORM = "Dictionary";
+    const DICT_IS_MULTILEVEL = false;
 
     /**
      * @return array
      */
     public function getId(): array
     {
-        return [self::DICT_ID, self::DICT_LABEL_LIST, self::DICT_LABEL_FORM];
+        return [
+            'id'        => static::DICT_ID,
+            'list'      => static::DICT_LABEL_LIST,
+            'form'      => static::DICT_LABEL_FORM,
+            'is_mult'   => static::DICT_IS_MULTILEVEL,
+        ];
     }
     /**
      * @return string
      */
     public function name() : string
     {
-        return self::DICT_LABEL_FORM;
+        return static::DICT_LABEL_FORM;
     }
 
     public abstract function setData(Request $request, $id): bool;
@@ -58,6 +65,28 @@ abstract class DictRepository implements RepositoryInterface
             return ['dataset' => [], 'params' => $this->columns(), 'title' => $this->getId()];
         }
     }
+    protected function makeDate(string $stamp): array
+    {
+        $df = new DateFormat($stamp);
+        return [
+            'type' => 'datestamp',
+            'value' => $stamp,
+            'date' => $df->getMonthShort() . " " . $df->getYear(),
+            'month' => $df->getMonth(),
+            'year' => $df->getYear()
+        ];
+
+    }
+
+    protected function makeLink(int $id, string $name, string $dict = ""): array
+    {
+        return [
+            'type'      => 'link',
+            'route'     => 'dict.six',
+            'params'    => [empty($dict) ? static::DICT_ID : $dict, $id],
+            'value'      => $name
+        ];
+    }
 
     public function columns(): array
     {
@@ -69,7 +98,8 @@ abstract class DictRepository implements RepositoryInterface
                 'name' => 'dict',
                 'label' => 'Dictionary',
                 'validation' => [],
-                'length' => 9
+                'length' => 9,
+                'type' => 'text'
             ],
         ];
     }

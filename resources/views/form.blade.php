@@ -16,13 +16,13 @@
 
         <!-- Header -->
         <header class="w3-container w3-center" style="padding:128px 16px" id="home">
-            <h1 class="w3-jumbo"><b>Edit record {{$model['title'][1]}}</b></h1>
+            <h1 class="w3-jumbo"><b>Edit record {{$model['title']['list']}}</b></h1>
             <p>Edit record.</p>
         </header>
         @include('inc.messages')
         <!-- Form Section -->
         <div class="w3-padding-32 w3-content" id="portfolio">
-            <form method="POST" action="/{{$model['title'][0]}}">
+            <form method="POST" action="/{{$model['title']['id']}}">
                 @csrf
                 <input type="hidden" name="id" id="id" value="{{$model['data']['id']}}" />
                @foreach($model['params']['fields'] as $field)

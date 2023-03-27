@@ -53,7 +53,7 @@
                 Frontend development is based on the traditional basis:
                 <button  onclick="openDialog('yellow')"
                          class="w3-button w3-white w3-hover-yellow  w3-hover-text-gray w3-border w3-border-yellow w3-round-large w3-padding-small  wow wobble animated">
-                    <i>HTML, CSS, JS with jQuery and Bootstrap framework <span class="badge">25 years</span></i>
+                    HTML, CSS, JS with jQuery and Bootstrap framework <span class="badge">25 years</span>
                 </button>
                 I have some practice in
                 <button  onclick="openDialog('green')"

@@ -33,6 +33,7 @@ final class Versions
      * @internal
      */
     const VERSIONS          = array (
+  'almasaeed2010/adminlte' => 'v3.2.0@bd4d9c72931f1dd28601b6bfb387554a381ad540',
   'asm89/stack-cors' => 'v2.1.1@73e5b88775c64ccc0b84fb60836b30dc9d92ac4a',
   'brick/math' => '0.9.3@ca57d18f028f84f777b2168cd1911b0dee2343ae',
   'composer/package-versions-deprecated' => '1.11.99.5@b4f54f74ef3453349c24a845d22392cd31e65f1d',
@@ -50,6 +51,7 @@ final class Versions
   'guzzlehttp/guzzle' => '7.5.0@b50a2a1251152e43f6a37f0fa053e730a67d25ba',
   'guzzlehttp/promises' => '1.5.2@b94b2807d85443f9719887892882d0329d1e2598',
   'guzzlehttp/psr7' => '2.4.3@67c26b443f348a51926030c83481b85718457d3d',
+  'jeroennoten/laravel-adminlte' => 'v3.8.6@6cb6153e875b3bbf085df0edfed25ceb35cbe2d6',
   'laravel/framework' => 'v8.83.27@e1afe088b4ca613fb96dc57e6d8dbcb8cc2c6b49',
   'laravel/sanctum' => 'v2.15.1@31fbe6f85aee080c4dc2f9b03dc6dd5d0ee72473',
   'laravel/serializable-closure' => 'v1.3.0@f23fe9d4e95255dacee1bf3525e0810d1a1b0f37',
@@ -146,7 +148,7 @@ final class Versions
   'sebastian/type' => '3.2.1@75e2c2a32f5e0b3aef905b9ed0b179b953b3d7c7',
   'sebastian/version' => '3.0.2@c6c1022351a901512170118436c764e473f6de8c',
   'theseer/tokenizer' => '1.2.1@34a41e998c2183e22995f158c581e7b5e755ab9e',
-  'laravel/laravel' => 'dev-master@b79d1809d8c033bef07c68330c58389933a46fd9',
+  'laravel/laravel' => 'dev-master@c2748f58837cf7e2794ace49014763c8490461d0',
 );
 
     private function __construct()

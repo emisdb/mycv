@@ -1,6 +1,11 @@
 <ul class="breadcrumb">
-    <li><a href="{{route("dict.uix",[$model['title'][0]])}}">
-            <i  class="fa fa-share-square-o w3-large"></i>
+    <li>
+        @if(empty($model['title']['parent']))
+            <a href="{{route("dict.uix",[$model['title']['id']])}}">
+        @else
+             <a href="{{route("dict.uix",[$model['title']['parent']])}}">
+         @endif
+             <i  class="fa fa-share-square-o w3-large"></i>
         </a></li>
     @if(is_array($path))
         @foreach($path as $item)

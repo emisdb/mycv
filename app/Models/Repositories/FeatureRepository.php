@@ -12,10 +12,6 @@ class FeatureRepository extends  DictRepository
     const DICT_LABEL_FORM = "Feature";
 
     protected $model;
-    public function getId() : array
-    {
-        return [self::DICT_ID, self::DICT_LABEL_LIST, self::DICT_LABEL_FORM];
-    }
 
     public function getData($id = 0) : array
     {
@@ -47,14 +43,16 @@ class FeatureRepository extends  DictRepository
                 'name' => 'name',
                 'label' => 'Feature',
                 'validation' =>  ['required','string','max:32'],
+                'type' => 'text',
                 'length' => 3
             ],
             [
                 'name' => 'description',
                 'label' => 'Description',
                 'validation' => ['required','string','max:128'],
-                'length' => 6
-            ],
+                'length' => 6,
+                 'type' => 'text',
+           ],
         ];
     }
 
