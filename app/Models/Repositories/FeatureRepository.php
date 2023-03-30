@@ -32,6 +32,13 @@ class FeatureRepository extends  DictRepository
             return is_object($this->model->create($request->all()));
         }
     }
+    public function delete($id) : array
+    {
+        $this->model = new Feature();
+        $result['parent'] = 0;
+        $result['success'] = $this->model->find($id)->delete();
+        return $result;
+    }
 
     public function columns() : array
     {

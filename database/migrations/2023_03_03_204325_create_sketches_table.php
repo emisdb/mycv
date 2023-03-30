@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 use App\Models\Publish;
-use App\Models\Idea;
+use App\Models\Index;
 
 class CreateSketchesTable extends Migration
 {
@@ -18,7 +18,7 @@ class CreateSketchesTable extends Migration
         Schema::create('sketches', function (Blueprint $table) {
             $table->id();
             $table->foreignIdFor(Publish::class);
-            $table->foreignIdFor(Idea::class);
+            $table->foreignIdFor(Index::class);
             $table->integer('ord');
             $table->timestamps();
         });

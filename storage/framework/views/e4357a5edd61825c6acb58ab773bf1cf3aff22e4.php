@@ -30,11 +30,11 @@
             <p>The professional programmer with the experience of <span class="badge">25 years</span>.</p>
             <p>During last <span class="badge">15 years</span> I specialize at the field of web-programming.</p>
             <p>My tech stack is Backend development on
-                <button  onclick="openDialog('indigo')"
-                         class="w3-button w3-white w3-hover-indigo w3-border w3-border-indigo w3-hover-text-white w3-round-large w3-padding-small wow wobble animated">
-                    <i>PHP <span class="badge">15 years</span></i>
-                </button>
-                with the use of
+                <?php echo $__env->make('inc.button',[
+                            'text' => 'PHP <span class="badge">15 years</span>',
+                            'color' => 'indigo',
+                            ], \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
+               with the use of
                 <button  onclick="openDialog('blue')"
                          class="w3-button w3-white w3-hover-blue w3-border w3-border-blue w3-round-large w3-padding-small  wow wobble animated">
                 <i>Yii and Yii2 framework <span class="badge">8 years</span></i>
@@ -52,7 +52,7 @@
                 Frontend development is based on the traditional basis:
                 <button  onclick="openDialog('yellow')"
                          class="w3-button w3-white w3-hover-yellow  w3-hover-text-gray w3-border w3-border-yellow w3-round-large w3-padding-small  wow wobble animated">
-                    <i>HTML, CSS, JS with jQuery and Bootstrap framework <span class="badge">25 years</span></i>
+                    HTML, CSS, JS with jQuery and Bootstrap framework <span class="badge">25 years</span>
                 </button>
                 I have some practice in
                 <button  onclick="openDialog('green')"
@@ -132,7 +132,8 @@
             <p>
                 Desktop application on C++ and Visual Basic. Embedded systems and equipment control system on C++ in UNIX and QNX environment;
             </p>
-            <p>Fluent English. Registered as an individual entrepreneur in Georgia and have multicurrency account in Georgian Bank. </p>
+            <p>Fluent English. Good communication skills that I earned during long period of individual work with the customers.</p>
+            <p>Registered as an individual entrepreneur in Georgia and have multicurrency account in Georgian Bank. </p>
             <hr class="w3-opacity">
         </div>
     </div>

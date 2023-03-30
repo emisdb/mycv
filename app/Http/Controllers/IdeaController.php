@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Idea;
+use App\Models\Index;
 use Illuminate\Http\Request;
 
 class IdeaController extends Controller
@@ -41,10 +41,10 @@ class IdeaController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Idea  $idea
+     * @param  \App\Models\Index  $idea
      * @return \Illuminate\Http\Response
      */
-    public function show(Idea $idea)
+    public function show(Index $idea)
     {
         //
     }
@@ -52,10 +52,10 @@ class IdeaController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Idea  $idea
+     * @param  \App\Models\Index  $idea
      * @return \Illuminate\Http\Response
      */
-    public function edit(Idea $idea)
+    public function edit(Index $idea)
     {
         //
     }
@@ -64,10 +64,10 @@ class IdeaController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Idea  $idea
+     * @param  \App\Models\Index  $idea
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Idea $idea)
+    public function update(Request $request, Index $idea)
     {
         //
     }
@@ -75,10 +75,10 @@ class IdeaController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Idea  $idea
+     * @param  \App\Models\Index  $idea
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Idea $idea)
+    public function destroy(Index $idea)
     {
         //
     }

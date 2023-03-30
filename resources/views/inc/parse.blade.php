@@ -14,7 +14,6 @@ foreach ($words as $word) {
          array_push($stack, $tag);
     } else {
         array_push($stack, $word);
-
     }
 }
 ?>

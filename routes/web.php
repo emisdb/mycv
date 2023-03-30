@@ -18,7 +18,9 @@ use App\Http\Controllers\LanguageController;
 Route::get('/', function () {
     return view('index');
 });
-
+Route::get('/test', function () {
+    return view('adminlte');
+});
 Route::get('/login', function () {
     return view('test');
 });

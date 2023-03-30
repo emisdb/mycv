@@ -31,6 +31,14 @@ class LanguageRepository extends  DictRepository
             return is_object($this->model->create($request->all()));
         }
     }
+    public function delete($id) : array
+    {
+        $this->model = new Language();
+        $rec = $this->model->find($id);
+        $result['parent'] = $rec->topic_id;
+        $result['success'] = $rec->delete();
+        return $result;
+    }
 
     public function test()
     {
