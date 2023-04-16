@@ -18,10 +18,4 @@ use App\Components\DateFormat;
 Artisan::command('inspire', function () {
     $this->comment(Inspiring::quote());
 })->purpose('Display an inspiring quote');
-Artisan::command('repair', function () {
-    $df = new DateFormat(397);
-    echo "Stamp: " . $df->getDateStamp() . "\n";
-    echo "Year: " . $df->getYear() . "\n";
-    echo "Month: " . $df->getMonth();
-    echo "\n";
-})->purpose('Some shite');
+

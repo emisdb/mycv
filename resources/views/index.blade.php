@@ -30,15 +30,15 @@
             <p>I am a web programmer from Russia currently located in Batumi, Republic of Georgia.</p>
             <p>The professional programmer with the experience of <span class="badge">25 years</span>.</p>
             <p>During last <span class="badge">15 years</span> I specialize at the field of web-programming.</p>
-            <p>My tech stack is Backend development on
-                @include('inc.button',[
+            <p>My tech stack is Backend development on <exp.general>
+                @include('pages.button',[
                             'text' => 'PHP <span class="badge">15 years</span>',
                             'color' => 'indigo',
                             ])
                with the use of
                 <button  onclick="openDialog('blue')"
                          class="w3-button w3-white w3-hover-blue w3-border w3-border-blue w3-round-large w3-padding-small  wow wobble animated">
-                <i>Yii and Yii2 framework <span class="badge">8 years</span></i>
+                Yii and Yii2 framework <span class="badge">8 years</span>
             </button>
             .
             </p>
@@ -58,9 +58,16 @@
                 I have some practice in
                 <button  onclick="openDialog('green')"
                          class="w3-button w3-white w3-hover-green w3-border w3-border-green w3-round-large w3-padding-small  wow wobble animated">
-                    <i>Vue.js <span class="badge">2 years</span></i>
+                    Vue.js <span class="badge">2 years</span>
                 </button>
                .
+            </p>
+            <p>
+                During my long practice of desktop and web applications I workrd in
+                <button  onclick="openDialog('green')"
+                         class="w3-button w3-white w3-hover-green w3-border w3-border-green w3-round-large w3-padding-small  wow wobble animated">
+                    database design and maintenance  <span class="badge">20 years</span>
+                </button> on a large scale.
             </p>
             <p>
                 Numerous projects were implemented both by
@@ -78,32 +85,32 @@
                 The use of MVC pattern in the framework allows to create a clear and easily adopted code. It also leaves open the possibility to preserve the flexibility of the technology.
             </p>
             <p>
-                In my long-time activity as the software engineer I was involved in the web projects from different fields of economy.
+                In my long-time activity as the software engineer I was involved in the web projects from
                 <button  onclick="openDialog('lime')"
                          class="w3-button w3-light-grey w3-hover-lime w3-border w3-border-lime w3-round-large w3-padding-small  wow wobble animated">
-                    <i>different fields of economy</i>
-                </button>
-                There were some projects where I developed .
-                <button  onclick="openDialog('gray')"
-                         class="w3-button w3-light-grey w3-hover-gray w3-border w3-border-gray w3-round-large w3-padding-small wow wobble animated">
-                    <i>individual configuration and solutions</i>
+                    different fields of economy
+                </button>.
+                There were some projects where I developed
+                <button  onclick="openDialog('khaki')"
+                         class="w3-button w3-light-khaki w3-hover-khaki w3-border w3-border-khaki w3-round-large w3-padding-small wow wobble animated">
+                    my own architecture, configuration and solutions
                 </button>
             </p>
             <p>
-                During my extensive practice  I handled many different
+                During my extensive practice I handled many different
                 <button  onclick="openDialog('sand')"
                          class="w3-button w3-light-grey w3-hover-sand w3-border w3-border-sand w3-round-large w3-padding-small wow wobble animated">
-                    <i>common popular tasks</i>
+                    common popular tasks
                 </button>
                 .
             </p>
             <p>
-                I had practice with a low-code rapid application development and delivery platform
+                I had practice with a low-code rapid application development and delivery
                 <button  onclick="openDialog('red')"
                          class="w3-button w3-white w3-hover-red w3-border w3-border-red w3-round-large w3-padding-small  wow wobble animated">
-                    <i>OutSystems Platform <span class="badge">3 years</span></i>
-                </button>
-               , Associate Developer certified specialist.
+                    OutSystems platform<span class="badge">3 years</span>
+                </button>.
+                Associate Developer certified specialist.
             </p>
             <p>
                 In many team projects I had experience to work with the Legacy systems and handled quite tangled technological solutions.
@@ -117,23 +124,21 @@
                 The project development basically is conducted in local environment provided by the
                 <button  onclick="openDialog('cyan')"
                          class="w3-button w3-white w3-hover-cyan w3-border w3-border-cyan w3-round-large w3-padding-small  wow wobble animated">
-                    <i>Docker <span class="badge">4 years</span></i>
+                    Docker <span class="badge">4 years</span>
                 </button>
-                Docker with the extensive use of Git flow and CI/CD tools.
+                with the extensive use of Git flow and CI/CD tools.
             </p>
-                Most of my developing activity was carried out in the projects based on the Agile principles
+                Most of my developing activity was carried out in the projects based on
             <button  onclick="openDialog('orange')"
                      class="w3-button w3-white w3-hover-orange w3-border w3-border-orange w3-round-large w3-padding-small  wow wobble animated">
-                <i>Agile principles <span class="badge">7 years</span></i>
+                the Agile principles <span class="badge">7 years</span>
             </button>
-            with the Scrum style process.
-
-            Wide variety of project management tools (Gira, Rally, Trello, Redmine) and communication tools (Slack, Google and Office 365) were practiced during this period.
+                with all stages of this process.
            </p>
             <p>
-                Desktop application on C++ and Visual Basic. Embedded systems and equipment control system on C++ in UNIX and QNX environment;
+            Desktop application on C++ and Visual Basic. Embedded systems and equipment control system on C++ in UNIX and QNX environment;
             </p>
-            <p>Fluent English. Good communication skills that I earned during long period of individual work with the customers.</p>
+            <p>Fluent English. Good communication skills that I earned during long period of individual direct work with the customers.</p>
             <p>Registered as an individual entrepreneur in Georgia and have multicurrency account in Georgian Bank. </p>
             <hr class="w3-opacity">
         </div>

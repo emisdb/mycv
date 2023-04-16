@@ -3,7 +3,7 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
-use App\Models\Index;
+use App\Models\Idea;
 use App\Models\Project;
 class CreateProjectToIdeasTable extends Migration
 {
@@ -17,7 +17,7 @@ class CreateProjectToIdeasTable extends Migration
         Schema::create('project_to_ideas', function (Blueprint $table) {
             $table->id();
             $table->foreignIdFor(Project::class);
-            $table->foreignIdFor(Index::class);
+            $table->foreignIdFor(Idea::class);
             $table->timestamps();
         });
     }

@@ -15,9 +15,13 @@ use App\Http\Controllers\LanguageController;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('/', function () {
-    return view('index');
-});
+Route::get('/', [MainController::class,'home'])->name('index');
+Route::get('/skills', [MainController::class,'skills'])->name('skills');
+Route::get('/projects/{type}', [MainController::class,'projects'])->name('projects');
+Route::redirect('/projectsp', '/projects/1')->name('projectsp');
+Route::redirect('/projectst', '/projects/0')->name('projectst');
+Route::get('/skill', function () { return view('skills-accordion');});
+
 Route::get('/test', function () {
     return view('adminlte');
 });
@@ -30,15 +34,16 @@ Route::get('/timeline', function () {
 Route::get('/team', function () {
     return view('team');
 })->name('team');
-Route::get('/skills', function () {
-    return view('skills');
-});
+
 Route::get('/contact', function () {
     return view('contact');
 });
 
 Route::get('/greet', function () {
     return view('greet');
+});
+Route::get('/home', function () {
+    return view('index');
 });
 Route::get('/skills/{type}', [MainController::class,'skills'])->name('skill');
 Route::get('/edit/{tab}/{id}', [MainController::class,'edit'])->name('dict.edit');

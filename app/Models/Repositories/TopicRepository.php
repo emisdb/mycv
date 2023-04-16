@@ -60,6 +60,19 @@ class TopicRepository extends  MultiLevelDictRepository
         return $this->path;
      }
 
+     public static function getSubIds($id,$arr = [])
+     {
+         $arrl = Topic::query()->select('id')->where('topic_id', '=', $id)->get()->toArray();
+
+         if(!empty($arrl)){
+             foreach($arrl as $tpic){
+                 array_push($arr, $tpic['id']);
+                 $arr = self::getSubIds($tpic['id'],$arr);
+             }
+         }
+         return $arr;
+     }
+
         public function getSubData($id) : array
     {
         $this->model = Topic::query()

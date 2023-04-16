@@ -4,12 +4,47 @@ namespace App\Http\Controllers;
 
 use App\Components\RepDispatcher;
 use App\Models\Feature;
+use App\Models\Feeds\FeedInterface;
+use App\Models\Feeds\Projects;
+use App\Models\Feeds\Skills;
+use App\Models\Project;
+use App\Models\Repositories\TopicRepository;
 use App\Models\Topic;
 use Illuminate\Http\Request;
 use App\Http\Requests\FeatureRequest;
+use App\Models\Feeds\Index;
+use App\Components\DataParser;
 
 class MainController extends Controller
 {
+    public function home(FeedInterface $feed)
+    {
+        $parser = new DataParser($feed);
+        $res = $parser->handle();
+//        dd($res);
+        return view('pages.index', ['model' => $res]);
+   }
+
+    public function skills()
+    {
+        $skills= new Skills();
+        $res = $skills->getData();
+//        dd($res);
+        return view('pages.skills', ['model' => $res]);
+    }
+    public function projects($type = 0)
+    {
+        $proj= new Projects($type);
+        $res = $proj->getData();
+//        dd($res);
+        if($type) {
+            return view('pages.time', ['model' => $res]);
+        } else {
+            return view('pages.team', ['model' => $res]);
+
+        }
+    }
+
     public function form($tab, $id)
     {
 
@@ -68,16 +103,6 @@ class MainController extends Controller
         $feature->description = $request->input('description');
         $feature->save();
         return redirect()->action([MainController::class, 'index'])->with('status', "Feature {$feature->id} created!");
-    }
-
-    public function skills($type = 'web')
-    {
-        switch ($type) {
-            case 'web':
-                return view('skills-accordion');
-            default:
-                return view('skills');
-        }
     }
 
 }

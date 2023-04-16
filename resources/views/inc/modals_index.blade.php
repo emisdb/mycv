@@ -53,7 +53,7 @@
 <script type="text/javascript">
     var colors = ['blue', 'green', 'pink', 'yellow', 'gray', 'lime', 'indigo', 'cyan', 'orange', 'red', 'sand'];
 
-    function openDialog(setcolor) {
+    function openDialog(mame,setcolor) {
         element = document.getElementById('container-box');
         colors.forEach(function (color, index) {
             if (setcolor == color) {

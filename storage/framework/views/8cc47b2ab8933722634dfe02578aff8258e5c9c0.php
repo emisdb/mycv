@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src='https://kit.fontawesome.com/1e9e0910f4.js' crossorigin='anonymous'></script>
     <link rel="stylesheet" href="<?php echo e(asset('css/app_cv.css')); ?>">
     <link rel="stylesheet" href="<?php echo e(asset('css/animate.css')); ?>">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -26,9 +27,9 @@
     <div class="w3-bar-block w3-center">
         <a href="/" class="w3-bar-item w3-button w3-text-grey w3-hover-black" onclick="closeNav()">Home</a>
         <a href="/skills" class="w3-bar-item w3-button w3-text-grey w3-hover-black" onclick="closeNav()">Skills</a>
-        <a href="/team" class="w3-bar-item w3-button w3-text-grey w3-hover-black"
+        <a href="/projects/0" class="w3-bar-item w3-button w3-text-grey w3-hover-black"
            onclick="closeNav()">Team work</a>
-        <a href="/timeline" class="w3-bar-item w3-button w3-text-grey w3-hover-black"
+        <a href="/projects/1" class="w3-bar-item w3-button w3-text-grey w3-hover-black"
            onclick="closeNav()">Personal work</a>
         <a href="/contact" class="w3-bar-item w3-button w3-text-grey w3-hover-black" onclick="closeNav()">Contact</a>
     </div>

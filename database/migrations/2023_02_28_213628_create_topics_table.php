@@ -20,7 +20,6 @@ class CreateTopicsTable extends Migration
             $table->unsignedBigInteger('parent')->nullable();
             $table->timestamps();
             $table->index('parent', 'topic_id_idx');
-            $table->foreign('project_id', 'project_id_fk')->on('projects')->references('id');
         });
 
     }

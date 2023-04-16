@@ -59,7 +59,7 @@ class DictController extends Controller
         return redirect()->action([self::class, 'index'], $tab)->with($result ? 'success' : 'failure', $this->getMessage($class->name(), $id, !$result));
     }
 
-    public function substore(Request $request, $tab, $id = 0, $parent)
+    public function substore(Request $request, $tab, $id = 0, $parent=0)
     {
         $class = RepDispatcher::ml_dispatch($tab);
         $result = $class->setData($request, $id);

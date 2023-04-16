@@ -8,4 +8,5 @@ use Illuminate\Database\Eloquent\Model;
 class ProjectToIdea extends Model
 {
     use HasFactory;
+
 }
