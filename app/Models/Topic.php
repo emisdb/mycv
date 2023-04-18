@@ -15,6 +15,10 @@ class Topic extends Model
     {
         return $this->hasMany(Topic::class, 'topic_id','id');
     }
+    public function ideas()
+    {
+        return $this->hasMany(Idea::class, 'topic_id','id');
+    }
 
     public function topic()
     {
