@@ -92,6 +92,7 @@ class Projects implements FeedInterface
                 }
             } else continue;
             $details = $this->getIdeas($details);
+            $clients = $this->getClients($clients);
              $result['id'] = $idea['id'];
             $result['name'] = $idea['name'];
             $result['start'] = DateFormat::getDate($idea['start']);
@@ -114,6 +115,19 @@ class Projects implements FeedInterface
             }
         }
         return $details;
+    }
+    protected function getClients($details)
+    {
+        $address = ['name', 'link', 'location'];
+        $vals = [];
+        $valsa = [];
+        foreach($details as $detail){
+            if (in_array($detail['name'], $address))
+                $vals[$detail['name']] = $detail['description'];
+            else
+                $valsa[$detail['name']] = $detail['description'];
+        }
+        return ['names' => $vals, 'other' => $valsa];
     }
 
     protected function setColor($arr)

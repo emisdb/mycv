@@ -129,7 +129,7 @@ body, h1, h2, h3, h4, h5, h6 {
     right: 30px;
     border: medium solid white;
     border-width: 10px 0 10px 10px;
-    border-color: transparent transparent transparent white;
+    border-color: transparent transparent transparent rgb(255,221,221);
 }
 
 /* Add arrows to the right container (pointing left) */
@@ -143,7 +143,7 @@ body, h1, h2, h3, h4, h5, h6 {
     left: 30px;
     border: medium solid white;
     border-width: 10px 10px 10px 0;
-    border-color: transparent white transparent transparent;
+    border-color: transparent rgb(255,221,221) transparent transparent;
 }
 
 /* Fix the circle for containers on the right side */
@@ -157,6 +157,20 @@ body, h1, h2, h3, h4, h5, h6 {
     background-color: white;
     position: relative;
     border-radius: 6px;
+}
+.time-content.w3-pale-red a {
+
+    font-weight: bolder;
+}
+.time-content.w3-pale-red a:hover {
+    background-color: #d81b60;
+    font-weight: normal;
+    font-style: italic;
+    color: #fff;
+    text-decoration: none;
+}
+.time-content.w3-pale-red i {
+    background-color: transparent;
 }
 .flip-box {
     background-color: transparent;

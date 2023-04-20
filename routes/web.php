@@ -16,6 +16,7 @@ use App\Http\Controllers\LanguageController;
 |
 */
 Route::get('/', [MainController::class,'home'])->name('index');
+
 Route::get('/skills', [MainController::class,'skills'])->name('skills');
 Route::get('/projects/{type}', [MainController::class,'projects'])->name('projects');
 Route::redirect('/projectsp', '/projects/1')->name('projectsp');
@@ -55,7 +56,7 @@ Route::resource('main', 'MainController')->only(['index', 'store']);
 Route::resource('lang', 'LanguageController');
 //Route::resource('topic', TopicController::class);
 
-Route::controller(DictController::class)->group(function () {
+Route::controller(DictController::class)->middleware(['auth'])->group(function () {
     Route::get('/dict/{tab}', 'index')->name('dict.uix');
     Route::get('/dict/test/{tab}', 'test');
     Route::get('/dict/{tab}/{id}', 'subindex')->name('dict.six');

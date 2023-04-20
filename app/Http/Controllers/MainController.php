@@ -34,9 +34,10 @@ class MainController extends Controller
     }
     public function projects($type = 0)
     {
-        $proj= new Projects($type);
+        $proj= new Projects(0);
+//        $proj= new Projects($type);
         $res = $proj->getData();
-        dd($res);
+        if($type > 0) dd($res);
         if($type) {
             return view('pages.time', ['model' => $res]);
         } else {
