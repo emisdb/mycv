@@ -1,5 +1,4 @@
-<h4>
-    in
+   in
     @empty($data['names']['link'])
         {{$data['names']['name']}} {{$data['names']['location'] ? '('.$data['names']['location'].')' : ''}}
     @else
@@ -7,7 +6,6 @@
             {{$data['names']['name']}} {{$data['names']['location'] ? '('.$data['names']['location'].')' : ''}}
         </a>
     @endempty
-</h4>
 
 
 

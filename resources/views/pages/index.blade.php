@@ -51,7 +51,7 @@
                     @endforeach
                 </p>
             @endforeach
-            @include('pages.popup' )
+            @include('pages.popups' )
             <hr class="w3-opacity">
         </div>
     </div>

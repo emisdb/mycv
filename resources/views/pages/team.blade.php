@@ -46,12 +46,14 @@
         </div>
         <div class="timeline">
             @foreach($model['data'] as $proj)
-                @include('pages.proj',['proj'=>$proj, 'techs' => $model['techs'], 'counter' => $counter])
-                <?php $counter++ ?>
+                <?php $side = ($counter++ % 2) ? 'left' : 'right'; ?>
+                @include('pages.proj',['proj'=>$proj, 'techs' => $model['techs'], 'side' => $side])
             @endforeach
 
         </div>
         @include('pages.proj_popups' )
         <hr class="w3-opacity">
+
     </div>
+
 @endsection

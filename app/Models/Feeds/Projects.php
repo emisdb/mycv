@@ -41,8 +41,9 @@ class Projects implements FeedInterface
         $projects = Project::query()->select(['id', 'name', 'start', 'finish'])
             ->whereHas('ideas', function ($query) {
                 $query->where('topic_id',self::TYPE)->where('ideas.name',$this->type);})
-            ->with(['ideas' => function ($query){ $query->with(['topic','ideas']);}])
-            ->orderBy('start', 'desc')->get()->toArray();
+            ->with(['ideas' => function ($query){ $query->with(['topic',
+                'ideas'=>function ($query){$query->where("topic_id",self::SHORTS);}])
+            ;}])->orderBy('start', 'desc')->get()->toArray();
         //with(['topic'])->with(['ideas'=> function ($query) {
         //                    $query->with(['topic'])
         //                        ->
@@ -77,9 +78,10 @@ class Projects implements FeedInterface
                     if ($idea_['topic_id'] == self::TECH) {
                         $tech = $idea_['name'];
                         $techs[$idea_['name']]['name']= $idea_['description'];
-                     }
+
+                  }
                     if(!empty($idea_['ideas'])){
-                        $result['techs'][] = $idea_['ideas'][0]['name'];
+                        $result['techs'][] = [$idea_['ideas'][0]['name'],$idea_['ideas'][0]['description'],$idea_['description']];
                    }
                     if(in_array($idea_['topic']['topic_id'],$this->details)){
                         $details = Idea::query()->where('topic_id',$idea_['topic_id'])->get()->toArray();
@@ -93,6 +95,7 @@ class Projects implements FeedInterface
             } else continue;
             $details = $this->getIdeas($details);
             $clients = $this->getClients($clients);
+            usort($result['techs'],function ($a,$b){ return (int)$a[1]>$b[1];});
              $result['id'] = $idea['id'];
             $result['name'] = $idea['name'];
             $result['start'] = DateFormat::getDate($idea['start']);
@@ -132,7 +135,7 @@ class Projects implements FeedInterface
 
     protected function setColor($arr)
     {
-        $colors = [['pale-red','red'], ['pale-yellow',"yellow"], ['pale-green','light-green'], ['pale-blue','blue'], ['light-gray','gray'], ['sand'.'khaki']];
+        $colors = [ ['pale-blue','blue'], ['pale-green','light-green'], ['sand','khaki'], ['pale-yellow',"yellow"],['pale-red','red'] ,['light-gray','gray']];
         $counter = 0;
         foreach ($arr as $name => $value){
             $arr[$name]['color'] = $colors[$counter++];
