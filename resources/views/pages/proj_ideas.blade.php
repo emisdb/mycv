@@ -1,4 +1,7 @@
 @foreach($topics as $topic)
+    @if($topic['name']=='slides')
+        @continue
+    @endif
     <h5>{{$topic['description']}}</h5>
     <ul class="w3-ul  w3-card-4 w3-margin-bottom">
         @foreach($topic['ideas'] as $idea)

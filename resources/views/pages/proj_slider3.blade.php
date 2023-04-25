@@ -4,7 +4,7 @@
             @foreach($topic['ideas'] as $idea)
                 <div class="w3-display-container mySlides{{$id}}" style="display:none;">
                     <img src="/images/projects/{{$topic['description']}}/{{$idea['name']}}" style="width:100%">
-                    <div class="w3-display-topleft w3-large w3-container w3-padding-16 w3-black">
+                    <div class="w3-display-bottomleft w3-large w3-container w3-padding-16 w3-black">
                         {{$idea['description']}}
                     </div>
                 </div>
