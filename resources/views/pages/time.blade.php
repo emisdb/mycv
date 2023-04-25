@@ -40,7 +40,6 @@
         <div class="timeline">
             @foreach($model['data'] as $proj)
                 <?php $side = ($counter++ % 2) ? 'left' : 'right'; ?>
-            @dd($side)
                 @include('pages.proj',['proj'=>$proj, 'techs' => $model['techs'], 'side' => $side])
             @endforeach
         </div>
