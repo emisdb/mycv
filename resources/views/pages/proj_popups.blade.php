@@ -1,5 +1,5 @@
 <div id="diaog-box" class="w3-modal">
-    <div  id="container-box" class="w3-modal-content">
+    <div  id="container-box" class="w3-modal-content proj-modal-content">
         <div  class="w3-container  w3-display-container">
             <span onclick="document.getElementById('diaog-box').style.display='none'"
                   class="w3-button w3-display-topright w3-large">x</span>

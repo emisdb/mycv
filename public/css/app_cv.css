@@ -349,7 +349,7 @@ div.w3-modal-content h4 {
     }
 }
 @media (min-width: 1800px) {
-    .w3-modal-content {
+    .proj-modal-content {
         width: 1600px;
     }
 }
