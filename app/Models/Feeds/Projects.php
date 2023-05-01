@@ -20,6 +20,7 @@ class Projects implements FeedInterface
     const SHORTS = 29;
     const DETAILS = 21;
     const CLIENTS = 31;
+    const INDUSTRIES = 38;
 
     protected $type;
     protected $details;
@@ -88,7 +89,7 @@ class Projects implements FeedInterface
                         $topics = Topic::query()->where('topic_id',$idea_['topic_id'])->with('ideas')->get()->toArray();
                     }
                     if(in_array($idea_['topic_id'],$this->clients)){
-                        $clients = Idea::query()->where('topic_id',$idea_['topic_id'])->get()->toArray();
+                        $clients = Idea::query()->with('ideas')->where('topic_id',$idea_['topic_id'])->get()->toArray();
                     }
                     unset($idea['ideas'][$key]);
                 }
@@ -125,8 +126,16 @@ class Projects implements FeedInterface
         $vals = [];
         $valsa = [];
         foreach($details as $detail){
-            if (in_array($detail['name'], $address))
+            if (in_array($detail['name'], $address)) {
                 $vals[$detail['name']] = $detail['description'];
+                if(($detail['name']=='name')&&(isset($detail['ideas']))){
+                    foreach ($detail['ideas'] as $value){
+                        if($value['topic_id']==self::INDUSTRIES){
+                            $vals['industry'] = $value['description'];
+                        }
+                    }
+                }
+            }
             else
                 $valsa[$detail['name']] = $detail['description'];
         }
