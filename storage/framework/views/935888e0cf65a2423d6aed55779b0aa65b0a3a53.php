@@ -50,7 +50,7 @@
                     <?php endif; ?>
 
                 </div>
-                <?php $__currentLoopData = $model['dataset']; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $rec): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                 <?php $__currentLoopData = $model['dataset']; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $rec): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                     <?php $__currentLoopData = $model['params']; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $field): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                         <?php if($field['length']>0): ?>
                             <div class="Rtable-cell" style="width:<?php echo e($field['length']); ?>0%;">

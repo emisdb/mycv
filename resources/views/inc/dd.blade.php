@@ -2,7 +2,10 @@
     @case('link')
         <a href="{{route($var['route'],$var['params'])}}">
             @if(empty($var['value']))
-                <i class="fa fa-mail-forward w3-medium"></i>
+                <i class="fa fa-mail-forward w3-medium">
+                    <span class="badge badge-secondary">{{$var['count']}}</span>
+                </i>
+
             @else
                 {{$var['value']}}
             @endif

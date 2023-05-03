@@ -122,6 +122,9 @@
       <excludeFolder url="file://$MODULE_DIR$/vendor/psr/cache" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/almasaeed2010/adminlte" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/jeroennoten/laravel-adminlte" />
+      <excludeFolder url="file://$MODULE_DIR$/.idea/dataSources" />
+      <excludeFolder url="file://$MODULE_DIR$/storage/framework/cache/data/50" />
+      <excludeFolder url="file://$MODULE_DIR$/storage/framework/cache/data/a1" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

@@ -50,7 +50,7 @@
                     @endif
 
                 </div>
-                @foreach($model['dataset'] as $rec)
+                 @foreach($model['dataset'] as $rec)
                     @foreach($model['params'] as $field)
                         @if($field['length']>0)
                             <div class="Rtable-cell" style="width:{{$field['length']}}0%;">

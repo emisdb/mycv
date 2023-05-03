@@ -78,13 +78,14 @@ abstract class DictRepository implements RepositoryInterface
 
     }
 
-    protected function makeLink(int $id, string $name, string $dict = ""): array
+    protected function makeLink(int $id, string $name, string $dict = "", $cou = 0): array
     {
         return [
             'type'      => 'link',
             'route'     => 'dict.six',
             'params'    => [empty($dict) ? static::DICT_ID : $dict, $id],
-            'value'      => $name
+            'value'      => $name,
+            'count'     => $cou
         ];
     }
 
