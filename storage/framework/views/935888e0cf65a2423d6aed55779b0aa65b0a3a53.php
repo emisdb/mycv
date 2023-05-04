@@ -50,6 +50,7 @@
                     <?php endif; ?>
 
                 </div>
+
                  <?php $__currentLoopData = $model['dataset']; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $rec): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                     <?php $__currentLoopData = $model['params']; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $field): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                         <?php if($field['length']>0): ?>
@@ -64,11 +65,13 @@
                         <?php endif; ?>
                     <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                     <div class="Rtable-cell rc-last">
-                        <a href="<?php echo e(route("dict.edit",[$model['title']['id'],$rec['id']])); ?>">
+                         <a href="<?php echo e(route("dict.edit",[$model['title']['id'],$rec['id']])); ?>">
                             <i class="fa fa-edit w3-medium"></i>
                         </a>
                         <?php if(isset($rec['subdict'])): ?>
                             <?php echo $__env->make('inc.dd',['var'=>$rec['subdict']], \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
+                        <?php elseif(isset($rec['ideas_count'])&&($rec['ideas_count']>0)): ?>
+                                <span class="badge badge-secondary" style="margin-left: -2px;"><?php echo e($rec['ideas_count']); ?></span>
                         <?php endif; ?>
                         <a href="<?php echo e(route("dict.delete",[$model['title']['id'],$rec['id']])); ?>">
                             <i class="fa fa-remove w3-medium"></i>

@@ -36,7 +36,7 @@ class TopicRepository extends  MultiLevelDictRepository
     protected function setLink(array $arr): array
     {
         $arr['name'] = $this->makeLink($arr['id'],$arr['name']);
-        $arr['subdict'] = $this->makeLink($arr['id'],"",static::DICT_SUBDICT, $arr['ideas_count'] ?? $arr['ideas_count'] );
+        $arr['subdict'] = $this->makeLink($arr['id'],"",static::DICT_SUBDICT, isset($arr['ideas_count']) ? $arr['ideas_count'] : 0 );
         if(isset($arr['topic'])) {
             $arr['parent'] = $this->makeLink($arr['id'],$arr['topic']['name']);
         }
@@ -78,7 +78,7 @@ class TopicRepository extends  MultiLevelDictRepository
         $this->model = Topic::query()
             ->with(['topic' => function ($query) {
                 $query->select('id', 'name');
-            }])->withCount(['ideas']);
+            }])->withCount(['ideas'])->withCount(['topics']);
 
            return $this->setLinks($this->model->where('topic_id', '=', $id)->get()->toArray());
      }

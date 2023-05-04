@@ -50,7 +50,7 @@ class IdeaRepository extends  MultiLevelDictRepository
     {
         $this->model = Idea::query();
 
-        return $this->model->where('topic_id', '=', $id)->get()->toArray();
+        return $this->model->where('topic_id', '=', $id)->withCount(['ideas'])->get()->toArray();
     }
     public function getData($id = 0) : array
     {

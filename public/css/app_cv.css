@@ -335,6 +335,10 @@ ul.breadcrumb li a:hover {
     color: inherit;
     background-color: transparent;
 }
+
+.Rtable-cell.rc-last span.badge {
+    margin-left: -12px;
+}
 .Rtable > .Rtable-cell.rc-last > a > .fa:hover {
     color: #cbd5e0;
     background-color: #6b7280;

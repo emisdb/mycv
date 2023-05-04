@@ -50,6 +50,7 @@
                     @endif
 
                 </div>
+{{--                    @dd($model)--}}
                  @foreach($model['dataset'] as $rec)
                     @foreach($model['params'] as $field)
                         @if($field['length']>0)
@@ -63,11 +64,13 @@
                         @endif
                     @endforeach
                     <div class="Rtable-cell rc-last">
-                        <a href="{{route("dict.edit",[$model['title']['id'],$rec['id']])}}">
+                         <a href="{{route("dict.edit",[$model['title']['id'],$rec['id']])}}">
                             <i class="fa fa-edit w3-medium"></i>
                         </a>
                         @if(isset($rec['subdict']))
                             @include('inc.dd',['var'=>$rec['subdict']])
+                        @elseif(isset($rec['ideas_count'])&&($rec['ideas_count']>0))
+                                <span class="badge badge-secondary" style="margin-left: -2px;">{{$rec['ideas_count']}}</span>
                         @endif
                         <a href="{{route("dict.delete",[$model['title']['id'],$rec['id']])}}">
                             <i class="fa fa-remove w3-medium"></i>
