@@ -16,8 +16,8 @@ use App\Http\Controllers\LanguageController;
 |
 */
 Route::get('/', [MainController::class,'home'])->name('index');
-
 Route::get('/skills', [MainController::class,'skills'])->name('skills');
+Route::get('/edu', [MainController::class,'edu'])->name('edu');
 Route::get('/projects/{type}', [MainController::class,'projects'])->name('projects');
 Route::redirect('/projectsp', '/projects/1')->name('projectsp');
 Route::redirect('/projectst', '/projects/0')->name('projectst');

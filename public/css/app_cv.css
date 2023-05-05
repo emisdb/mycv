@@ -43,6 +43,9 @@ body, h1, h2, h3, h4, h5, h6 {
 .skill {
     background-image: url(/images/myimg.jpg?45816d61aa555126ab73590df412330a);
 }
+.edu {
+     background-image: url(/images/alma.png?e699ae08471868ba7887c84623ef88af);
+ }
 .time {
     background-image: url(/images/haifa.jpg?245bb0855af212b4309bae639a03d084);
 }

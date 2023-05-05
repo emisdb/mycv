@@ -43,6 +43,9 @@ body, h1, h2, h3, h4, h5, h6 {
 .skill {
     background-image: url('img/myimg.jpg');
 }
+.edu {
+     background-image: url('img/alma.png');
+ }
 .time {
     background-image: url('img/haifa.jpg');
 }

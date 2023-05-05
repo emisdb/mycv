@@ -27,6 +27,8 @@
     <div class="w3-bar-block w3-center">
         <a href="/" class="w3-bar-item w3-button w3-text-grey w3-hover-black" onclick="closeNav()">Home</a>
         <a href="/skills" class="w3-bar-item w3-button w3-text-grey w3-hover-black" onclick="closeNav()">Skills</a>
+        <a href="<?php echo e(route('edu')); ?>" class="w3-bar-item w3-button w3-text-grey w3-hover-black"
+           onclick="closeNav()">Education</a>
         <a href="/projects/0" class="w3-bar-item w3-button w3-text-grey w3-hover-black"
            onclick="closeNav()">Team work</a>
         <a href="/projects/1" class="w3-bar-item w3-button w3-text-grey w3-hover-black"
