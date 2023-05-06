@@ -31,10 +31,10 @@
         <div class="w3-button w3-large w3-block w3-light-gray w3-left-align w3-bottombar w3-header" >
             <div class="flex-container">
                 <div class="flex-left">
-                    <h2 style="font-weight:bold; ">College. organization</h2>
+                    <h2 style="font-weight:bold; ">College, Organization</h2>
                 </div>
                 <div>
-                    <h4 style="text-align:center;">Started<br> at</h4>
+                    <h4 style="text-align:center;">Started</h4>
                 </div>
                 <div>
                     <h4 style="text-align:center;">Finished</h4>
@@ -68,8 +68,8 @@
                         @endisset
                     </div>
                     <div>
-                        @isset($item['length'])
-                            {{$item['length']}}
+                        @isset($item['finish'])
+                            {{$item['finish']}}
                         @endisset
                     </div>
                 </div>

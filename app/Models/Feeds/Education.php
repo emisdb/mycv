@@ -13,6 +13,7 @@ class Education implements FeedInterface
     const TECHNOLOGY = 'education';
     const LANGUAGE = 1;
     const PICTURE = 'education';
+    const STUFF = 'etc';
 
     public function getData(): array
     {
@@ -30,6 +31,7 @@ class Education implements FeedInterface
                 $query->with(['topic']);
             }])
             ->whereIn('topic_id', $topics)
+            ->whereDoesntHave('topic', function($query){$query->where('name', '=',self::STUFF);})
 //            ->select(['id','name'])
             ->get()->sortBy([['topic.id', 'asc'], ['id', 'asc']])->toArray();
 
@@ -53,6 +55,9 @@ class Education implements FeedInterface
                 foreach ($idea['ideas'] as $idea_) {
                     if ($idea_['topic']['name'] == self::PICTURE) {
                         $result['pic'] = $idea_['description'];
+                    }
+                    if ($idea_['topic']['name'] == self::STUFF) {
+                        $result[$idea_['name']] = $idea_['description'];
                     }
                 }
             }
