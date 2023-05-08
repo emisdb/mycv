@@ -1,5 +1,4 @@
 @extends('layouts.main')
-@include('inc.cv-button')
 @section('title-text')
     My skills
 @endsection
@@ -22,7 +21,9 @@
         <header class="w3-container w3-center" style="padding:128px 16px" id="home">
             <h1 class="w3-jumbo"><b>Education</b></h1>
             <p>Education and training</p>
-            @yield('cv-button')
+            <x-page.cv>
+                Download detailed CV
+            </x-page.cv>
         </header>
         <?php
         $topic = 0;
