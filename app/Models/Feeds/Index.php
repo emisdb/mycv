@@ -224,7 +224,7 @@ class Index implements FeedInterface
             [
                 'name' => 'projects.individual',
                 'color' => 'khaki',
-                'text' => 'my own architecture, configuration and solutions',
+                'text' => 'own architecture, configuration and solutions',
                 'dialog' => [
                     'title' => 'My individual work',
                     'content' => [
@@ -346,7 +346,7 @@ class Index implements FeedInterface
             ],
             [
                 'name' => 'exp.embed',
-                'color' => 'brown',
+                'color' => 'deep-orange',
                 'text' => 'embedded systems <@4 years>',
                 'dialog' => [
                     'title' => 'Computerized control systems',
@@ -462,7 +462,7 @@ class Index implements FeedInterface
             'Numerous projects were implemented both by <a.projectsp the individual efforts> and as <a.projectst a part of the team>',
             'My development practice is built on the SOLID principles and based on the design patterns accepted as the common attitude in contemporary programming. The use of MVC pattern in the framework allows to create a clear and easily adopted code. It also leaves open the possibility to preserve the flexibility of the technology.',
             'In my long-time activity as the software engineer I was involved in the web projects from <economy.fields>.',
-            'I had big experience with the individual projects where I developed <projects.individual>.',
+            'I had big experience with the individual projects where I developed my <projects.individual>.',
             'During my extensive practice I handled many different <tasks.web>',
             'I had practice with a low-code application development and delivery <exp.outsystems>. I am an Associate Developer certified specialist.',
             'In many team projects I had experience to work with the Legacy systems and handled quite tangled technological solutions.',
