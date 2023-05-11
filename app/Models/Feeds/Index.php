@@ -347,7 +347,7 @@ class Index implements FeedInterface
             [
                 'name' => 'exp.embed',
                 'color' => 'brown',
-                'text' => 'embedded systems and equipment control system <@4 years>',
+                'text' => 'embedded systems <@4 years>',
                 'dialog' => [
                     'title' => 'Computerized control systems',
                     'content' => [
@@ -360,6 +360,34 @@ class Index implements FeedInterface
                             'made complex calculations for tracking algorithm and geometric compute',
                             'provided operator control on the guided aircrafts'
                             ],
+                        ['Platform and Technologies',
+                            'Operating systems:',
+                            'MS DOS, Windows',
+                            'QNX 6.1 / Neutrino, Photon App Builder, ',
+                            'Database management systems:',
+                            'PostgreSQL',
+                            'Programming languages:',
+                            'C++'
+                        ],
+                    ]
+                ],
+            ],
+            [
+                'name' => 'exp.control',
+                'color' => 'brown',
+                'text' => 'equipment control system <@4 years>',
+                'dialog' => [
+                    'title' => 'Computerized control systems',
+                    'content' => [
+                        ['Applcations for ',
+                            'I had an experience of 3 years working on the air traffic control system. ',
+                            'Within this project we developed and implemented the application that',
+                            'maintatined radar and other equipment control',
+                            'processed the signals from different communication sources',
+                            'made graphic visualization of the aircraft traffic and airplane resource parameters',
+                            'made complex calculations for tracking algorithm and geometric compute',
+                            'provided operator control on the guided aircrafts'
+                        ],
                         ['Platform and Technologies',
                             'Operating systems:',
                             'MS DOS, Windows',
@@ -425,7 +453,7 @@ class Index implements FeedInterface
     {
         return [
             'I am a web programmer from Russia currently located in Batumi, Republic of Georgia.',
-            'The professional programmer with the <exp.general>.',
+            'The professional software engineer with the <exp.general>.',
             'During last <@15 years> I specialize at the field of <exp.web>.',
             'My tech stack is Backend development on <exp.php> with the use of <exp.yii>.',
             'I also have good knowledge of <exp.laravel>.',
@@ -442,9 +470,10 @@ class Index implements FeedInterface
             'Big experience in REST API development and other side API integration.',
             'The project development basically is conducted in local environment provided by the <exp.docker> with the extensive use of Git flow and CI/CD tools.',
             'Most of my developing activity was carried out in the projects based on <exp.agile> with complete Scrum cycle and techniques of this methodology.',
-            'Big part of my developer career I worked on <exp.desktop> built on C++ and Visual Basic. I also have experience in production of <exp.embed> on C++ in UNIX and QNX environment.',
+            'Big part of my developer career I worked on <exp.desktop> built on C++ and Visual Basic. I also have experience in production of <exp.embed> and <exp.control> on C++ in UNIX and QNX environment.',
             '<exp.english>. Good <exp.communication> that I earned during long period of individual direct work with the customers.',
             'Registered as an individual entrepreneur in Georgia and have multicurrency account in Georgian Bank.',
+            'Open for job proposals and interesting projects.',
         ];
     }
 }
