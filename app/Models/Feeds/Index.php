@@ -122,14 +122,29 @@ class Index implements FeedInterface
             [
                 'name' => 'exp.frontend',
                 'color' => 'yellow',
-                'text' => 'HTML, CSS, JS with jQuery <@25 years> and Bootstrap framework <@8 years>',
+                'text' => 'HTML, CSS, JS with jQuery <@25 years>',
                 'dialog' => [
                     'title' => 'My frontend practices',
                     'content' => [
                         ['Front end development',
                             'My frontend practices were set up when separation between fronend and backend has not come along. In my individual projects I had to fulfil all jobs.',
                             'Many technologies, extensive use of jQuery UI and components were employed.',
-                            'In my own projects front-end side is built on the responsive web design principles. I extensively use Bootstrap framework',
+                            'In my own projects front-end side is built on the responsive web design principles',
+                            'I extensively use Bootstrap framework',
+                        ],
+                    ]
+                ],
+            ],
+            [
+                'name' => 'exp.bootstrap',
+                'color' => 'light-green',
+                'text' => 'Bootstrap framework <@8 years>',
+                'dialog' => [
+                    'title' => 'Bootstrap framework',
+                    'content' => [
+                        ['Front end development',
+                            'In my own projects front-end side is built on the responsive web design principles.',
+                            'I extensively use Bootstrap framework',
                         ],
                     ]
                 ],
@@ -414,7 +429,7 @@ class Index implements FeedInterface
             'During last <@15 years> I specialize at the field of <exp.web>.',
             'My tech stack is Backend development on <exp.php> with the use of <exp.yii>.',
             'I also have good knowledge of <exp.laravel>.',
-            'Frontend development is based on the traditional basis: <exp.frontend>. I have some practice in <exp.vue>.',
+            'Frontend development is based on the traditional basis: <exp.frontend> and <exp.bootstrap>. I have some practice in <exp.vue>.',
             'During my long practice of desktop and web applications developmet I handled <exp.database> on a large scale.',
             'Numerous projects were implemented both by <a.projectsp the individual efforts> and as <a.projectst a part of the team>',
             'My development practice is built on the SOLID principles and based on the design patterns accepted as the common attitude in contemporary programming. The use of MVC pattern in the framework allows to create a clear and easily adopted code. It also leaves open the possibility to preserve the flexibility of the technology.',
