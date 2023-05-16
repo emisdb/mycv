@@ -157,7 +157,7 @@ class Index implements FeedInterface
                     'title' => 'Vue.js',
                     'content' => [
                         ['Vue.js practical usage',
-                            'While working on the Laravel project I hsd some practice in Vue.js usage.',
+                            'While working on the Laravel project I had some practice in Vue.js usage.',
                             'I had some experience of implementing Vue.js with Inertia.js.',
                         ],
                     ]
@@ -173,7 +173,7 @@ class Index implements FeedInterface
                         ['Database management systems',
                             'Almost all projects I worked on required use of database',
                             'I had experience of database implementation even before I started web application development.',
-                            'Long period of extensive use of SQL for database mintainance.',
+                            'Long period of extensive use of SQL for database maintenance.',
                         ],
                         ['Database management systems',
                             'dBase, FoxBase	since 1995 for several years',
@@ -453,6 +453,7 @@ class Index implements FeedInterface
     {
         return [
             'I am a web programmer from Russia currently located in Batumi, Republic of Georgia.',
+            'Now open for job proposals and interesting projects.',
             'The professional software engineer with the <exp.general>.',
             'During last <@15 years> I specialize at the field of <exp.web>.',
             'My tech stack is Backend development on <exp.php> with the use of <exp.yii>.',
@@ -473,7 +474,6 @@ class Index implements FeedInterface
             'Big part of my developer career I worked on <exp.desktop> built on C++ and Visual Basic. I also have experience in production of <exp.embed> and <exp.control> on C++ in UNIX and QNX environment.',
             '<exp.english>. Good <exp.communication> that I earned during long period of individual direct work with the customers.',
             'Registered as an individual entrepreneur in Georgia and have multicurrency account in Georgian Bank.',
-            'Open for job proposals and interesting projects.',
         ];
     }
 }
