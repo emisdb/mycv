@@ -157,8 +157,9 @@ class Index implements FeedInterface
                     'title' => 'Vue.js',
                     'content' => [
                         ['Vue.js practical usage',
-                            'While working on the Laravel project I had some practice in Vue.js usage.',
-                            'I had some experience of implementing Vue.js with Inertia.js.',
+                            'While working on the Laravel project I used Vue.js as a frontend template.',
+                            'I had experience of implementing Vue.js with Inertia.js.',
+                            'Most of my personal web projects during last 3 years I built on the Vue.js basis',
                         ],
                     ]
                 ],
