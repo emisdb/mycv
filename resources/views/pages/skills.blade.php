@@ -20,7 +20,7 @@
 
         <!-- Header -->
         <header class="w3-container w3-center" style="padding:128px 16px" id="home">
-            <h1 class="w3-jumbo"><b>Skills and education</b></h1>
+            <h1 class="w3-jumbo"><b>Skills</b></h1>
             <p>Skills I acquired and exercised</p>
             @yield('cv-button')
         </header>

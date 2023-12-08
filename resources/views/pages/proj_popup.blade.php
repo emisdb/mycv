@@ -12,6 +12,9 @@
                 <li>   @include('pages.proj_detail') </li>
                 @if(!empty($proj['client']['names']))
                     <li> @include('pages.proj_client', ['data' => $proj['client']] ) </li>
+                    @if(isset($proj['client']['names']['industry']))
+                        <li style="font-size:.8em;">{{$proj['client']['names']['industry']}}</li>
+                    @endif
                 @endif
                 <li>   @include('pages.proj_line',['details'=>$proj['details'],'name'=>'position'])</li>
                 <li>   @include('pages.proj_techs',['details'=>$proj['techs']])</li>

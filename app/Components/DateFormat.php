@@ -80,11 +80,9 @@ class DateFormat
     protected static function calculateDate($month)
     {
         $year = floor($month / 12);
-        if ($month == 12) {
-            $year--;
-        } else {
-            $month = $month % 12;
-        };
+        $month = $month % 12;
+        if($month==0) $year--;
+
         return ['month' => $month, 'year' => $year];
 
     }

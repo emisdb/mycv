@@ -43,6 +43,9 @@ body, h1, h2, h3, h4, h5, h6 {
 .skill {
     background-image: url('img/myimg.jpg');
 }
+.edu {
+     background-image: url('img/alma.png');
+ }
 .time {
     background-image: url('img/haifa.jpg');
 }
@@ -337,6 +340,10 @@ ul.breadcrumb li a:hover {
     color: inherit;
     background-color: transparent;
 }
+
+.Rtable-cell.rc-last span.badge {
+    margin-left: -12px;
+}
 .Rtable > .Rtable-cell.rc-last > a > .fa:hover {
     color: #cbd5e0;
     background-color: #6b7280;
@@ -351,7 +358,7 @@ div.w3-modal-content h4 {
     }
 }
 @media (min-width: 1800px) {
-    .w3-modal-content {
+    .proj-modal-content {
         width: 1600px;
     }
 }

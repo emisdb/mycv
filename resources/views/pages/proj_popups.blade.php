@@ -1,5 +1,5 @@
 <div id="diaog-box" class="w3-modal">
-    <div  id="container-box" class="w3-modal-content">
+    <div  id="container-box" class="w3-modal-content proj-modal-content">
         <div  class="w3-container  w3-display-container">
             <span onclick="document.getElementById('diaog-box').style.display='none'"
                   class="w3-button w3-display-topright w3-large">x</span>
@@ -10,7 +10,7 @@
 </div>
 <?php $colors = []; ?>
 @foreach($model['data'] as $proj)
-        <?php $colors["proj".$proj['id']] = $model['techs'][$proj['tech']]['color'][0]; ?>
+        <?php $proj =;$colors["proj".$proj['id']] = $model['techs'][$proj['tech']]['color'][0]; ?>
         @include('pages.proj_popup',['proj' => $proj, 'color' => $colors["proj".$proj['id']], 'name' =>$proj['id']])
 @endforeach
 <script type="text/javascript">

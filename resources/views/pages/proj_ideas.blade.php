@@ -1,8 +1,17 @@
 @foreach($topics as $topic)
+    @if($topic['name']=='slides')
+        @continue
+    @endif
     <h5>{{$topic['description']}}</h5>
     <ul class="w3-ul  w3-card-4 w3-margin-bottom">
         @foreach($topic['ideas'] as $idea)
-            <li><b>{{$idea['name']}}:</b> {{$idea['description']}}</li>
+            <li><b>{{$idea['name']}}:</b>
+                @if(strpos($idea['description'],"href")>0)
+                    {!!$idea['description']!!}
+                @else
+                    {{$idea['description']}}
+                @endif
+            </li>
         @endforeach
     </ul>
 @endforeach
@@ -19,6 +28,3 @@
         </ul>
     @endif
 @endforeach
-
-
-

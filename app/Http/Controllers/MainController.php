@@ -7,6 +7,7 @@ use App\Models\Feature;
 use App\Models\Feeds\FeedInterface;
 use App\Models\Feeds\Projects;
 use App\Models\Feeds\Skills;
+use App\Models\Feeds\Education;
 use App\Models\Project;
 use App\Models\Repositories\TopicRepository;
 use App\Models\Topic;
@@ -32,12 +33,19 @@ class MainController extends Controller
 //        dd($res);
         return view('pages.skills', ['model' => $res]);
     }
+    public function edu()
+    {
+        $skills= new Education();
+        $res = $skills->getData();
+//        dd($res);
+        return view('pages.edu', ['model' => $res]);
+    }
     public function projects($type = 0)
     {
-        $proj= new Projects(0);
+        $proj= new Projects($type);
 //        $proj= new Projects($type);
         $res = $proj->getData();
-        if($type > 0) dd($res);
+        if($type == 100) dd($res);
         if($type) {
             return view('pages.time', ['model' => $res]);
         } else {

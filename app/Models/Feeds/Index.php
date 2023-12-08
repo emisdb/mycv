@@ -122,14 +122,29 @@ class Index implements FeedInterface
             [
                 'name' => 'exp.frontend',
                 'color' => 'yellow',
-                'text' => 'HTML, CSS, JS with jQuery <@25 years> and Bootstrap framework <@8 years>',
+                'text' => 'HTML, CSS, JS with jQuery <@25 years>',
                 'dialog' => [
                     'title' => 'My frontend practices',
                     'content' => [
                         ['Front end development',
                             'My frontend practices were set up when separation between fronend and backend has not come along. In my individual projects I had to fulfil all jobs.',
                             'Many technologies, extensive use of jQuery UI and components were employed.',
-                            'In my own projects front-end side is built on the responsive web design principles. I extensively use Bootstrap framework',
+                            'In my own projects front-end side is built on the responsive web design principles',
+                            'I extensively use Bootstrap framework',
+                        ],
+                    ]
+                ],
+            ],
+            [
+                'name' => 'exp.bootstrap',
+                'color' => 'light-green',
+                'text' => 'Bootstrap framework <@8 years>',
+                'dialog' => [
+                    'title' => 'Bootstrap framework',
+                    'content' => [
+                        ['Front end development',
+                            'In my own projects front-end side is built on the responsive web design principles.',
+                            'I extensively use Bootstrap framework',
                         ],
                     ]
                 ],
@@ -142,8 +157,9 @@ class Index implements FeedInterface
                     'title' => 'Vue.js',
                     'content' => [
                         ['Vue.js practical usage',
-                            'While working on the Laravel project I hsd some practice in Vue.js usage.',
-                            'I had some experience of implementing Vue.js with Inertia.js.',
+                            'While working on the Laravel project I used Vue.js as a frontend template.',
+                            'I had experience of implementing Vue.js with Inertia.js.',
+                            'Most of my personal web projects during last 3 years I built on the Vue.js basis',
                         ],
                     ]
                 ],
@@ -158,7 +174,7 @@ class Index implements FeedInterface
                         ['Database management systems',
                             'Almost all projects I worked on required use of database',
                             'I had experience of database implementation even before I started web application development.',
-                            'Long period of extensive use of SQL for database mintainance.',
+                            'Long period of extensive use of SQL for database maintenance.',
                         ],
                         ['Database management systems',
                             'dBase, FoxBase	since 1995 for several years',
@@ -209,7 +225,7 @@ class Index implements FeedInterface
             [
                 'name' => 'projects.individual',
                 'color' => 'khaki',
-                'text' => 'my own architecture, configuration and solutions',
+                'text' => 'own architecture, configuration and solutions',
                 'dialog' => [
                     'title' => 'My individual work',
                     'content' => [
@@ -331,8 +347,8 @@ class Index implements FeedInterface
             ],
             [
                 'name' => 'exp.embed',
-                'color' => 'brown',
-                'text' => 'embedded systems and equipment control system <@4 years>',
+                'color' => 'deep-orange',
+                'text' => 'embedded systems <@4 years>',
                 'dialog' => [
                     'title' => 'Computerized control systems',
                     'content' => [
@@ -345,6 +361,34 @@ class Index implements FeedInterface
                             'made complex calculations for tracking algorithm and geometric compute',
                             'provided operator control on the guided aircrafts'
                             ],
+                        ['Platform and Technologies',
+                            'Operating systems:',
+                            'MS DOS, Windows',
+                            'QNX 6.1 / Neutrino, Photon App Builder, ',
+                            'Database management systems:',
+                            'PostgreSQL',
+                            'Programming languages:',
+                            'C++'
+                        ],
+                    ]
+                ],
+            ],
+            [
+                'name' => 'exp.control',
+                'color' => 'brown',
+                'text' => 'equipment control system <@4 years>',
+                'dialog' => [
+                    'title' => 'Computerized control systems',
+                    'content' => [
+                        ['Applcations for ',
+                            'I had an experience of 3 years working on the air traffic control system. ',
+                            'Within this project we developed and implemented the application that',
+                            'maintatined radar and other equipment control',
+                            'processed the signals from different communication sources',
+                            'made graphic visualization of the aircraft traffic and airplane resource parameters',
+                            'made complex calculations for tracking algorithm and geometric compute',
+                            'provided operator control on the guided aircrafts'
+                        ],
                         ['Platform and Technologies',
                             'Operating systems:',
                             'MS DOS, Windows',
@@ -410,16 +454,17 @@ class Index implements FeedInterface
     {
         return [
             'I am a web programmer from Russia currently located in Batumi, Republic of Georgia.',
-            'The professional programmer with the <exp.general>.',
+            'Now open for job proposals and interesting projects.',
+            'The professional software engineer with the <exp.general>.',
             'During last <@15 years> I specialize at the field of <exp.web>.',
             'My tech stack is Backend development on <exp.php> with the use of <exp.yii>.',
             'I also have good knowledge of <exp.laravel>.',
-            'Frontend development is based on the traditional basis: <exp.frontend>. I have some practice in <exp.vue>.',
+            'Frontend development is based on the traditional basis: <exp.frontend> and <exp.bootstrap>. I have some practice in <exp.vue>.',
             'During my long practice of desktop and web applications developmet I handled <exp.database> on a large scale.',
             'Numerous projects were implemented both by <a.projectsp the individual efforts> and as <a.projectst a part of the team>',
             'My development practice is built on the SOLID principles and based on the design patterns accepted as the common attitude in contemporary programming. The use of MVC pattern in the framework allows to create a clear and easily adopted code. It also leaves open the possibility to preserve the flexibility of the technology.',
             'In my long-time activity as the software engineer I was involved in the web projects from <economy.fields>.',
-            'I had big experience with the individual projects where I developed <projects.individual>.',
+            'I had big experience with the individual projects where I developed my <projects.individual>.',
             'During my extensive practice I handled many different <tasks.web>',
             'I had practice with a low-code application development and delivery <exp.outsystems>. I am an Associate Developer certified specialist.',
             'In many team projects I had experience to work with the Legacy systems and handled quite tangled technological solutions.',
@@ -427,7 +472,7 @@ class Index implements FeedInterface
             'Big experience in REST API development and other side API integration.',
             'The project development basically is conducted in local environment provided by the <exp.docker> with the extensive use of Git flow and CI/CD tools.',
             'Most of my developing activity was carried out in the projects based on <exp.agile> with complete Scrum cycle and techniques of this methodology.',
-            'Big part of my developer career I worked on <exp.desktop> built on C++ and Visual Basic. I also have experience in production of <exp.embed> on C++ in UNIX and QNX environment.',
+            'Big part of my developer career I worked on <exp.desktop> built on C++ and Visual Basic. I also have experience in production of <exp.embed> and <exp.control> on C++ in UNIX and QNX environment.',
             '<exp.english>. Good <exp.communication> that I earned during long period of individual direct work with the customers.',
             'Registered as an individual entrepreneur in Georgia and have multicurrency account in Georgian Bank.',
         ];
