@@ -10,7 +10,7 @@
 </div>
 <?php $colors = []; ?>
 @foreach($model['data'] as $proj)
-        <?php $proj =;$colors["proj".$proj['id']] = $model['techs'][$proj['tech']]['color'][0]; ?>
+        <?php $colors["proj".$proj['id']] = $model['techs'][$proj['tech']]['color'][0]; ?>
         @include('pages.proj_popup',['proj' => $proj, 'color' => $colors["proj".$proj['id']], 'name' =>$proj['id']])
 @endforeach
 <script type="text/javascript">
