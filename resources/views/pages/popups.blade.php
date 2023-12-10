@@ -23,11 +23,16 @@
 
     function openDialog(name) {
         element = document.getElementById('container-box');
+        setcolor = '';
         for (const [key, color] of Object.entries(colors)) {
+
             if (key == name) {
-                element.classList.add("w3-" + color);
+                setcolor = color;
+                element.classList.add("w3-" + setcolor);
             } else {
-                element.classList.remove("w3-" + color);
+                if(setcolor != color){
+                    element.classList.remove("w3-" + color);
+                }
             }
         }
         document.getElementById('diaog-box').style.display = 'block';

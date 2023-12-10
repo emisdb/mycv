@@ -8,10 +8,10 @@ use Illuminate\Http\Request;
 
 class DictController extends Controller
 {
-    public function index($tab)
+    public function index(Request $request, $tab)
     {
         $class = RepDispatcher::dispatch($tab);
-        return view('dict.list', ['model' => $class->getList()]);
+        return view('dict.list', ['model' => $class->getList(), 'dd' => explode('/', $request->path())[1] ?? null]);
     }
 
     public function subindex($tab, $id)
@@ -31,7 +31,7 @@ class DictController extends Controller
         $class = RepDispatcher::dispatch($tab);
         $result = $class->delete($id);
         if (is_array($result)) {
-            if ($result['parent'] == 0){
+            if ($result['parent'] == 0) {
                 return redirect()->action([self::class, 'index'], $tab)
                     ->with($result['success'] ? 'success' : 'failure',
                         $this->getMessage($class->name(), $id, !$result['success'], true));
@@ -59,7 +59,7 @@ class DictController extends Controller
         return redirect()->action([self::class, 'index'], $tab)->with($result ? 'success' : 'failure', $this->getMessage($class->name(), $id, !$result));
     }
 
-    public function substore(Request $request, $tab, $id = 0, $parent=0)
+    public function substore(Request $request, $tab, $id = 0, $parent = 0)
     {
         $class = RepDispatcher::ml_dispatch($tab);
         $result = $class->setData($request, $id);

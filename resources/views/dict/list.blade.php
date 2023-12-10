@@ -26,6 +26,7 @@
                 @include('inc.breadcrumb')
             @else
                 <p>List dictionary.</p>
+                <p>{{$dd}}</p>
             @endif
 
 
