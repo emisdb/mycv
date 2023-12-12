@@ -25,7 +25,10 @@
             @if(isset($path))
                 @include('inc.breadcrumb')
             @else
-                <p>List dictionary.</p>
+                <p>List dictionary {{$dd}}.</p>
+                @if($dd=='proj')
+                    @include('inc.aboutproj')
+                @endif
             @endif
 
 

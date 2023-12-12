@@ -15,7 +15,7 @@ class Index implements FeedInterface
                     'content' => [
                         ['My experience',
                             'Since 1995 when I started my computer science study at the University of Alabama in USA I am entirely in the programming in different fields of computerized system development on different platforms.',
-                            '25 years, 28 project, including 18 individual and 10 big corporate team projects',
+                            '25 years, 29 project, including 18 individual and 11 big corporate team projects',
                         ],
                         ['Fields of expertise', 'web application development', 'desktop applications', 'embedded systems', 'equipment control systems',]
                     ]
@@ -187,6 +187,24 @@ class Index implements FeedInterface
                 ],
             ],
             [
+                'name' => 'exp.instruments',
+                'color' => 'orange',
+                'text' => 'popular data handling instruments<@3 years>',
+                'dialog' => [
+                    'title' => 'Popular tools used in web development ,',
+                    'content' => [
+                        ['high-performance in-memory data store',
+                            'Redis',
+                            'Elasticsearch',
+                            'Memcached',
+                        ],
+                        ['NoSQL database',
+                            'MongoDB',
+                        ],
+                    ]
+                ],
+            ],
+            [
                 'name' => 'economy.fields',
                 'color' => 'lime',
                 'text' => 'different fields of economy',
@@ -223,6 +241,28 @@ class Index implements FeedInterface
                 ],
             ],
             [
+                'name' => 'economy.marketing',
+                'color' => 'teal',
+                'text' => 'web marketing instruments',
+                'dialog' => [
+                    'title' => 'software platforms related to affiliate marketing and performance tracking',
+                    'content' => [
+                        ['affiliate marketing platforms that provides tools for managing and optimizing performance marketing campaigns',
+                            'Google Ads',
+                            'Facebook Ads Manager',
+                            'Everflow'
+                        ],
+                        ['lead distribution and performance tracking platform ',
+                            'Google Analytics',
+                            'Facebook Business Manager',
+                            'Facebook Insights',
+                            'Leadspedia',
+                            'HasOffers',
+                        ],
+                    ]
+                ],
+            ],
+            [
                 'name' => 'projects.individual',
                 'color' => 'khaki',
                 'text' => 'own architecture, configuration and solutions',
@@ -249,19 +289,27 @@ class Index implements FeedInterface
                     'title' => 'Popular tasks in my work',
                     'content' => [
                         ['Features I implemented',
+                            'Administrative panel',
                             'Import/Export Excel/XML/CSV',
                             'PDF generation',
+                           'QR code generation',
+                            'Google and Yandex map API',
+                            'Google and Facebook SSO',
+                            'Lazy loading',
+                            'Mailgun integration',
+                        ],
+                        ['Functionality I developed',
                             'Shopping Cart for online ordering',
                             'Email sending',
                             'CRUD with filtering, sorting, pagination',
-                            'QR code generation',
                             'Customer registration and access contol',
                             'Composer implementation',
+                            'On-line payment',
                             'RESTful API',
-                            'Google and Yandex map API',
                             'Automated application  deployment',
-                            'Google and Facebook SSO',
+                            'External organization data computerized system integration',
                         ],
+
                     ]
                 ],
             ],
@@ -290,7 +338,7 @@ class Index implements FeedInterface
                     'content' => [
                         ['Docker',
                             'Since 2019 in all projects I took part the use of Docker for local environment was inevitable condition.',
-                            'Some steps in the corporate project local setup I were made by me.',
+                            'The big diversity of the web engine architectures for local use were set by me.',
                             'All my individual projects that I extensively reuse for my new projects are set with the use of Docker in different environments.',
                         ],
                     ]
@@ -360,7 +408,7 @@ class Index implements FeedInterface
                             'made graphic visualization of the aircraft traffic and airplane resource parameters',
                             'made complex calculations for tracking algorithm and geometric compute',
                             'provided operator control on the guided aircrafts'
-                            ],
+                        ],
                         ['Platform and Technologies',
                             'Operating systems:',
                             'MS DOS, Windows',
@@ -450,20 +498,19 @@ class Index implements FeedInterface
 
         ];
     }
+
     public function getText(): array
     {
         return [
-            'I am a web programmer from Russia currently located in Batumi, Republic of Georgia.',
-            'Now open for job proposals and interesting projects.',
-            'The professional software engineer with the <exp.general>.',
-            'During last <@15 years> I specialize at the field of <exp.web>.',
-            'My tech stack is Backend development on <exp.php> with the use of <exp.yii>.',
-            'I also have good knowledge of <exp.laravel>.',
-            'Frontend development is based on the traditional basis: <exp.frontend> and <exp.bootstrap>. I have some practice in <exp.vue>.',
-            'During my long practice of desktop and web applications developmet I handled <exp.database> on a large scale.',
+            'I am a web software engineer from  Batumi, Republic of Georgia. Now open for job proposals and interesting projects.',
+            'The professional software engineer with the <exp.general>. During last <@15 years> I specialize at the field of <exp.web>.',
+            'My tech stack is Backend development on <exp.php> with the use of <exp.yii>. My hands-on experience spans  <exp.laravel>.',
+            'Frontend development is based on the traditional basis: <exp.frontend> and <exp.bootstrap>. Recently I extensively use <exp.vue>.',
+            'During my long practice of desktop and web applications developmet I have honed my skills in <exp.database> on a large scale. I have consistently demonstrated proficiency in working with a diverse range of <exp.instruments> ',
             'Numerous projects were implemented both by <a.projectsp the individual efforts> and as <a.projectst a part of the team>',
             'My development practice is built on the SOLID principles and based on the design patterns accepted as the common attitude in contemporary programming. The use of MVC pattern in the framework allows to create a clear and easily adopted code. It also leaves open the possibility to preserve the flexibility of the technology.',
             'In my long-time activity as the software engineer I was involved in the web projects from <economy.fields>.',
+            'Recently I had big experience in leverging the <economy.marketing>.',
             'I had big experience with the individual projects where I developed my <projects.individual>.',
             'During my extensive practice I handled many different <tasks.web>',
             'I had practice with a low-code application development and delivery <exp.outsystems>. I am an Associate Developer certified specialist.',
