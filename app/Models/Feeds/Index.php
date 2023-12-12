@@ -200,7 +200,7 @@ class Index implements FeedInterface
                         ],
                         ['NoSQL database',
                             'MongoDB',
-                         ],
+                        ],
                     ]
                 ],
             ],
@@ -258,7 +258,7 @@ class Index implements FeedInterface
                             'Facebook Insights',
                             'Leadspedia',
                             'HasOffers',
-                         ],
+                        ],
                     ]
                 ],
             ],
@@ -289,19 +289,27 @@ class Index implements FeedInterface
                     'title' => 'Popular tasks in my work',
                     'content' => [
                         ['Features I implemented',
+                            'Administrative panel',
                             'Import/Export Excel/XML/CSV',
                             'PDF generation',
+                           'QR code generation',
+                            'Google and Yandex map API',
+                            'Google and Facebook SSO',
+                            'Lazy loading',
+                            'Mailgun integration',
+                        ],
+                        ['Functionality I developed',
                             'Shopping Cart for online ordering',
                             'Email sending',
                             'CRUD with filtering, sorting, pagination',
-                            'QR code generation',
                             'Customer registration and access contol',
                             'Composer implementation',
+                            'On-line payment',
                             'RESTful API',
-                            'Google and Yandex map API',
                             'Automated application  deployment',
-                            'Google and Facebook SSO',
+                            'External organization data computerized system integration',
                         ],
+
                     ]
                 ],
             ],
@@ -400,7 +408,7 @@ class Index implements FeedInterface
                             'made graphic visualization of the aircraft traffic and airplane resource parameters',
                             'made complex calculations for tracking algorithm and geometric compute',
                             'provided operator control on the guided aircrafts'
-                            ],
+                        ],
                         ['Platform and Technologies',
                             'Operating systems:',
                             'MS DOS, Windows',
@@ -490,6 +498,7 @@ class Index implements FeedInterface
 
         ];
     }
+
     public function getText(): array
     {
         return [
