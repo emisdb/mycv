@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Actions</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src='https://kit.fontawesome.com/1e9e0910f4.js' crossorigin='anonymous'></script>
+    <link rel="stylesheet" href="{{ asset('css/app_cv.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/animate.css') }}">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <style>
+        .bg-dark {
+            background-color: #5aa885;
+            color: #f1f1f1;
+         }
+        table caption {
+            background-color: #4a5568;
+            color: #f9f1f1;
+            font-size: 1.2em;
+            text-outline: #5aa885 5px;
+            text-transform: uppercase;
+
+        }
+
+    </style>
+</head>
+<body>
+<div class="container">
+    <p align="center"><a href="http://geo.emisdb.ru" target="_blank"><img src="http://geo.emisdb.ru/images/my_batum.jpg"
+                                                                          width="200"></a></p>
+    <h1>To operate the site content</h1>
+    <h2> Add project </h2>
+    To add the project you have to follow the steps:
+    <table class="table">
+        <caption>Project</caption>
+        <tr>
+            <th>Action</th>
+            <th>Range</th>
+            <th>Result</th>
+        </tr>
+        <tr>
+            <td class="bg-dark" colspan="3">Minimal settings</td>
+        </tr>
+
+        <tr>
+            <td>
+                INSERT INTO `mycv`.`projects` (`name`, `start`, `finish`) VALUES ('Academsnab ERP', '212', '231');<br/>
+            </td>
+            <td></td>
+            <td>projects.id = 31</td>
+        </tr>
+        <tr>
+            <td>
+                INSERT INTO `mycv`.`project_to_ideas` (`project_id`, `idea_id`) VALUES ('31', '46');<br/>
+            </td>
+            <td>[46,47] - individual, team</td>
+            <td>type of project</td>
+        </tr>
+        <tr>
+            <td>
+                INSERT INTO `mycv`.`project_to_ideas` (`project_id`, `idea_id`) VALUES ('31', '82');
+            </td>
+            <td>[81,82,83] - web, desktop, embed</td>
+            <td>technology type</td>
+        </tr>
+        <tr>
+            <td>
+                INSERT INTO `mycv`.`project_to_ideas` (`project_id`, `idea_id`) VALUES ('31', '20');
+            </td>
+            <td>[[20...][11...]...] => topic_id=[10,13...] => topic_id=[1]</td>
+            <td>at least one technology</td>
+        </tr>
+        <tr>
+            <td class="bg-dark" colspan="3">Add some data settings</td>
+        </tr>
+        <tr>
+            <td>
+                INSERT INTO `mycv`.`topics` (`topic_id`, `name`, `description`) VALUES ('22', 'Academsnab erp',
+                'Academsnab erp');
+            </td>
+            <td>[22,23] => topic_id=[21] - individual, team</td>
+            <td>topics.id=116 :add group for project</td>
+        </tr>
+        <tr>
+            <td>
+                INSERT INTO `mycv`.`ideas` (`topic_id`, `name`, `description`) VALUES ('116', 'name', 'Name');<br/>
+                INSERT INTO `mycv`.`ideas` (`topic_id`, `name`, `description`) VALUES ('116', 'type', 'Type');<br/>
+            </td>
+            <td>[name, type]</td>
+            <td>id = 433, id = 434</td>
+        </tr>
+        .
+        <tr>
+            <td>
+                INSERT INTO `mycv`.`project_to_ideas` (`project_id`, `idea_id`) VALUES ('31', '433');
+            </td>
+            <td>[name]</td>
+            <td>project_id = 31, idea_id = 433 connect project and name from topics.project group</td>
+        </tr>
+        <tr>
+            <td class="bg-dark" colspan="3">Add auxiliary data:</td>
+        </tr>
+        <tr>
+            <td>
+                INSERT INTO `mycv`.`ideas` (`topic_id`, `name`, `description`) VALUES ('116', 'position', 'Position');
+            </td>
+            <td>[position]</td>
+            <td>id = position</td>
+        </tr>
+
+    </table>
+    <h2> Add client </h2>
+    To add the client and connect it to the project:
+    <table class="table">
+        <caption>client</caption>
+        <tr>
+            <th>Action</th>
+            <th>Range</th>
+            <th>Result</th>
+        </tr>
+        <tr>
+            <td class="bg-dark" colspan="3">Add client</td>
+        </tr>
+        <tr>
+            <td>
+                INSERT INTO `mycv`.`topics` (`topic_id`, `name`, `description`) VALUES ('31', 'Academsnab',
+                'Academsnab');
+            </td>
+            <td>topic_id=[31] - clients</td>
+            <td>topics.id=40 :add group for project</td>
+        </tr>
+        <tr>
+            <td>
+                INSERT INTO `mycv`.`ideas` (`topic_id`, `name`, `description`) VALUES ('40', 'name', 'Academsnab');<br/>
+                INSERT INTO `mycv`.`ideas` (`topic_id`, `name`, `description`) VALUES ('40', 'link', 'https://academs.ru/');<br/>
+                INSERT INTO `mycv`.`ideas` (`topic_id`, `name`, `description`) VALUES ('40', 'location', 'St. Petersburg, Russia');<br/>
+            </td>
+            <td>topic_id=[40] - clients</td>
+            <td>ideas.id=103;ideas.id=104;ideas.id=105;</td>
+        </tr>
+        <tr>
+            <td>
+                INSERT INTO `mycv`.`project_to_ideas` (`project_id`, `idea_id`) VALUES ('31', '103');
+            </td>
+            <td>[name]</td>
+            <td>project_id = 31, idea_id = 103 connect project and name from topics.clients group</td>
+        </tr>
+
+    </table>
+    <h2> Add technology </h2>
+    To add technology connect it to the project:
+    <table class="table">
+        <caption>technology</caption>
+        <tr>
+            <th>Action</th>
+            <th>Range</th>
+            <th>Result</th>
+        </tr>
+        <tr>
+            <td class="bg-dark" colspan="3">Add technology group</td>
+        </tr>
+        <tr>
+            <td>
+                INSERT INTO `mycv`.`topics` (`topic_id`, `name`, `description`) VALUES ('1', 'Web Marketing',
+                'Web Marketing Platforms');
+            </td>
+            <td>topic_id=[1] - technology</td>
+            <td>topics.id=117 :add group of technology</td>
+        </tr>
+        <tr>
+            <td class="bg-dark" colspan="3">Add technology</td>
+        </tr>
+        <tr>
+            <td>
+                INSERT INTO `mycv`.`ideas` (`topic_id`, `name`, `description`) VALUES ('117', 'Leadspedia', 'Leadspedia');
+            </td>
+            <td>topic_id=[117] - technology group</td>
+            <td>ideas.id=438;</td>
+        </tr>
+        <tr>
+            <td>
+                INSERT INTO `mycv`.`ideas` (`topic_id`, `name`, `description`) VALUES ('29', 'Leadspedia', '7');
+            </td>
+            <td>topic_id=[29] - shorts for technologies group</td>
+            <td>ideas.id=445;</td>
+        </tr>
+        <tr>
+            <td>
+                INSERT INTO `mycv`.`idea_to_idea` (`name`, `pidea_id`, `cidea_id`) VALUES ('short', '438', '445');
+            </td>
+            <td>
+                pidea_id=[438] - technology</br>
+                cidea_id=[445] - shorts for technologies </br>
+            </td>
+            <td>link technology to short</td>
+        </tr>
+        <tr>
+            <td class="bg-dark" colspan="3">Add picture to technology</td>
+        </tr>
+        <tr>
+            <td>
+                INSERT INTO `mycv`.`ideas` (`topic_id`, `name`, `description`) VALUES ('25', 'leadspedia', 'leadspedia.png');
+            </td>
+            <td>topic_id=[25] - pictures for technologies group</td>
+            <td>ideas.id=449;</td>
+        </tr>
+        <tr>
+            <td>
+                INSERT INTO `mycv`.`idea_to_idea` (`name`, `pidea_id`, `cidea_id`) VALUES ('symbol', '438', '449');
+            </td>
+            <td>
+                pidea_id=[438] - technology</br>
+                cidea_id=[449] - symbol for technologies </br>
+            </td>
+            <td>link technology to short</td>
+        </tr>
+        <tr>
+            <td class="bg-dark" colspan="3">Add technology to project</td>
+        </tr>
+        <tr>
+            <td>
+                INSERT INTO `mycv`.`project_to_ideas` (`project_id`, `idea_id`) VALUES ('31', '438');
+            </td>
+            <td>[name]</td>
+            <td>project_id = 31, idea_id = 438 connect project and technology</td>
+        </tr>
+
+    </table>
+
+</div>
+</body>
+</html>
