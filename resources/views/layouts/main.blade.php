@@ -12,7 +12,9 @@
     <link rel="stylesheet" href="{{ asset('css/app_cv.css') }}">
     <link rel="stylesheet" href="{{ asset('css/animate.css') }}">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="{{ asset('js/wow.min.js') }}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.bundle.min.js"></script>
 </head>
 <body>
 @include('inc.cv-button')
@@ -40,7 +42,7 @@
     </div>
 </nav>
 @yield('content')
-<script>
+<script type="text/javascript">
     // Open and close sidebar
     function openNav() {
         document.getElementById("mySidebar").style.width = "60%";
@@ -50,14 +52,6 @@
     function closeNav() {
         document.getElementById("mySidebar").style.display = "none";
     }
-</script>
-
-</body>
-</html>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-<script src="{{ asset('js/wow.min.js') }}"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.bundle.min.js"></script>
-<script type="text/javascript">
     function accFunction(id) {
         var y = document.getElementsByClassName("accordion");
         var x = document.getElementById(id);
@@ -71,3 +65,5 @@
         }
     }
 </script>
+</body>
+</html>

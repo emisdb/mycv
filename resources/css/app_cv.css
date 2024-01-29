@@ -590,3 +590,17 @@ div.w3-modal-content h4 {
 .mySlides img {
     width:100%;
 }
+ul.treeview li{
+    display: block;
+    list-style-type: disc;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    padding-inline-start: 40px;
+}
+ul.treeview {
+    list-style: initial;
+    padding-left: 15px;
+}
+

@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MainController;
+use App\Http\Controllers\TopicController;
 //use App\Http\Controllers\DictController;
 use App\Http\Controllers\LanguageController;
 
@@ -68,8 +69,13 @@ Route::controller(DictController::class)->middleware(['auth'])->group(function (
 });
 
 
+
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');
+
+Route::get('/topics', [TopicController::class,'topics'])->name('topics');
+Route::get('/ideas', [TopicController::class,'topic_ideas'])->name('topic_ideas');
+Route::get('/ideas', [TopicController::class,'topic_ideas'])->name('topic_ideas');
 
 require __DIR__.'/auth.php';

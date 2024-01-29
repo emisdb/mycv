@@ -8,6 +8,21 @@ use Illuminate\Http\Response;
 
 class TopicController extends Controller
 {
+    /**
+     * Display a listing of the resource.
+     *
+     */
+    public function topics()
+    {
+        $topics = Topic::with('descendants')->whereNull('topic_id')->get();
+        return view('dashboard.topics', compact('topics'));
+    }
+
+    public function topic_ideas()
+    {
+        $topics = Topic::with('descendants')->with('ideas')->get();
+        return view('dashboard.topic_ideas', compact('topics'));
+    }
 
     /**
      * Display a listing of the resource.
