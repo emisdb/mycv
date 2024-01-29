@@ -78,13 +78,7 @@ class MainController extends Controller
         => function ($query) {
                 $query->select('name');
             }])->find($id);
-        if ($topic) {
-            var_dump($topic->toArray());
-            if ($topic->topic) {
-                var_dump($topic->topic->toArray());
-            }
-        }
-        return "<h3>TOPIC</h3>";
+        return view('topic', compact('topic'));
     }
 
     /**

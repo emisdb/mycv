@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Index;
+use App\Models\Idea;
 use Illuminate\Http\Request;
 
 class IdeaController extends Controller
@@ -14,7 +14,8 @@ class IdeaController extends Controller
      */
     public function index()
     {
-        //
+        $ideas = Idea::with('descendants')->whereNull('pidea_id')->get();
+        return view('dashboard.ideas', compact('ideas'));
     }
 
     /**
@@ -41,10 +42,10 @@ class IdeaController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Index  $idea
+     * @param  \App\Models\Idea  $idea
      * @return \Illuminate\Http\Response
      */
-    public function show(Index $idea)
+    public function show(Idea $idea)
     {
         //
     }
@@ -52,10 +53,10 @@ class IdeaController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Index  $idea
+     * @param  \App\Models\Idea  $idea
      * @return \Illuminate\Http\Response
      */
-    public function edit(Index $idea)
+    public function edit(Idea $idea)
     {
         //
     }
@@ -64,10 +65,10 @@ class IdeaController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Index  $idea
+     * @param  \App\Models\Idea  $idea
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Index $idea)
+    public function update(Request $request, Idea $idea)
     {
         //
     }
@@ -75,10 +76,10 @@ class IdeaController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Index  $idea
+     * @param  \App\Models\Idea  $idea
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Index $idea)
+    public function destroy(Idea $idea)
     {
         //
     }

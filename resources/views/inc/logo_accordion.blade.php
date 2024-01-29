@@ -36,7 +36,7 @@
         <li class="inactive movable"><img src="{{ asset('images/head/m_.jpg') }}" alt=""/>/li>
         <li class="inactive movable"><img src="{{ asset('images/head/i_.jpg') }}" alt=""/>/li>
         <li class="inactive movable"><img src="{{ asset('images/head/s_.jpg') }}" alt=""/>/li>
-        <li class="inactive"><img src="{{ asset('images/head/dot.jpg') }}g" alt=""/>/li>
+        <li class="inactive"><img src="{{ asset('images/head/dot.jpg') }}" alt=""/>/li>
         <li class="inactive movable"><img src="{{ asset('images/head/d_.jpg') }}" alt=""/>/li>
         <li class="inactive movable"><img src="{{ asset('images/head/b_.jpg') }}" alt=""/>/li>
 </ul>
