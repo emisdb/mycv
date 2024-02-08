@@ -1,6 +1,6 @@
 @extends('layouts.main')
 @section('title-text')
-    My skills
+    Education
 @endsection
 @section('left')
     <!-- Sidebar with image -->
