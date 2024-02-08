@@ -76,7 +76,7 @@ class MainController extends Controller
     {
         $topic = Topic::query()->with(['topic'
         => function ($query) {
-                $query->select('name');
+                $query->select('id', 'name');
             }])->find($id);
         return view('topic', compact('topic'));
     }

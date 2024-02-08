@@ -17,6 +17,7 @@ class LanguageController extends Controller
     {
         $lang = new Language();
         $feed = $lang->all()->toArray();
+        dd($feed);
         $params = array_merge(['title' => ['Languages', 'lang']], $lang->params());
 
         return view('dict.list', [

@@ -600,5 +600,7 @@ ul.treeview {
     list-style: initial;
     padding-left: 15px;
 }
-
+div.cv-dropdown {
+    position: static;
+}
 
