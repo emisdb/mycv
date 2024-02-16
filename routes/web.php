@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MainController;
 use App\Http\Controllers\TopicController;
+use App\Http\Controllers\ProjectController;
 //use App\Http\Controllers\DictController;
 use App\Http\Controllers\LanguageController;
 
@@ -77,5 +78,6 @@ Route::get('/dashboard', function () {
 Route::get('/topics', [TopicController::class,'topics'])->name('topics');
 Route::get('/ideas', [TopicController::class,'topic_ideas'])->name('topic_ideas');
 Route::get('/ideas', [TopicController::class,'topic_ideas'])->name('topic_ideas');
+Route::get('/projs', [ProjectController::class,'index'])->middleware(['auth'])->name('projs');
 
 require __DIR__.'/auth.php';

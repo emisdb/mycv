@@ -18,21 +18,11 @@
                     </x-nav-link>
                 </div>
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                    <x-nav-link :href="route('topics')" :active="request()->routeIs('topics')">
-                        {{ __('Topics') }}
-                    </x-nav-link>
-                </div>
-                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                    <x-nav-link :href="route('topic_ideas')" :active="request()->routeIs('topic_ideas')">
-                        {{ __('Ideas') }}
-                    </x-nav-link>
-                </div>
-                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
                     <x-nav-link :href="route('projs')" :active="request()->routeIs('projs')">
                         {{ __('Projects') }}
                     </x-nav-link>
                 </div>
-            </div>
+             </div>
 
             <!-- Settings Dropdown -->
             <div class="hidden sm:flex sm:items-center sm:ml-6">
