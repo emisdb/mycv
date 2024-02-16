@@ -14,7 +14,8 @@ class ProjectController extends Controller
      */
     public function index()
     {
-        //
+        $projs = Project::with('ideas')->get();
+        return view('lw.projs', compact('projs'));
     }
 
     /**
