@@ -692,6 +692,9 @@ select {
 .ml-4 {
   margin-left: 1rem;
 }
+.mr-0 {
+  margin-right: 0px;
+}
 .mr-2 {
   margin-right: 0.5rem;
 }
@@ -885,6 +888,9 @@ select {
 .border-b-2 {
   border-bottom-width: 2px;
 }
+.border-l {
+  border-left-width: 1px;
+}
 .border-l-4 {
   border-left-width: 4px;
 }
@@ -1057,6 +1063,10 @@ select {
 }
 .tracking-widest {
   letter-spacing: 0.1em;
+}
+.text-black {
+  --tw-text-opacity: 1;
+  color: rgb(0 0 0 / var(--tw-text-opacity));
 }
 .text-gray-200 {
   --tw-text-opacity: 1;

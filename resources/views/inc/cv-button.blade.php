@@ -9,6 +9,7 @@
                 <a href="{{url('/')}}/docs/cv_eng_short.pdf" class="w3-bar-item w3-button" target="_blank">Short version (3 pages)</a>
                 <a href="{{url('/')}}/docs/cv_eng_g.pdf" class="w3-bar-item w3-button" target="_blank">Extended version (14 pages)</a>
                 <a href="{{url('/')}}/docs/cv_ru.pdf" class="w3-bar-item w3-button" target="_blank">Short version in Russian</a>
+                <a href="{{url('/')}}/docs/cv_long_ru.pdf" class="w3-bar-item w3-button" target="_blank">Long version in Russian (14 pages)</a>
             </div>
         </div>
     </div>
