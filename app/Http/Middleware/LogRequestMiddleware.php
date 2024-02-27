@@ -23,11 +23,11 @@ class LogRequestMiddleware
         $ipAddress = $request->ip();
 
         // Get the server name
-        $serverName = $request->server('SERVER_NAME');
+//        $serverName = $request->server('SERVER_NAME');
         $requestPath = $request->path();
 
         // Create the log message
-        $logMessage = "$dateTime\t$requestPath\t$serverName\t$ipAddress";
+        $logMessage = "$dateTime\t$requestPath\t$ipAddress";
 
         // Log the message to the special log file
         file_put_contents(storage_path('logs/connects.log'), $logMessage . PHP_EOL, FILE_APPEND);

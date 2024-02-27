@@ -25,7 +25,7 @@ class FileController extends Controller
             $logFilePath = storage_path('logs/download.log');
 
         }
-        $logEntries = $this->fileService->getLogEntries($logFilePath, $currentPage, 20, $url);
+        $logEntries = $this->fileService->getLogEntries($logFilePath, $currentPage, 50, $url);
         $logtitle = $id == 0 ? 'queries' : 'downloads';
 
         return view('dashboard.log', compact('logEntries' , 'logtitle'));
