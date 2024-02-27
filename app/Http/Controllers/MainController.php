@@ -14,7 +14,7 @@ use App\Models\Topic;
 use Illuminate\Http\Request;
 use App\Http\Requests\FeatureRequest;
 use App\Models\Feeds\Index;
-use App\Components\DataParser;
+use App\Services\DataParser;
 
 class MainController extends Controller
 {
