@@ -19,14 +19,7 @@ class FileController extends Controller
     {
         $currentPage = request()->query('page', 1);
         $url = request()->url();
-        if ($id == 0) {
-            $logFilePath = storage_path('logs/connects.log');
-
-        } else {
-            $logFilePath = storage_path('logs/download.log');
-
-        }
-        $logEntries = $this->fileService->getLogEntries($logFilePath, $currentPage, 50, $url);
+        $logEntries = $this->fileService->getLogEntries($id, $currentPage, 50, $url);
         $logtitle = $id == 0 ? 'queries' : 'downloads';
         $myip = self::MYIP;
 

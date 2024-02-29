@@ -12,10 +12,10 @@
                 <div class="p-6 bg-white border-b border-gray-200">
                     <!-- log/show.blade.php -->
                     @foreach ($logEntries as $logEntry)
-                        @if(strpos($myip, $logEntry) !== false)
-                            <p>{{ $logEntry }}</p>
-                        @else
+                        @if(strpos($logEntry, $myip) !== false)
                             <p style="background-color: #7a8793">{{ $logEntry }}</p>
+                        @else
+                            <p>{{ $logEntry }}</p>
                         @endif
                     @endforeach
                     {{ $logEntries->links() }}
