@@ -2,11 +2,18 @@
 
 namespace App\Http\Middleware;
 
+use App\Services\FileService;
 use Closure;
 use Illuminate\Http\Request;
 
 class LogFileDownloadMiddleware
 {
+    protected $fileService;
+
+    public function __construct(FileService $fileService)
+    {
+        $this->fileService = $fileService;
+    }
     /**
      * Handle an incoming request.
      *
@@ -16,20 +23,13 @@ class LogFileDownloadMiddleware
      */
     public function handle(Request $request, Closure $next)
     {
-        // Get the current date and time
-        $dateTime = now()->format('Y-m-d H:i:s');
-
         // Get the IP address of the client
         $ipAddress = $request->ip();
 
         // Get the file path
         $filePath = $request->path(); // Adjust the file path as needed
 
-        // Create the log message with tab delimiter
-        $logMessage = "$dateTime\t$filePath\t$ipAddress";
-
-        // Log the message to the special log file
-        file_put_contents(storage_path('logs/download.log'), $logMessage . PHP_EOL, FILE_APPEND);
+        $this->fileService->setLogEntries($ipAddress, $filePath, true );
 
         // Continue processing the request
         return $next($request);
