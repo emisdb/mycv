@@ -7,6 +7,7 @@ use App\Services\FileService;
 
 class FileController extends Controller
 {
+    const MYIP = '92.51.75.166';
     protected $fileService;
 
     public function __construct(FileService $fileService)
@@ -18,7 +19,7 @@ class FileController extends Controller
     {
         $currentPage = request()->query('page', 1);
         $url = request()->url();
-        if($id == 0){
+        if ($id == 0) {
             $logFilePath = storage_path('logs/connects.log');
 
         } else {
@@ -27,8 +28,9 @@ class FileController extends Controller
         }
         $logEntries = $this->fileService->getLogEntries($logFilePath, $currentPage, 50, $url);
         $logtitle = $id == 0 ? 'queries' : 'downloads';
+        $myip = self::MYIP;
 
-        return view('dashboard.log', compact('logEntries' , 'logtitle'));
+        return view('dashboard.log', compact('logEntries', 'logtitle', 'myip'));
     }
 }
 
