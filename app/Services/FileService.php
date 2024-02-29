@@ -6,10 +6,17 @@ use Illuminate\Pagination\LengthAwarePaginator;
 
 class FileService
 {
-    const LOG_REQUEST_FILE = 'connects.log';
-    const LOG_DOWNLOAD_FILE = 'download.log';
+    protected const LOG_REQUEST_FILE = 'connects.log';
+    protected const LOG_DOWNLOAD_FILE = 'download.log';
+    protected const LOG_REQUEST_MYIP = '92.51.75.166';
 
-    public function setLogEntries($ipAddress , $requestPath, $is_file = false) : bool
+    public function getMyIP()
+    {
+        return self::LOG_REQUEST_MYIP;
+
+    }
+
+    public function setLogEntries($ipAddress, $requestPath, $is_file = false): bool
     {
         $dateTime = now();
         $dateTime->modify('+4 hours');
@@ -17,9 +24,10 @@ class FileService
         $logMessage = "$dtLog\t$requestPath\t$ipAddress";
 
         // Log the message to the special log file
-         return (bool)file_put_contents($this->getFileLog($is_file), $logMessage . PHP_EOL, FILE_APPEND);
+        return (bool)file_put_contents($this->getFileLog($is_file), $logMessage . PHP_EOL, FILE_APPEND);
     }
-   public function getLogEntries($log_id,  $currentPage = 1, $perPage = 50, $url = '') : LengthAwarePaginator
+
+    public function getLogEntries($log_id, $currentPage = 1, $perPage = 50, $url = ''): LengthAwarePaginator
     {
         // Read the log file
         $logEntries = file($this->getFileLog($log_id));
@@ -42,9 +50,10 @@ class FileService
 
         return $paginator;
     }
-    private function getFileLog($is_down)
+
+    private function getFileLog($is_down): string
     {
-        if($is_down) {
+        if ($is_down) {
             return storage_path('logs/' . self::LOG_DOWNLOAD_FILE);
         } else {
             return storage_path('logs/' . self::LOG_REQUEST_FILE);
