@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Components;
+
 use App\Models\Repositories\RepositoryInterface;
 use App\Models\Repositories\MultilevelListRepositoryInterface;
 use App\Models\Repositories\LanguageRepository;
@@ -23,19 +24,23 @@ class RepDispatcher
         'topic' => TopicRepository::class,
         'idea' => IdeaRepository::class,
     ];
-    public static function dispatch($tab) : RepositoryInterface
+
+    public static function dispatch($tab): ?RepositoryInterface
     {
         if ($rep = static::$reps[$tab]) {
-            $class = $rep;
-            return new $class;
+            if (class_exists($rep)) {
+                return new $rep;
+            }
         }
         throw new \Exception("No such dictionary");
     }
-    public static function ml_dispatch($tab) : MultilevelListRepositoryInterface
+
+    public static function mlDispatch($tab): ?MultilevelListRepositoryInterface
     {
         if ($rep = static::$mlreps[$tab]) {
-            $class = $rep;
-            return new $class;
+            if (class_exists($rep)) {
+                return new $rep;
+            }
         }
         throw new \Exception("No such dictionary");
     }

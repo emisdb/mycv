@@ -16,7 +16,7 @@ class DictController extends Controller
 
     public function subindex($tab, $id)
     {
-        $class = RepDispatcher::ml_dispatch($tab);
+        $class = RepDispatcher::mlDispatch($tab);
         return view('dict.list', ['model' => $class->getSubList($id), 'path' => $class->getPath($id), 'id' => $id]);
     }
 
@@ -48,7 +48,7 @@ class DictController extends Controller
 
     public function subform($tab, $id)
     {
-        $class = RepDispatcher::ml_dispatch($tab);
+        $class = RepDispatcher::mlDispatch($tab);
         return view('dict.form', ['model' => $class->getSubForm($id), 'path' => $class->getPath($id),]);
     }
 
@@ -61,7 +61,7 @@ class DictController extends Controller
 
     public function substore(Request $request, $tab, $id = 0, $parent = 0)
     {
-        $class = RepDispatcher::ml_dispatch($tab);
+        $class = RepDispatcher::mlDispatch($tab);
         $result = $class->setData($request, $id);
         return redirect()->action([self::class, 'subindex'], [$tab, $parent])->with($result ? 'success' : 'failure', $this->getMessage($class->name(), $id, !$result));
     }
