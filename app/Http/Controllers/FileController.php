@@ -3,13 +3,13 @@
 // FileController.php
 namespace App\Http\Controllers;
 
-use App\Services\FileService;
+use App\Services\FileServiceInterface;
 
 class FileController extends Controller
 {
     protected $fileService;
 
-    public function __construct(FileService $fileService)
+    public function __construct(FileServiceInterface $fileService)
     {
         $this->fileService = $fileService;
     }

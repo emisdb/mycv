@@ -2,7 +2,7 @@
 
 namespace App\Http\Middleware;
 
-use App\Services\FileService;
+use App\Services\FileServiceInterface;
 use Closure;
 use Illuminate\Http\Request;
 
@@ -10,7 +10,7 @@ class LogFileDownloadMiddleware
 {
     protected $fileService;
 
-    public function __construct(FileService $fileService)
+    public function __construct(FileServiceInterface $fileService)
     {
         $this->fileService = $fileService;
     }

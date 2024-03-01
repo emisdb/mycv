@@ -4,7 +4,7 @@ namespace App\Services;
 
 use Illuminate\Pagination\LengthAwarePaginator;
 
-class FileService
+class FileService implements FileServiceInterface
 {
     protected const LOG_REQUEST_FILE = 'connects.log';
     protected const LOG_DOWNLOAD_FILE = 'download.log';
