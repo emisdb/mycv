@@ -38,7 +38,7 @@
                     </x-nav-link>
                 </div>
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                    <x-nav-link :href="route('logd')" :active="request()->is('log/1')">
+                    <x-nav-link :href="route('logd')" :active="request()->is('logs/1')">
                         {{ __('Downloads') }}
                     </x-nav-link>
                 </div>
