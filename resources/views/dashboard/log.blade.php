@@ -12,6 +12,8 @@
                 <div class="p-6 bg-white border-b border-gray-200">
                     <!-- log/show.blade.php -->
                     @foreach ($logEntries as $logEntry)
+                        @include('dashboard.log_line', ['entry' => $logEntry])
+
                         @if(strpos($logEntry, $myIp) !== false)
                             <p style="background-color: #7a8793">{{ $logEntry }}</p>
                         @else
