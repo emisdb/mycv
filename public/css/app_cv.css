@@ -356,6 +356,7 @@ div.w3-display-topright {
 }
 div.w3-display-container {
     padding-bottom: 8px ;
+    border-radius: 10px;
 }
 
 div.w3-modal-content{
