@@ -352,6 +352,10 @@ div.w3-modal-content h4 {
     background-color: #5aa885;
     color:#edf2f7;
 }
+div.w3-modal-content{
+    box-shadow: 0 5px 15px rgba(0,0,0,.5);
+    border-right: 6px;
+}
 @media (min-width: 1200px) {
     .w3-modal-content {
         width: 1100px;
