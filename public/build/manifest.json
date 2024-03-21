@@ -1,0 +1,25 @@
+{
+  "resources/css/app.css": {
+    "file": "assets/app-fNCE5DMw.css",
+    "src": "resources/css/app.css",
+    "isEntry": true
+  },
+  "resources/css/vue.css": {
+    "file": "assets/vue-l0sNRNKZ.js",
+    "src": "resources/css/vue.css",
+    "isEntry": true
+  },
+  "resources/js/app.js": {
+    "file": "assets/app-9kz-KJRH.js",
+    "src": "resources/js/app.js",
+    "isEntry": true
+  },
+  "resources/js/vue.js": {
+    "file": "assets/vue-BBC2j4Gt.js",
+    "src": "resources/js/vue.js",
+    "isEntry": true,
+    "css": [
+      "assets/vue-B_SY1GJM.css"
+    ]
+  }
+}

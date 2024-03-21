@@ -49,6 +49,23 @@ Route::middleware('logFileDownload')->group(function () {
 
 });
 
+Route::prefix('admin')->group(
+    function () {
+        Route::get('/',function () {
+            return view('admin.demo.demo',['module'=>0]);
+        })->name('admin.demo');
+        Route::get('/demo2',function () {
+            return view('admin.demo.demo2',['module'=>2]);
+        })->name('admin.demo2');
+        Route::get('/demo3',function () {
+            return view('admin.demo.demo3',['module'=>3]);
+        })->name('admin.demo3');
+        Route::get('/projects',function () {
+            return view('admin.cv.projects',['module'=>0]);
+        })->name('admin.projects');
+    }
+);
+
 
 Route::get('/test', function () {
     return view('adminlte');

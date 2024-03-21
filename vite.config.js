@@ -1,14 +1,33 @@
-import { defineConfig } from 'vite';
+import {defineConfig} from 'vite';
 import laravel from 'laravel-vite-plugin';
+import vue from '@vitejs/plugin-vue';
 
 export default defineConfig({
-    define: {
-        __VUE_PROD_HYDRATION_MISMATCH_DETAILS__: false, // or true based on your needs
-    },
     plugins: [
-        laravel([
-            'resources/css/app.css',
-            'resources/js/app.js',
-        ]),
+        laravel({
+            input: [
+                'resources/css/app.css',
+                'resources/js/app.js',
+                'resources/css/vue.css',
+                'resources/js/vue.js',
+            ],
+            refresh: true,
+        }),
+        vue(
+            {
+                template: {
+                    transformAssetUrls: {
+                        base: null,
+                        includeAbsolute: false,
+                    },
+                }
+            }
+        ),
     ],
+    resolve: {
+        alias: {
+            '@': '/resources/js',
+            'vue': 'vue/dist/vue.esm-bundler.js'
+        }
+    }
 });
