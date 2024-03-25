@@ -10,15 +10,30 @@
                         </p>
                     </a>
                     <ul class="nav nav-treeview">
-                        <li class="nav-item "> <a href="{{ route('admin.projects') }}" class="nav-link {{ $module == 0 ? 'active' : ''}}"> <i class="nav-icon bi bi-circle"></i>
-                                <p>Dashboard v1</p>
-                            </a> </li>
-                        <li class="nav-item"> <a href="{{ route('admin.projects') }}" class="nav-link {{ $module == 2 ? 'active' : ''}}"> <i class="nav-icon bi bi-circle"></i>
-                                <p>Dashboard v2</p>
-                            </a> </li>
-                        <li class="nav-item "> <a href="{{ route('admin.projects') }}" class="nav-link {{ $module == 3 ? 'active' : ''}}"> <i class="nav-icon bi bi-circle"></i>
-                                <p>Dashboard v3</p>
-                            </a> </li>
+                        <li class="nav-item ">
+                            <router-link class="nav-link" to="/admin/vue/examp" class="nav-link {{ $module == 0 ? 'active' : ''}}">
+                                <i class="nav-icon bi bi-box-seam-fill  menu-icon"></i>
+                                <span class="menu-title">Check vue</span>
+                            </router-link>
+                         </li>
+                        <li class="nav-item">
+                            <router-link class="nav-link" to="/admin/vue/sam" class="nav-link {{ $module == 0 ? 'active' : ''}}">
+                                <i class="nav-icon bi bi-person-up menu-icon"></i>
+                                <span class="menu-title">Project Sam</span>
+                            </router-link>
+                        </li>
+                        <li class="nav-item ">
+                            <router-link class="nav-link" to="/admin/vue/stand" class="nav-link {{ $module == 0 ? 'active' : ''}}">
+                                <i class="nav-icon bi bi-reception-2 menu-icon"></i>
+                                <span class="menu-title">Project Stand</span>
+                            </router-link>
+                        </li>
+                        <li class="nav-item ">
+                            <router-link class="nav-link" to="/admin/vue/lead" class="nav-link {{ $module == 0 ? 'active' : ''}}">
+                                <i class="nav-icon bi bi-reception-3 menu-icon"></i>
+                                <span class="menu-title">Project Topics</span>
+                            </router-link>
+                        </li>
                     </ul>
                 </li>
              </ul> <!--end::Sidebar Menu-->

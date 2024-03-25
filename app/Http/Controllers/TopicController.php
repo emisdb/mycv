@@ -29,9 +29,26 @@ class TopicController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index() : Response
+    public function index(): Response
     {
-        return response(json_encode(Topic::all()->toArray()), 200)
+        $topics = Topic::with(['topic' => function ($query) {
+            $query->select('id', 'name');
+        }])
+            ->select('id', 'name', 'description', 'topic_id')
+            ->get();
+
+        $topicsArray = $topics->map(function ($topic) {
+            return [
+                'id' => $topic->id,
+                'name' => $topic->name,
+                'description' => $topic->description,
+                'topic_id' => $topic->topic_id,
+                'topic_name' => $topic->topic ? $topic->topic->name : null,
+            ];
+        });
+
+        $topicsArray = $topicsArray->toArray();
+        return response(json_encode($topicsArray), 200)
             ->header('Content-Type', 'application/json');
     }
 
@@ -42,19 +59,19 @@ class TopicController extends Controller
      */
     public function create()
     {
-       $data = [
+        $data = [
             'description' => 'phrase to address',
             'name' => 'phrase',
         ];
         Topic::create($data);
         return response($data, 200)
-        ->header('Content-Type', 'application/json');
+            ->header('Content-Type', 'application/json');
     }
 
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
@@ -65,7 +82,7 @@ class TopicController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Topic  $topic
+     * @param \App\Models\Topic $topic
      * @return \Illuminate\Http\Response
      */
     public function show(Topic $topic)
@@ -76,7 +93,7 @@ class TopicController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Topic  $topic
+     * @param \App\Models\Topic $topic
      * @return \Illuminate\Http\Response
      */
     public function edit(Topic $topic)
@@ -87,8 +104,8 @@ class TopicController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Topic  $topic
+     * @param \Illuminate\Http\Request $request
+     * @param \App\Models\Topic $topic
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, Topic $topic)
@@ -99,7 +116,7 @@ class TopicController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Topic  $topic
+     * @param \App\Models\Topic $topic
      * @return \Illuminate\Http\Response
      */
     public function destroy(Topic $topic)

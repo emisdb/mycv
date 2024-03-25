@@ -60,6 +60,9 @@ Route::prefix('admin')->group(
         Route::get('/demo3',function () {
             return view('admin.demo.demo3',['module'=>3]);
         })->name('admin.demo3');
+        Route::get('/vue/{any?}',function () {
+            return view('admin.cv.projects',['module'=>0]);
+        })->where('any', '.*')->name('admin.vue');
         Route::get('/projects',function () {
             return view('admin.cv.projects',['module'=>0]);
         })->name('admin.projects');
@@ -116,7 +119,7 @@ Route::get('/dashboard', function () {
 
 Route::get('/topics', [TopicController::class,'topics'])->name('topics');
 Route::get('/ideas', [TopicController::class,'topic_ideas'])->name('topic_ideas');
-Route::get('/ideas', [TopicController::class,'topic_ideas'])->name('topic_ideas');
+Route::get('/topic-api', [TopicController::class,'index'])->name('topic_api');
 Route::get('/projs', [ProjectController::class,'index'])->middleware(['auth'])->name('projs');
 Route::get('/logs/{id}', [FileController::class,'showLog'])->middleware(['auth'])->name('logs');
 Route::redirect('/logq', '/logs/0')->name('logq');
