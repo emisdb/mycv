@@ -1,10 +1,10 @@
 <ul class="nested treeview">
     @foreach ($topics as $topic)
-        <li><span @if($topic->descendants->isNotEmpty()) class="caret" @endif>
-                        {{ $topic->name }} : {{$topic->id}}
+        <li><span @if($topic->descend_counts->isNotEmpty()) class="caret" @endif>
+                               {{$topic->id}}.{{ $topic->name }}  : {{$topic->ideas_count}}
                     </span>
-            @if ($topic->descendants->isNotEmpty())
-                @include('dashboard.partials', ['topics' => $topic->descendants])
+            @if ($topic->descend_counts->isNotEmpty())
+                @include('dashboard.partials', ['topics' => $topic->descend_counts])
             @endif
         </li>
     @endforeach

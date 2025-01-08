@@ -1,9 +1,9 @@
 <?php return array(
     'root' => array(
         'name' => 'laravel/laravel',
-        'pretty_version' => 'dev-master',
-        'version' => 'dev-master',
-        'reference' => 'e675a2f8696cb537c867dc447dbb379c3e756feb',
+        'pretty_version' => '1.0.0+no-version-set',
+        'version' => '1.0.0.0',
+        'reference' => null,
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -434,9 +434,9 @@
             ),
         ),
         'jeroennoten/laravel-adminlte' => array(
-            'pretty_version' => 'v3.8.6',
-            'version' => '3.8.6.0',
-            'reference' => '6cb6153e875b3bbf085df0edfed25ceb35cbe2d6',
+            'pretty_version' => 'v3.14.2',
+            'version' => '3.14.2.0',
+            'reference' => 'dfd6b46be4a1c43338dfa1eb312030604ad95ef8',
             'type' => 'library',
             'install_path' => __DIR__ . '/../jeroennoten/laravel-adminlte',
             'aliases' => array(),
@@ -467,9 +467,9 @@
             'dev_requirement' => false,
         ),
         'laravel/laravel' => array(
-            'pretty_version' => 'dev-master',
-            'version' => 'dev-master',
-            'reference' => 'e675a2f8696cb537c867dc447dbb379c3e756feb',
+            'pretty_version' => '1.0.0+no-version-set',
+            'version' => '1.0.0.0',
+            'reference' => null,
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),

@@ -2,9 +2,13 @@
 
 use App\Http\Controllers\FileController;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Routing\Router;
 use App\Http\Controllers\MainController;
 use App\Http\Controllers\TopicController;
 use App\Http\Controllers\ProjectController;
+use App\Http\Controllers\api\ProjectController as ApiProjectController;
+use App\Http\Controllers\api\TopicController as ApiTopicController;
+
 //use App\Http\Controllers\DictController;
 use App\Http\Controllers\LanguageController;
 
@@ -99,10 +103,18 @@ Route::get('/dashboard', function () {
 
 Route::get('/topics', [TopicController::class,'topics'])->name('topics');
 Route::get('/ideas', [TopicController::class,'topic_ideas'])->name('topic_ideas');
-Route::get('/ideas', [TopicController::class,'topic_ideas'])->name('topic_ideas');
 Route::get('/projs', [ProjectController::class,'index'])->middleware(['auth'])->name('projs');
 Route::get('/logs/{id}', [FileController::class,'showLog'])->middleware(['auth'])->name('logs');
 Route::redirect('/logq', '/logs/0')->name('logq');
 Route::redirect('/logd', '/logs/1')->name('logd');
+
+Route::group(['prefix' => '/api', 'as' => 'api.', 'namespace' => 'api'],  static function (Router $router) {
+    Route::get('/projs/{type?}', [ApiProjectController::class,'index'])->name('api-projs');
+    Route::get('/proj/{id}', [ApiProjectController::class,'proj'])->name('api-proj');
+    Route::get('/indi', [ApiProjectController::class,'indi'])->name('api-projs-indi');
+    Route::get('/team', [ApiProjectController::class,'team'])->name('api-projs-team');
+    Route::get('/topics', [ApiTopicController::class,'topics'])->name('topics');
+
+});
 
 require __DIR__.'/auth.php';

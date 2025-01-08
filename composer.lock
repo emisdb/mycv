@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "81a2560ec70ecc90ba9cd792cd0a5588",
+    "content-hash": "b3f1d947bb330c312825aee382796c53",
     "packages": [
         {
             "name": "almasaeed2010/adminlte",
@@ -1351,27 +1351,26 @@
         },
         {
             "name": "jeroennoten/laravel-adminlte",
-            "version": "v3.8.6",
+            "version": "v3.14.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/jeroennoten/Laravel-AdminLTE.git",
-                "reference": "6cb6153e875b3bbf085df0edfed25ceb35cbe2d6"
+                "reference": "dfd6b46be4a1c43338dfa1eb312030604ad95ef8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/jeroennoten/Laravel-AdminLTE/zipball/6cb6153e875b3bbf085df0edfed25ceb35cbe2d6",
-                "reference": "6cb6153e875b3bbf085df0edfed25ceb35cbe2d6",
+                "url": "https://api.github.com/repos/jeroennoten/Laravel-AdminLTE/zipball/dfd6b46be4a1c43338dfa1eb312030604ad95ef8",
+                "reference": "dfd6b46be4a1c43338dfa1eb312030604ad95ef8",
                 "shasum": ""
             },
             "require": {
                 "almasaeed2010/adminlte": "3.2.*",
-                "laravel/framework": ">=6.0",
-                "php": ">=7.2.0"
+                "laravel/framework": ">=7.0",
+                "php": ">=7.2.5"
             },
             "require-dev": {
                 "orchestra/testbench": ">=4.0",
-                "phpunit/phpunit": ">=9.1",
-                "scrutinizer/ocular": "^1.9"
+                "phpunit/phpunit": ">=9.1"
             },
             "type": "library",
             "extra": {
@@ -1403,7 +1402,11 @@
                 "administrator",
                 "laravel"
             ],
-            "time": "2023-02-03T16:04:05+00:00"
+            "support": {
+                "issues": "https://github.com/jeroennoten/Laravel-AdminLTE/issues",
+                "source": "https://github.com/jeroennoten/Laravel-AdminLTE/tree/v3.14.2"
+            },
+            "time": "2024-11-09T16:13:13+00:00"
         },
         {
             "name": "laravel/framework",
@@ -7975,12 +7978,12 @@
     ],
     "aliases": [],
     "minimum-stability": "dev",
-    "stability-flags": [],
+    "stability-flags": {},
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {
         "php": "^7.3|^8.0"
     },
-    "platform-dev": [],
-    "plugin-api-version": "2.3.0"
+    "platform-dev": {},
+    "plugin-api-version": "2.6.0"
 }

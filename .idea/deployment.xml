@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="PublishConfigData" serverName="mycv">
+  <component name="PublishConfigData" serverName="docker">
     <serverData>
-      <paths name="mycv">
+      <paths name="docker">
         <serverdata>
           <mappings>
-            <mapping local="$PROJECT_DIR$" web="public" />
+            <mapping local="$PROJECT_DIR$" web="mycv" />
           </mappings>
         </serverdata>
       </paths>

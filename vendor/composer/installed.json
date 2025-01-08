@@ -1844,30 +1844,29 @@
         },
         {
             "name": "jeroennoten/laravel-adminlte",
-            "version": "v3.8.6",
-            "version_normalized": "3.8.6.0",
+            "version": "v3.14.2",
+            "version_normalized": "3.14.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/jeroennoten/Laravel-AdminLTE.git",
-                "reference": "6cb6153e875b3bbf085df0edfed25ceb35cbe2d6"
+                "reference": "dfd6b46be4a1c43338dfa1eb312030604ad95ef8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/jeroennoten/Laravel-AdminLTE/zipball/6cb6153e875b3bbf085df0edfed25ceb35cbe2d6",
-                "reference": "6cb6153e875b3bbf085df0edfed25ceb35cbe2d6",
+                "url": "https://api.github.com/repos/jeroennoten/Laravel-AdminLTE/zipball/dfd6b46be4a1c43338dfa1eb312030604ad95ef8",
+                "reference": "dfd6b46be4a1c43338dfa1eb312030604ad95ef8",
                 "shasum": ""
             },
             "require": {
                 "almasaeed2010/adminlte": "3.2.*",
-                "laravel/framework": ">=6.0",
-                "php": ">=7.2.0"
+                "laravel/framework": ">=7.0",
+                "php": ">=7.2.5"
             },
             "require-dev": {
                 "orchestra/testbench": ">=4.0",
-                "phpunit/phpunit": ">=9.1",
-                "scrutinizer/ocular": "^1.9"
+                "phpunit/phpunit": ">=9.1"
             },
-            "time": "2023-02-03T16:04:05+00:00",
+            "time": "2024-11-09T16:13:13+00:00",
             "type": "library",
             "extra": {
                 "laravel": {
@@ -1899,6 +1898,10 @@
                 "administrator",
                 "laravel"
             ],
+            "support": {
+                "issues": "https://github.com/jeroennoten/Laravel-AdminLTE/issues",
+                "source": "https://github.com/jeroennoten/Laravel-AdminLTE/tree/v3.14.2"
+            },
             "install-path": "../jeroennoten/laravel-adminlte"
         },
         {
