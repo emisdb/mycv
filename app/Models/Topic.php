@@ -9,6 +9,8 @@ class Topic extends Model
 {
     use HasFactory;
     protected $guarded = ['id'];
+    // Hide created_at and updated_at globally
+    protected $hidden = ['created_at', 'updated_at'];
     //   protected $fillable = ['description','name'];
 
     public function topics()
@@ -18,6 +20,15 @@ class Topic extends Model
     public function descendants()
     {
         return $this->topics()->with('descendants');
+    }
+    public function descend_counts()
+    {
+        return $this->topics()->with('descend_counts')->withCount('ideas');
+    }
+    public function descend_ideas()
+    {
+        return $this->topics()->with(['descend_ideas', 'ideas.ideas']);
+//        return $this->topics()->with(['descend_ideas']);
     }
     public function ideas()
     {

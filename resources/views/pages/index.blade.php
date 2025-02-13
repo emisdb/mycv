@@ -19,6 +19,7 @@
         <!-- Header -->
         <header class="w3-container w3-center" style="padding:128px 16px" id="home">
             <h1 class="w3-jumbo"><b>Denis Tsybulia</b></h1>
+            <p>Senior Software Engineer.</p>
             <p>Web application developer.</p>
             <p>Backend PHP programmer.</p>
             @yield('cv-button')

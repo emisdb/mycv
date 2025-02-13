@@ -2,9 +2,14 @@
 
 use App\Http\Controllers\FileController;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Routing\Router;
 use App\Http\Controllers\MainController;
 use App\Http\Controllers\TopicController;
 use App\Http\Controllers\ProjectController;
+use App\Http\Controllers\api\ProjectController as ApiProjectController;
+use App\Http\Controllers\api\TopicController as ApiTopicController;
+use App\Http\Controllers\api\IdeaController as ApiIdeaController;
+
 //use App\Http\Controllers\DictController;
 use App\Http\Controllers\LanguageController;
 
@@ -48,26 +53,6 @@ Route::middleware('logFileDownload')->group(function () {
     });
 
 });
-
-Route::prefix('admin')->group(
-    function () {
-        Route::get('/',function () {
-            return view('admin.demo.demo',['module'=>0]);
-        })->name('admin.demo');
-        Route::get('/demo2',function () {
-            return view('admin.demo.demo2',['module'=>2]);
-        })->name('admin.demo2');
-        Route::get('/demo3',function () {
-            return view('admin.demo.demo3',['module'=>3]);
-        })->name('admin.demo3');
-        Route::get('/vue/{any?}',function () {
-            return view('admin.cv.projects',['module'=>0]);
-        })->where('any', '.*')->name('admin.vue');
-        Route::get('/projects',function () {
-            return view('admin.cv.projects',['module'=>0]);
-        })->name('admin.projects');
-    }
-);
 
 
 Route::get('/test', function () {
@@ -119,10 +104,22 @@ Route::get('/dashboard', function () {
 
 Route::get('/topics', [TopicController::class,'topics'])->name('topics');
 Route::get('/ideas', [TopicController::class,'topic_ideas'])->name('topic_ideas');
-Route::get('/topic-api', [TopicController::class,'index'])->name('topic_api');
 Route::get('/projs', [ProjectController::class,'index'])->middleware(['auth'])->name('projs');
 Route::get('/logs/{id}', [FileController::class,'showLog'])->middleware(['auth'])->name('logs');
 Route::redirect('/logq', '/logs/0')->name('logq');
 Route::redirect('/logd', '/logs/1')->name('logd');
+
+Route::group(['prefix' => '/api', 'as' => 'api.', 'namespace' => 'api'],  static function (Router $router) {
+
+   Route::get('/projs/{type?}', [ApiProjectController::class,'index'])->name('api-projs');
+    Route::get('/proj/{id}', [ApiProjectController::class,'proj'])->name('api-proj');
+    Route::get('/indi', [ApiProjectController::class,'indi'])->name('api-projs-indi');
+    Route::get('/team', [ApiProjectController::class,'team'])->name('api-projs-team');
+    Route::get('/topics', [ApiTopicController::class,'topics'])->name('topics');
+    Route::get('/topic/{topic}', [ApiTopicController::class,'show'])->name('topic');
+    Route::get('/idea/{idea}', [ApiIdeaController::class,'show'])->name('idea');
+    Route::get('/tech/{topic}', [ApiTopicController::class,'tech'])->name('idea');
+
+});
 
 require __DIR__.'/auth.php';

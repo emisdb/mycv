@@ -1,7 +1,8 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\api;
 
+use App\Http\Controllers\Controller;
 use App\Models\Topic;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
@@ -18,19 +19,13 @@ class TopicController extends Controller
             ->withCount('ideas')
             ->whereNull('topic_id')
             ->get();
-//        return response()->json(
-//            [
-//                'data' => $topics->toArray(),
-//            ]);
-       return view('dashboard.topics', compact('topics'));
+//            ->makeHidden(['created_at', 'updated_at']);
+        return response()->json(
+            [
+                'data' => $topics->toArray(),
+            ]);
     }
 
-
-    public function topic_ideas()
-    {
-        $topics = Topic::with('descendants')->with('ideas')->get();
-        return view('dashboard.topic_ideas', compact('topics'));
-    }
 
     /**
      * Display a listing of the resource.
@@ -39,24 +34,7 @@ class TopicController extends Controller
      */
     public function index(): Response
     {
-        $topics = Topic::with(['topic' => function ($query) {
-            $query->select('id', 'name');
-        }])
-            ->select('id', 'name', 'description', 'topic_id')
-            ->get();
-
-        $topicsArray = $topics->map(function ($topic) {
-            return [
-                'id' => $topic->id,
-                'name' => $topic->name,
-                'description' => $topic->description,
-                'topic_id' => $topic->topic_id,
-                'topic_name' => $topic->topic ? $topic->topic->name : null,
-            ];
-        });
-
-        $topicsArray = $topicsArray->toArray();
-        return response(json_encode($topicsArray), 200)
+        return response(json_encode(Topic::all()->toArray()), 200)
             ->header('Content-Type', 'application/json');
     }
 
@@ -91,11 +69,26 @@ class TopicController extends Controller
      * Display the specified resource.
      *
      * @param \App\Models\Topic $topic
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\JsonResponse
      */
     public function show(Topic $topic)
     {
-        //
+        return response()->json([
+            'data' => $topic->load(['topic', 'descendants', 'ideas'])->toArray(),
+        ]);
+    }
+
+    /**
+     * Display the specified resource.
+     *
+     * @param \App\Models\Topic $topic
+     * @return \Illuminate\Http\JsonResponse
+     */
+    public function tech(Topic $topic)
+    {
+        return response()->json([
+            'data' => $topic->load(['topic', 'descend_ideas', 'ideas'])->toArray(),
+        ]);
     }
 
     /**
