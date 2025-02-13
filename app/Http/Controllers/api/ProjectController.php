@@ -15,8 +15,13 @@ class ProjectController extends Controller
      */
     public function index($type = null)
     {
-        $projs = Project::with(['ideas'=> function ($query) use ($type) {
-            $query->with('topic');
+        $projs = Project::with(['ideas'=> function ($query)  {
+            $query->with('topic')
+                ->select('ideas.id','ideas.name','ideas.description', 'topic_id')
+            ;
+        }])
+            ->select('id','name','start', 'finish')
+            ->whereHas('ideas', function ($query) use ($type) {
             if(!is_null($type)) {
                 if($type == 1) {
                     $query->where('topic_id',28)->where('ideas.name','team');
@@ -24,11 +29,13 @@ class ProjectController extends Controller
                     $query->where('topic_id',28)->where('ideas.name','individual');
                 }
             }
-        }])->limit(40)->orderBy('start','desc')->get();
+        })
+            ->limit(40)
+            ->orderBy('start','desc')->get();
         return response()->json(
             [
                 'data' => [
-                    'projects' => $projs->toArray(),
+                 'projects' => $projs->toArray(),
                 ]
             ]
         );

@@ -25,6 +25,11 @@ class Topic extends Model
     {
         return $this->topics()->with('descend_counts')->withCount('ideas');
     }
+    public function descend_ideas()
+    {
+        return $this->topics()->with(['descend_ideas', 'ideas.ideas']);
+//        return $this->topics()->with(['descend_ideas']);
+    }
     public function ideas()
     {
         return $this->hasMany(Idea::class, 'topic_id','id');

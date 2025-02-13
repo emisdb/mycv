@@ -3,19 +3,19 @@
 namespace App\Http\Controllers\api;
 
 use App\Http\Controllers\Controller;
-use App\Models\Topic;
+use App\Models\Idea;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 
-class TopicController extends Controller
+class IdeaController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      */
-    public function topics()
+    public function ideas()
     {
-        $topics = Topic::with(['descend_counts', 'ideas'])
+        $topics = Idea::with(['descend_counts', 'ideas'])
             ->withCount('ideas')
             ->whereNull('topic_id')
             ->get();
@@ -34,7 +34,7 @@ class TopicController extends Controller
      */
     public function index(): Response
     {
-        return response(json_encode(Topic::all()->toArray()), 200)
+        return response(json_encode(Idea::all()->toArray()), 200)
             ->header('Content-Type', 'application/json');
     }
 
@@ -49,7 +49,7 @@ class TopicController extends Controller
             'description' => 'phrase to address',
             'name' => 'phrase',
         ];
-        Topic::create($data);
+        Idea::create($data);
         return response($data, 200)
             ->header('Content-Type', 'application/json');
     }
@@ -68,36 +68,23 @@ class TopicController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param \App\Models\Topic $topic
+     * @param \App\Models\Idea $topic
      * @return \Illuminate\Http\JsonResponse
      */
-    public function show(Topic $topic)
+    public function show(Idea $idea)
     {
         return response()->json([
-            'data' => $topic->load(['topic', 'descendants', 'ideas'])->toArray(),
-        ]);
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param \App\Models\Topic $topic
-     * @return \Illuminate\Http\JsonResponse
-     */
-    public function tech(Topic $topic)
-    {
-        return response()->json([
-            'data' => $topic->load(['topic', 'descend_ideas', 'ideas'])->toArray(),
+            'data' => $idea->load(['ideas.topic','topic'])->toArray(),
         ]);
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param \App\Models\Topic $topic
+     * @param \App\Models\Idea $topic
      * @return \Illuminate\Http\Response
      */
-    public function edit(Topic $topic)
+    public function edit(Idea $topic)
     {
         //
     }
@@ -106,10 +93,10 @@ class TopicController extends Controller
      * Update the specified resource in storage.
      *
      * @param \Illuminate\Http\Request $request
-     * @param \App\Models\Topic $topic
+     * @param \App\Models\Idea $topic
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Topic $topic)
+    public function update(Request $request, Idea $topic)
     {
         //
     }
@@ -117,10 +104,10 @@ class TopicController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param \App\Models\Topic $topic
+     * @param \App\Models\Idea $topic
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Topic $topic)
+    public function destroy(Idea $topic)
     {
         //
     }
