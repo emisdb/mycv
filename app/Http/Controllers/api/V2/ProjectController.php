@@ -1,14 +1,22 @@
 <?php
 
-namespace App\Http\Controllers\api;
+namespace App\Http\Controllers\api\V2;
 
 use App\Http\Controllers\Controller;
 use App\Models\Project;
 use App\Models\Repositories\IdeaRepository;
+use App\Services\IndexService;
 use Illuminate\Http\Request;
 
 class ProjectController extends Controller
 {
+
+    private IndexService $indexService;
+    public function __construct(
+        IndexService $indexService
+    ) {
+        $this->indexService = $indexService;
+    }
     /**
      * Display a listing of the resource.
      *
@@ -16,6 +24,13 @@ class ProjectController extends Controller
      */
     public function index($type = null)
     {
+        return response()->json(
+            [
+                'data' => $this->indexService->getTopics('proj_index')
+            ]
+        );
+
+
         $projs = Project::with(['ideas'=> function ($query)  {
             $query->with('topic')
                 ->select('ideas.id','ideas.name','ideas.description', 'topic_id')
@@ -42,52 +57,6 @@ class ProjectController extends Controller
         );
     }
 
-        public function indi()
-    {
-        $projs = Project::whereHas('ideas', function ($query) {
-            $query->where('topic_id', 28)
-                ->where('name', 'individual');
-        })
-            ->orderBy('start', 'desc')
-            ->get();
-        return response()->json(
-            [
-                'data' => [
-                    'projects' => $projs->toArray(),
-                ]
-            ]
-        );
-    }
-    public function team()
-    {
-        $projs = Project::whereHas('ideas', function ($query) {
-            $query->where('topic_id', 28)
-                ->where('name', 'team');
-        })
-            ->orderBy('start', 'desc')
-            ->get();
-        return response()->json(
-            [
-                'data' => [
-                    'projects' => $projs->toArray(),
-                ]
-            ]
-        );
-    }
-    public function proj($id)
-    {
-        $proj = Project::with(['ideas'=> function ($query) {
-            $query->select(['ideas.id','ideas.description','ideas.name','ideas.topic_id'])
-                ->with(['topic' => function ($query) {
-                    $query->select(['topics.id','topics.description','topics.name','topics.topic_id'])
-                        ->with(['topic']);}])
-            ;}])->find($id);
-        return response()->json(
-            [
-                'data' => $proj->toArray(),
-            ]
-        );
-    }
     public function projEdit($id)
     {
         $proj = Project::with(['ideas'=> function ($query) {

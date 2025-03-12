@@ -7,6 +7,7 @@ use App\Http\Controllers\MainController;
 use App\Http\Controllers\TopicController;
 use App\Http\Controllers\ProjectController;
 use App\Http\Controllers\api\ProjectController as ApiProjectController;
+use App\Http\Controllers\api\V2\ProjectController as ApiV2ProjectController;
 use App\Http\Controllers\api\TopicController as ApiTopicController;
 use App\Http\Controllers\api\IdeaController as ApiIdeaController;
 
@@ -119,6 +120,12 @@ Route::group(['prefix' => '/api', 'as' => 'api.', 'namespace' => 'api'],  static
     Route::get('/topic/{topic}', [ApiTopicController::class,'show'])->name('topic');
     Route::get('/idea/{idea}', [ApiIdeaController::class,'show'])->name('idea');
     Route::get('/tech/{topic}', [ApiTopicController::class,'tech'])->name('idea');
+    Route::get('/proj/{id}/edit', [ApiProjectController::class,'projEdit'])->name('api-proj');
+
+});
+Route::group(['prefix' => '/api/v2', 'as' => 'api.v2'],  static function (Router $router) {
+
+    Route::get('/projs/{type?}', [ApiV2ProjectController::class,'index'])->name('api2-projs');
 
 });
 

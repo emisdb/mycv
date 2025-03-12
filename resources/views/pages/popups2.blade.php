@@ -9,14 +9,9 @@
     </div>
 </div>
 <?php $colors = []; ?>
-@foreach($model as $rec)
-    @foreach($rec as $ph)
-        @if($ph['type'] == 'pop')
-            <?php $colors[$ph['data']] = $ph['text']['color']; ?>
-            @include('pages.popup',['format' => $ph['text']['dialog'], 'color' => $ph['text']['color'], 'name' =>$ph['data']])
-        @elseif($ph['type'] == 'ul')
-        @endif
-    @endforeach
+@foreach($dialogs as $ph)
+        <?php $colors[$ph['name']] = $ph['color']; ?>
+        @include('pages.popup',['format' => $ph['dialog'], 'color' => $ph['color'], 'name' =>$ph['name']])
 @endforeach
 <script type="text/javascript">
  //   var colors = ['blue', 'green', 'pink', 'yellow', 'gray', 'lime', 'indigo', 'cyan', 'orange', 'red', 'sand'];

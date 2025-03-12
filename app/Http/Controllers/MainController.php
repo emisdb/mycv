@@ -21,9 +21,9 @@ class MainController extends Controller
     public function home(FeedInterface $feed)
     {
         $parser = new DataParser($feed);
-        $res = $parser->handle();
-//        dd($res);
-        return view('pages.index', ['model' => $res]);
+        $result = $parser->handle();
+//        dd($result);
+        return view('pages.index', ['model' => $result[0],'dialogs' => $result[1]]);
    }
 
     public function skills()
@@ -78,6 +78,7 @@ class MainController extends Controller
         => function ($query) {
                 $query->select('id', 'name');
             }])->find($id);
+//        dd(compact('topic'));
         return view('topic', compact('topic'));
     }
 

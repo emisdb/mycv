@@ -6,12 +6,12 @@
 @section('left')
     <!-- Sidebar with image -->
     <nav class="w3-sidebar w3-hide-medium w3-hide-small" style="width:40%">
-        <div class="bgimg skill"></div>
+        <div class="bgimg skill2"></div>
     </nav>
 @endsection
 
 @section('content')
-    <div class="w3-main w3-padding-large" style="margin-left:40%">
+    <div class="w3-main w3-padding-large sunrise-bg">
 
         <!-- Menu icon to open sidebar -->
         <span class="w3-button w3-top w3-white w3-xxlarge w3-text-grey w3-hover-text-black"
@@ -19,7 +19,7 @@
             <i class="fa fa-bars"></i></span>
 
         <!-- Header -->
-        <header class="w3-container w3-center" style="padding:128px 16px" id="home">
+        <header class="w3-container w3-center w3-animate-zoom w3-ho" style="padding:128px 16px" id="home">
             <h1 class="w3-jumbo"><b>Skills</b></h1>
             <p>Skills I acquired and exercised</p>
             @yield('cv-button')
