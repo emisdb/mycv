@@ -70,6 +70,73 @@ body, h1, h2, h3, h4, h5, h6 {
 .dear2 {
     background-image: url(/images/dear2.jpg?94a9a38583893f63db9c5e927addaf0c);
 }
+.front-bg {
+    background-image: linear-gradient(to bottom left,rgba(0, 0, 255, 0.5), rgba(255, 255, 255, 0.5));
+    margin-left:40%;
+}
+.cool-bg {
+    background: linear-gradient(to bottom left, #8fa1b6, #cbd5e0, #7a54c9);
+    margin-left:40%;
+}
+.modern-bg {
+    background: linear-gradient(to bottom left, #cbd5e0, #a86ee8, #ff66b2);
+    margin-left:40%;
+}
+.warm-bg {
+    background: linear-gradient(to bottom left, #cbd5e0, #f0b3a0, #ff5792);
+    margin-left:40%;
+}
+.skill-bg {
+    background: linear-gradient(to bottom left, #cbd5e0, #e2c1f0, #f8aacb);
+    margin-left:40%;
+}
+.sunrise-bg {
+    background: linear-gradient(to bottom left, #cbd5e0, #e8d6f0, #fcd4e3);
+    margin-left:40%;
+}
+
+.skill2 {
+    background-image: url(https://en.emisdb.ru/project/css/images/agile_dark.jpg);
+    background-position-x: -80px;
+}
+
+#contact-table td
+{
+    padding: 5px;
+    font-size: 1.3em;
+    font-weight: bolder;
+
+}
+#portfolio>div {
+    line-height: 1.8;
+    margin-bottom: 15px;
+    background: rgba(255, 255, 255, 0.3); /* Light translucent background */
+    border-left: 4px solid #0c84ff; /* Subtle accent line */
+    border-radius: 8px;
+    padding: 10px 15px;
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
+    font-weight: 500;
+    color: #333; /* Better readability */
+}
+
+#portfolio span.badge{
+    margin-left: 3px;
+}
+/* Ensures spans align well within the paragraph */
+#portfolio div span {
+    display: inline-flex; /* Align like inline elements but respect spacing */
+    align-items: center; /* Keep elements centered */
+    vertical-align: middle; /* Align with surrounding text */
+    padding: 2px 6px; /* Reduce padding so it doesn't break line spacing */
+    font-weight: 500;
+}
+
+#portfolio div li {
+    list-style: circle;
+}
+#modal-content div li {
+    list-style: none;
+}
 /* The actual timeline (the vertical ruler) */
 .timeline {
     position: relative;
