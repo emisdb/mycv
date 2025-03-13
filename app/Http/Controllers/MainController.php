@@ -43,7 +43,6 @@ class MainController extends Controller
     public function projects($type = 0)
     {
         $proj= new Projects($type);
-//        $proj= new Projects($type);
         $res = $proj->getData();
         if($type == 100) dd($res);
         if($type) {
