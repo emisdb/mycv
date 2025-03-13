@@ -1,0 +1,495 @@
+{
+    "data": {
+        "id": 30,
+        "name": "NIB web traffic control",
+        "start": 402,
+        "finish": 407,
+        "created_at": "2023-12-12T06:52:01.000000Z",
+        "updated_at": "2023-12-12T06:52:01.000000Z",
+        "ideas": [
+            {
+                "id": 47,
+                "description": "team projects",
+                "name": "team",
+                "topic_id": 28,
+                "pivot": {
+                    "project_id": 30,
+                    "idea_id": 47
+                },
+                "topic": {
+                    "id": 28,
+                    "description": "project types for selection",
+                    "name": "Project type",
+                    "topic_id": 21,
+                    "topic": {
+                        "id": 21,
+                        "name": "projects",
+                        "description": "data on projects",
+                        "topic_id": null,
+                        "created_at": "2023-04-06T04:07:58.000000Z",
+                        "updated_at": "2023-04-06T04:07:58.000000Z"
+                    }
+                }
+            },
+            {
+                "id": 81,
+                "description": "Web technology",
+                "name": "web",
+                "topic_id": 30,
+                "pivot": {
+                    "project_id": 30,
+                    "idea_id": 81
+                },
+                "topic": {
+                    "id": 30,
+                    "description": "types of the technology",
+                    "name": "technology",
+                    "topic_id": 21,
+                    "topic": {
+                        "id": 21,
+                        "name": "projects",
+                        "description": "data on projects",
+                        "topic_id": null,
+                        "created_at": "2023-04-06T04:07:58.000000Z",
+                        "updated_at": "2023-04-06T04:07:58.000000Z"
+                    }
+                }
+            },
+            {
+                "id": 20,
+                "description": "PHP",
+                "name": "PHP",
+                "topic_id": 10,
+                "pivot": {
+                    "project_id": 30,
+                    "idea_id": 20
+                },
+                "topic": {
+                    "id": 10,
+                    "description": "Internet and World Wide Web",
+                    "name": "web",
+                    "topic_id": 1,
+                    "topic": {
+                        "id": 1,
+                        "name": "technology",
+                        "description": "technology",
+                        "topic_id": null,
+                        "created_at": null,
+                        "updated_at": null
+                    }
+                }
+            },
+            {
+                "id": 421,
+                "description": "5",
+                "name": "Redis",
+                "topic_id": 29,
+                "pivot": {
+                    "project_id": 30,
+                    "idea_id": 421
+                },
+                "topic": {
+                    "id": 29,
+                    "description": "shorts for technologies",
+                    "name": "shorts",
+                    "topic_id": null,
+                    "topic": null
+                }
+            },
+            {
+                "id": 423,
+                "description": "NIB campaign engine",
+                "name": "name",
+                "topic_id": 114,
+                "pivot": {
+                    "project_id": 30,
+                    "idea_id": 423
+                },
+                "topic": {
+                    "id": 114,
+                    "description": "NIB in Neklo",
+                    "name": "NIB",
+                    "topic_id": 23,
+                    "topic": {
+                        "id": 23,
+                        "name": "Team corporate projects",
+                        "description": "Сorporate projects where I was employed as a part of team",
+                        "topic_id": 21,
+                        "created_at": "2023-04-06T04:11:20.000000Z",
+                        "updated_at": "2023-04-06T04:11:20.000000Z"
+                    }
+                }
+            },
+            {
+                "id": 428,
+                "description": "Neklo",
+                "name": "name",
+                "topic_id": 115,
+                "pivot": {
+                    "project_id": 30,
+                    "idea_id": 428
+                },
+                "topic": {
+                    "id": 115,
+                    "description": "Neklo",
+                    "name": "Neklo",
+                    "topic_id": 31,
+                    "topic": {
+                        "id": 31,
+                        "name": "clients",
+                        "description": "my clients",
+                        "topic_id": null,
+                        "created_at": "2023-04-12T07:05:05.000000Z",
+                        "updated_at": "2023-04-12T07:05:05.000000Z"
+                    }
+                }
+            },
+            {
+                "id": 419,
+                "description": "I am adept at leveraging the unique strengths of  the rapid data access capabilities of Redis.",
+                "name": "Redis",
+                "topic_id": 13,
+                "pivot": {
+                    "project_id": 30,
+                    "idea_id": 419
+                },
+                "topic": {
+                    "id": 13,
+                    "description": "Database management systems and data instruments:",
+                    "name": "Database management",
+                    "topic_id": 1,
+                    "topic": {
+                        "id": 1,
+                        "name": "technology",
+                        "description": "technology",
+                        "topic_id": null,
+                        "created_at": null,
+                        "updated_at": null
+                    }
+                }
+            },
+            {
+                "id": 427,
+                "description": "Templating engines used in web development\u003Cul\u003E\u003Cli\u003ETwig\u003C/li\u003E\u003Cli\u003EBlade\u003C/li\u003E\u003C/ul\u003E",
+                "name": "Templating engines ",
+                "topic_id": 10,
+                "pivot": {
+                    "project_id": 30,
+                    "idea_id": 427
+                },
+                "topic": {
+                    "id": 10,
+                    "description": "Internet and World Wide Web",
+                    "name": "web",
+                    "topic_id": 1,
+                    "topic": {
+                        "id": 1,
+                        "name": "technology",
+                        "description": "technology",
+                        "topic_id": null,
+                        "created_at": null,
+                        "updated_at": null
+                    }
+                }
+            },
+            {
+                "id": 15,
+                "description": "LINUX, Bash script",
+                "name": "LINUX",
+                "topic_id": 14,
+                "pivot": {
+                    "project_id": 30,
+                    "idea_id": 15
+                },
+                "topic": {
+                    "id": 14,
+                    "description": "Operating Systems and Shells",
+                    "name": "Operating Systems and Shells",
+                    "topic_id": 1,
+                    "topic": {
+                        "id": 1,
+                        "name": "technology",
+                        "description": "technology",
+                        "topic_id": null,
+                        "created_at": null,
+                        "updated_at": null
+                    }
+                }
+            },
+            {
+                "id": 432,
+                "description": "6",
+                "name": "Twig",
+                "topic_id": 29,
+                "pivot": {
+                    "project_id": 30,
+                    "idea_id": 432
+                },
+                "topic": {
+                    "id": 29,
+                    "description": "shorts for technologies",
+                    "name": "shorts",
+                    "topic_id": null,
+                    "topic": null
+                }
+            },
+            {
+                "id": 438,
+                "description": "Leadspedia",
+                "name": "Leadspedia",
+                "topic_id": 117,
+                "pivot": {
+                    "project_id": 30,
+                    "idea_id": 438
+                },
+                "topic": {
+                    "id": 117,
+                    "description": "Web Marketing Platforms",
+                    "name": "Web Marketing Platforms",
+                    "topic_id": 1,
+                    "topic": {
+                        "id": 1,
+                        "name": "technology",
+                        "description": "technology",
+                        "topic_id": null,
+                        "created_at": null,
+                        "updated_at": null
+                    }
+                }
+            },
+            {
+                "id": 439,
+                "description": "HasOffers",
+                "name": "HasOffers",
+                "topic_id": 117,
+                "pivot": {
+                    "project_id": 30,
+                    "idea_id": 439
+                },
+                "topic": {
+                    "id": 117,
+                    "description": "Web Marketing Platforms",
+                    "name": "Web Marketing Platforms",
+                    "topic_id": 1,
+                    "topic": {
+                        "id": 1,
+                        "name": "technology",
+                        "description": "technology",
+                        "topic_id": null,
+                        "created_at": null,
+                        "updated_at": null
+                    }
+                }
+            },
+            {
+                "id": 440,
+                "description": "Facebook Ads",
+                "name": "Facebook Ads",
+                "topic_id": 117,
+                "pivot": {
+                    "project_id": 30,
+                    "idea_id": 440
+                },
+                "topic": {
+                    "id": 117,
+                    "description": "Web Marketing Platforms",
+                    "name": "Web Marketing Platforms",
+                    "topic_id": 1,
+                    "topic": {
+                        "id": 1,
+                        "name": "technology",
+                        "description": "technology",
+                        "topic_id": null,
+                        "created_at": null,
+                        "updated_at": null
+                    }
+                }
+            },
+            {
+                "id": 441,
+                "description": "Google Ads",
+                "name": "Google Ads",
+                "topic_id": 117,
+                "pivot": {
+                    "project_id": 30,
+                    "idea_id": 441
+                },
+                "topic": {
+                    "id": 117,
+                    "description": "Web Marketing Platforms",
+                    "name": "Web Marketing Platforms",
+                    "topic_id": 1,
+                    "topic": {
+                        "id": 1,
+                        "name": "technology",
+                        "description": "technology",
+                        "topic_id": null,
+                        "created_at": null,
+                        "updated_at": null
+                    }
+                }
+            },
+            {
+                "id": 442,
+                "description": "Everflow",
+                "name": "Everflow",
+                "topic_id": 117,
+                "pivot": {
+                    "project_id": 30,
+                    "idea_id": 442
+                },
+                "topic": {
+                    "id": 117,
+                    "description": "Web Marketing Platforms",
+                    "name": "Web Marketing Platforms",
+                    "topic_id": 1,
+                    "topic": {
+                        "id": 1,
+                        "name": "technology",
+                        "description": "technology",
+                        "topic_id": null,
+                        "created_at": null,
+                        "updated_at": null
+                    }
+                }
+            },
+            {
+                "id": 29,
+                "description": "Git systems I worked: \u003Cul\u003E\u003Cli\u003EGitHub\u003C/li\u003E\u003Cli\u003EGitLab\u003C/li\u003E\u003Cli\u003EBitBucket\u003C/li\u003E\u003C/ul\u003E",
+                "name": "Git DVCS",
+                "topic_id": 11,
+                "pivot": {
+                    "project_id": 30,
+                    "idea_id": 29
+                },
+                "topic": {
+                    "id": 11,
+                    "description": "Project Management tools",
+                    "name": "Project Management",
+                    "topic_id": 1,
+                    "topic": {
+                        "id": 1,
+                        "name": "technology",
+                        "description": "technology",
+                        "topic_id": null,
+                        "created_at": null,
+                        "updated_at": null
+                    }
+                }
+            },
+            {
+                "id": 30,
+                "description": "Project management tools: \u003Cul\u003E\u003Cli\u003EJIRA\u003C/li\u003E\u003Cli\u003E Rally\u003C/li\u003E\u003Cli\u003ETrello\u003C/li\u003E\u003Cli\u003ERedmine\u003C/li\u003E\u003C/ul\u003E",
+                "name": "JIRA, Rally, Trello, Redmine",
+                "topic_id": 11,
+                "pivot": {
+                    "project_id": 30,
+                    "idea_id": 30
+                },
+                "topic": {
+                    "id": 11,
+                    "description": "Project Management tools",
+                    "name": "Project Management",
+                    "topic_id": 1,
+                    "topic": {
+                        "id": 1,
+                        "name": "technology",
+                        "description": "technology",
+                        "topic_id": null,
+                        "created_at": null,
+                        "updated_at": null
+                    }
+                }
+            },
+            {
+                "id": 35,
+                "description": "\u003Cul\u003E\u003Cli\u003EDocker\u003C/li\u003E\u003Cli\u003EDocker-compose\u003C/li\u003E\u003C/ul\u003E",
+                "name": "Docker",
+                "topic_id": 11,
+                "pivot": {
+                    "project_id": 30,
+                    "idea_id": 35
+                },
+                "topic": {
+                    "id": 11,
+                    "description": "Project Management tools",
+                    "name": "Project Management",
+                    "topic_id": 1,
+                    "topic": {
+                        "id": 1,
+                        "name": "technology",
+                        "description": "technology",
+                        "topic_id": null,
+                        "created_at": null,
+                        "updated_at": null
+                    }
+                }
+            },
+            {
+                "id": 444,
+                "description": "New Relic  tool for application performance monitoring",
+                "name": "New Relic",
+                "topic_id": 11,
+                "pivot": {
+                    "project_id": 30,
+                    "idea_id": 444
+                },
+                "topic": {
+                    "id": 11,
+                    "description": "Project Management tools",
+                    "name": "Project Management",
+                    "topic_id": 1,
+                    "topic": {
+                        "id": 1,
+                        "name": "technology",
+                        "description": "technology",
+                        "topic_id": null,
+                        "created_at": null,
+                        "updated_at": null
+                    }
+                }
+            },
+            {
+                "id": 55,
+                "description": "2",
+                "name": "Laravel",
+                "topic_id": 29,
+                "pivot": {
+                    "project_id": 30,
+                    "idea_id": 55
+                },
+                "topic": {
+                    "id": 29,
+                    "description": "shorts for technologies",
+                    "name": "shorts",
+                    "topic_id": null,
+                    "topic": null
+                }
+            },
+            {
+                "id": 24,
+                "description": "Laravel",
+                "name": "Laravel",
+                "topic_id": 10,
+                "pivot": {
+                    "project_id": 30,
+                    "idea_id": 24
+                },
+                "topic": {
+                    "id": 10,
+                    "description": "Internet and World Wide Web",
+                    "name": "web",
+                    "topic_id": 1,
+                    "topic": {
+                        "id": 1,
+                        "name": "technology",
+                        "description": "technology",
+                        "topic_id": null,
+                        "created_at": null,
+                        "updated_at": null
+                    }
+                }
+            }
+        ]
+    }
+}
