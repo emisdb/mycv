@@ -4,6 +4,7 @@ namespace App\Http\Controllers\api;
 
 use App\Http\Controllers\Controller;
 use App\Models\Project;
+use App\Models\Repositories\IdeaRepository;
 use Illuminate\Http\Request;
 
 class ProjectController extends Controller
@@ -40,7 +41,8 @@ class ProjectController extends Controller
             ]
         );
     }
-    public function indi()
+
+        public function indi()
     {
         $projs = Project::whereHas('ideas', function ($query) {
             $query->where('topic_id', 28)
@@ -83,6 +85,23 @@ class ProjectController extends Controller
         return response()->json(
             [
                 'data' => $proj->toArray(),
+            ]
+        );
+    }
+    public function projEdit($id)
+    {
+        $proj = Project::with(['ideas'=> function ($query) {
+            $query->select(['ideas.id','ideas.topic_id'])
+                ->with(['topic' => function ($query) {
+                    $query->select(['topics.id','topics.topic_id'])
+                       ; }])
+            ;}])->select(['id'])->find($id);
+        $rep = new IdeaRepository();
+
+        return response()->json(
+            [
+                'data' => $proj->toArray(),
+                'dics' => $rep->getDropdown('employment_type')
             ]
         );
     }

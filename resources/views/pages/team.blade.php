@@ -20,13 +20,13 @@
 @endsection
 
 @section('content')
-    <div class="w3-main w3-padding-large" style="margin-left:40%">
+    <div class="w3-main w3-padding-large  modern-bg">
 
         <!-- Menu icon to open sidebar -->
         <span class="w3-button w3-top w3-white w3-xxlarge w3-text-grey w3-hover-text-black" style="width:auto;right:0;" onclick="openNav()"><i class="fa fa-bars"></i></span>
 
         <!-- Header -->
-        <header class="w3-container w3-center" style="padding:128px 16px" id="home">
+        <header class="w3-container w3-center  w3-animate-zoom" style="padding:128px 16px" id="home">
             <h1 class="w3-jumbo"><b>Portfolio of team work</b></h1>
             <p>Timeline of the projects I took part in</p>
             @yield('cv-button')

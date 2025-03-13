@@ -14,6 +14,7 @@
         @if($ph['type'] == 'pop')
             <?php $colors[$ph['data']] = $ph['text']['color']; ?>
             @include('pages.popup',['format' => $ph['text']['dialog'], 'color' => $ph['text']['color'], 'name' =>$ph['data']])
+        @elseif($ph['type'] == 'ul')
         @endif
     @endforeach
 @endforeach

@@ -12,7 +12,7 @@ class TopicRepository extends  MultiLevelDictRepository
     const DICT_LABEL_FORM = "Topic";
     const DICT_SUBDICT = "idea";
     const DICT_PARENT_ID = "topic_id";
-
+    const TOPIC_INDEX = "index";
     protected $model;
     protected $path;
     public function getSubForm($id) : array
@@ -160,6 +160,7 @@ class TopicRepository extends  MultiLevelDictRepository
             ],
         ];
     }
+
     public function test() {
         $this->path = [];
         $this->makePath(Topic::find(5));

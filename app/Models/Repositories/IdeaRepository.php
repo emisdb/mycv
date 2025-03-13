@@ -6,7 +6,7 @@ use App\Models\Idea;
 use App\Models\Topic;
 use Illuminate\Http\Request;
 
-class IdeaRepository extends  MultiLevelDictRepository
+class IdeaRepository extends MultiLevelDictRepository
 {
     const DICT_ID = "idea";
     const DICT_PARENT = "topic";
@@ -16,13 +16,15 @@ class IdeaRepository extends  MultiLevelDictRepository
     const DICT_LIST_PICT = "dear";
     const DICT_FORM_PICT = "legs";
 
+
     protected $model;
     protected $path;
 
-    public function getSubForm($id) : array
+    public function getSubForm($id): array
     {
-        return ['dataset' => ['topic_id'=>$id], 'params' => $this->columns(), 'title' => $this->getId()];
+        return ['dataset' => ['topic_id' => $id], 'params' => $this->columns(), 'title' => $this->getId()];
     }
+
     public function getSubList($id): array
     {
         return ['dataset' => $this->getSubData($id), 'params' => $this->columns(), 'title' => $this->getId()];
@@ -31,48 +33,82 @@ class IdeaRepository extends  MultiLevelDictRepository
     protected function makePath(Topic $topic)
     {
         $topic_p = $topic->topic;
-        if($topic_p){
-            array_unshift($this->path, $this->makeLink($topic_p->id,$topic_p->name,self::DICT_PARENT));
+        if ($topic_p) {
+            array_unshift($this->path, $this->makeLink($topic_p->id, $topic_p->name, self::DICT_PARENT));
             $this->makePath($topic_p);
         }
     }
-    public function getPath($id) : array
+
+    public function getPath($id): array
     {
         $this->path = [];
-        if($topic=Topic::find($id)) {
+        if ($topic = Topic::find($id)) {
             $this->path = [$topic->name];
             $this->makePath($topic);
         }
         return $this->path;
     }
 
-    public function getSubData($id) : array
+    public function getSubData($id): array
     {
         $this->model = Idea::query();
 
         return $this->model->where('topic_id', '=', $id)->withCount(['ideas'])->get()->toArray();
     }
-    public function getData($id = 0) : array
+
+    public function getData($id = 0): array
     {
         $this->model = new Idea();
-        if($id) {
+        if ($id) {
             return $this->model->find($id)->toArray();
         } else {
             return $this->model->all()->toArray();
         }
     }
-    public function setData(Request $request, $id = 0) : bool
+
+    public function getDropdown($sysname)
+    {
+        $ids = $this->getIndexId($sysname);
+        if ($ids) {
+            if(count($ids)==1){
+                $ideas = Idea::where('topic_id', $ids[0])->select(['id','name','description'])->get();
+                return $ideas->toArray();
+            }
+        }
+    }
+
+    protected function getIndexId($sysname)
+    {
+        $values = config('sys.proj.' . $sysname);
+
+        if (empty($values)) {
+            throw new \Exception('Configuration sys.index is empty');
+        }
+
+        $query = Topic::select('id')->where('name', array_shift($values));
+
+// Dynamically nest where conditions for each level
+        foreach ($values as $value) {
+            $query = Topic::select(['id','description'])
+                ->where('name', $value)
+                ->where('topic_id', function ($subQuery) use ($query) {
+                    $subQuery->select('id')->fromSub($query, 'sub');                });
+        }
+        return $query->pluck('id')->toArray();
+    }
+
+    public function setData(Request $request, $id = 0): bool
     {
         $request->validate($this->getValidation());
         $this->model = new Idea();
-        if($id) {
+        if ($id) {
             return $this->model->find($id)->update($request->all());
-       } else {
+        } else {
             return is_object($this->model->create($request->all()));
         }
     }
 
-    public function delete($id) : array
+    public function delete($id): array
     {
         $this->model = new Idea();
         $rec = $this->model->find($id);
@@ -81,7 +117,7 @@ class IdeaRepository extends  MultiLevelDictRepository
         return $result;
     }
 
-    public function columns() : array
+    public function columns(): array
     {
         /*
          * parameter length must sum up 9 in the end
@@ -90,17 +126,17 @@ class IdeaRepository extends  MultiLevelDictRepository
             [
                 'name' => 'name',
                 'label' => 'Name',
-                'validation' =>  ['required','string','max:64'],
+                'validation' => ['required', 'string', 'max:64'],
                 'length' => 3,
-                   'type' => 'text',
-          ],
+                'type' => 'text',
+            ],
             [
                 'name' => 'description',
                 'label' => 'Description',
-                'validation' => ['required','string','max:256'],
+                'validation' => ['required', 'string', 'max:256'],
                 'length' => 6,
-                   'type' => 'text',
-          ],
+                'type' => 'text',
+            ],
             [
                 'name' => 'topic_id',
                 'parent' => true,

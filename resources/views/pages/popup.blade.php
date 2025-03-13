@@ -9,7 +9,7 @@
                             <h5 class="w3-center">{{$li}}</h5>
                             <ol class="w3-ul w3-card-4 w3-hoverable">
                         @else
-                                    <li class="w3-hover-text-black">{{$li}}</li>
+                                    <li class="w3-hover-text-black">{!! $li !!}</li>
                         @endif
                     @endforeach
                             </ol>
@@ -24,7 +24,7 @@
                         <h5 class="w3-center">{{$li}}</h5>
                         <ol class="w3-ul w3-card-4 w3-hoverable">
                     @else
-                                <li class="w3-hover-text-black">{{$li}}</li>
+                                <li class="w3-hover-text-black">{!! $li !!}</li>
                     @endif
                 @endforeach
                 </ol>
