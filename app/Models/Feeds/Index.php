@@ -150,7 +150,7 @@ class Index implements FeedInterface
             [
                 'name' => 'exp.frontend',
                 'color' => 'yellow',
-                'text' => 'HTML, CSS, JS with jQuery <@25 years>',
+                'text' => 'HTML, CSS <@25 years>',
                 'dialog' => [
                     'title' => 'My frontend practices',
                     'content' => [
@@ -158,7 +158,32 @@ class Index implements FeedInterface
                             'My frontend practices were set up when separation between fronend and backend has not come along. In my individual projects I had to fulfil all jobs.',
                             'Many technologies, extensive use of jQuery UI and components were employed.',
                             'In my own projects front-end side is built on the responsive web design principles',
+                            'Cross-browser compatibility handling and progressive enhancement strategies',
                             'I extensively use Bootstrap framework',
+                        ],
+                    ]
+                ],
+            ],
+            [
+                'name' => 'exp.js',
+                'color' => 'silver',
+                'text' => 'JS, TS with jQuery <@15 years>',
+                'dialog' => [
+                    'title' => 'Javascript and Typescript',
+                    'content' => [
+                        ['Javascript',
+                            'Extensive experience with vanilla JavaScript, DOM manipulation, and event-driven programming',
+                            'Many technologies, extensive use of jQuery UI and components were employed.',
+                            'Strong skills in optimizing performance and rendering, including lazy loading, code splitting, and caching strategies.',
+                            'Experience with integrating third-party APIs such as Google Maps API, Facebook SDK, and payment gateways.',
+                            'Managing asynchronous operations with Promises, async/await, and event-driven architectures.',
+                        ],
+                        ['Typescript',
+                            'Developing scalable and maintainable applications using TypeScript, ensuring type safety and enhanced code quality.',
+                            'Using TypeScript with Vue.js, Node.js, and frontend frameworks for structured development.',
+                            'Extensive experience with Vite for ultra-fast frontend builds, live reloading, and modern JavaScript/TypeScript support.',
+                            'Using npm/yarn for dependency management and script automation.',
+                            'Implementing tree shaking, code splitting, and ES modules for optimized frontend performance.',
                         ],
                     ]
                 ],
@@ -628,7 +653,7 @@ class Index implements FeedInterface
             'I am a web software engineer based in Batumi, Republic of Georgia. I am currently open to job opportunities and exciting new projects.',
             'With <exp.general> in software engineering, I have spent the last <@16 years> specializing in <exp.web>.',
             'My tech stack focuses on backend development with <exp.php>, utilizing <exp.yii>, as well as <exp.laravel>. I also have hands-on experience with <exp.symfony>.',
-            'My frontend development expertise is built on a solid foundation of <exp.frontend>, and the <exp.bootstrap>. Recently, I have been extensively using <exp.vue> .',
+            'My frontend development expertise is built on a solid foundation of <exp.frontend> with extensive use of <exp.js> and the <exp.bootstrap>.  Recently, I have been extensively using <exp.vue> .',
             'Throughout my extensive experience in desktop and web application development, I have honed my skills in <exp.database> on a large scale. I have also consistently demonstrated proficiency in working with a diverse range of <exp.instruments>.',
             'The project development basically is conducted in local environment provided by the <exp.docker> with the extensive use of Git flow and CI/CD tools.',
             'My development practice is grounded in <exp.solid> principles and follows widely accepted design patterns that are central to contemporary programming. The use of the <exp.mvc> in frameworks enables the creation of clear, maintainable code while preserving the flexibility of the technology.',
