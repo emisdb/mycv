@@ -10,7 +10,7 @@ use App\Http\Controllers\api\ProjectController as ApiProjectController;
 use App\Http\Controllers\api\V2\ProjectController as ApiV2ProjectController;
 use App\Http\Controllers\api\TopicController as ApiTopicController;
 use App\Http\Controllers\api\IdeaController as ApiIdeaController;
-
+//use App\Http\Livewire\Counter;
 //use App\Http\Controllers\DictController;
 use App\Http\Controllers\LanguageController;
 
@@ -68,14 +68,14 @@ Route::get('/timeline', function () {
 Route::get('/team', function () {
     return view('team');
 })->name('team');
-
-
 Route::get('/greet', function () {
     return view('greet');
 });
 Route::get('/home', function () {
     return view('index');
 });
+// Route::get('/counter', Counter::class);
+
 Route::get('/skills/{type}', [MainController::class,'skills'])->name('skill');
 Route::get('/edit/{tab}/{id}', [MainController::class,'edit'])->name('dict.edit');
 Route::get('/delete/{tab}/{id}', [MainController::class,'form'])->name('dict.delete');
