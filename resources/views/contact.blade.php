@@ -24,6 +24,7 @@
             @yield('cv-button')
         </header>
 
+        <div class="w3-responsive">
         <table  class="w3-card-4 w3-margin-bottom w3-animate-top w3-black w3-padding-16" id="contact-table">
             <tr><th>currently resided</th><td>Batumi</td><td>Georgia</td></tr>
             <tr><th>nationality</th><td>Saint Petersburg</td><td>Russia</td></tr>
@@ -34,6 +35,7 @@
             <tr><th>E - mail:</th><td><a href="mailto:dentsi@yahoo.com" >dentsi@yahoo.com</a></td><td></td></tr>
             <tr><th>Web-site</th><td><a href="http://www.emisdb.ru" target="_blank">www.emisdb.ru</a></td><td>corp.</td></tr>
         </table>
+        </div>
         <hr class="w3-opacity">
     </div>
 

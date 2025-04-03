@@ -381,9 +381,36 @@ class Index implements FeedInterface
                 ],
             ],
             [
-                'name' => 'projects.individual',
+                'name' => 'projects.individual1',
                 'color' => 'aqua',
-                'text' => 'own architecture, configuration and solutions',
+                'text' => 'own architecture',
+                'dialog' => [
+                    'title' => 'In my individual work',
+                    'content' => [
+                        ['Implemented Corporate Information Systems',
+                            'Built applications from the ground up based on customer-specific requirements.',
+                            'Designed scalable and flexible architectures to accommodate future growth',
+                            'Designed and integrated solutions tailored to enterprise-level needs',
+                            'Applied industry best practices to ensure reliability, security, and maintainability',
+                            'Provided System Integration and Data Migration',
+                            'Optimized System performance',
+                        ],
+                        ['Maintaining and Enhancing Legacy Systems',
+                            'Continued development and support for long-running projects with outdated codebases',
+                            'Refactored and optimized existing systems while preserving core functionality',
+                            'Migrated outdated platforms to more efficient and scalable architectures.',
+                            'Connected new systems with existing corporate infrastructure and third-party services',
+                            'Successfully connected various external services, APIs, and SaaS solutions',
+                            'Ensured seamless communication between internal systems and third-party platforms',
+                        ],
+                    ]
+
+                ],
+            ],
+            [
+                'name' => 'projects.individual2',
+                'color' => 'aqua',
+                'text' => 'configuration and solutions',
                 'dialog' => [
                     'title' => 'In my individual work',
                     'content' => [
@@ -679,7 +706,7 @@ class Index implements FeedInterface
             'Throughout my extensive experience in desktop and web application development, I have honed my skills in <exp.database> on a large scale. I have also consistently demonstrated proficiency in working with a diverse range of <exp.instruments>.',
             'The project development basically is conducted in local environment provided by the <exp.docker> with the extensive use of Git flow and CI/CD tools.',
             'My development practice is grounded in <exp.solid> principles and follows widely accepted design patterns that are central to contemporary programming. The use of the <exp.mvc> in frameworks enables the creation of clear, maintainable code while preserving the flexibility of the technology.',
-            'Numerous projects were implemented both through <a.projectsp the individual efforts> and as <a.projectst a part of the team>. In the case of individual projects, I developed my <projects.individual> and was responsible for performing <projects.roles> typically handled by a team.',
+            'Numerous projects were implemented both through <a.projectsp the individual efforts> and as <a.projectst a part of the team>. In the case of individual projects, I developed my <projects.individual1>, <projects.individual2> and was responsible for performing <projects.roles> typically handled by a team.',
             'Throughout my long career as a software engineer, I have been involved in web projects across <economy.fields>. I have handled a wide variety of <tasks.web> and implemented key features in many of the projects I’ve worked on.',
             'I have extensive experience in various aspects of software development, including working with both modern and legacy systems.
                 Over the years, I have tackled a wide range of complex technological challenges, including:
