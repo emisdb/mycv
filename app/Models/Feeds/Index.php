@@ -189,17 +189,39 @@ class Index implements FeedInterface
                 ],
             ],
             [
-                'name' => 'exp.bootstrap',
-                'color' => 'light-green',
-                'text' => 'Bootstrap <@8 years> and Tailwind <@2 years>',
+                'name' => 'exp.tailwind',
+                'color' => 'light-blue',
+                'text' => 'Tailwind <@3 years>',
                 'dialog' => [
-                    'title' => 'Bootstrap framework',
+                    'title' => 'Tailwind CSS Expertise',
                     'content' => [
                         ['Front end development',
-                            'In my own projects front-end side is built on the responsive web design principles.',
-                            'I extensively use Bootstrap framework',
+                            'Recently, I have gained hands-on experience with Tailwind CSS, a utility-first framework that allows for rapid UI development with minimal CSS files.',
+                            'Using Tailwind’s utility classes to streamline styling and reduce the need for additional CSS.',
+                            'Applying dark mode support, theming, and responsive layouts efficiently.',
+                            'Implementing Tailwind with Vue.js for modern frontend applications.'
+                        ],
+                    ]
+                ],
+            ],
+            [
+                'name' => 'exp.bootstrap',
+                'color' => 'light-green',
+                'text' => 'Bootstrap <@8 years>',
+                'dialog' => [
+                    'title' => 'Bootstrap Expertise',
+                    'content' => [
+                        ['In my frontend development',
+                            'I have extensive experience using the Bootstrap framework for responsive and mobile-first web development. ',
+                            'It has been an integral part of my frontend projects, providing a consistent, structured approach to UI design built on the responsive web design principles.',
+                            'Proficient in Bootstrap’s grid system, utilities, and component-based development.',
+                            'Utilizing AdminLTE, a powerful Bootstrap-based admin panel, for dashboards with widgets, charts, tables, and user management interfaces.'
+                        ],
+                        ['Js integrations',
+                            'Experience with Bootstrap JavaScript components, such as modals, carousels, tooltips, and accordions.',
+                            'Integrating Bootstrap with jQuery and Vue.js for dynamic UI elements.',
                             'Recently had some experience with  Tailwind CSS',
-                            'I like to employ AdminLTE - popular Bootstrap admin themes, with widgets, charts, and user management UI.'
+                            'Optimizing page performance by using only required Bootstrap modules instead of the full library..'
                         ],
                     ]
                 ],
@@ -207,7 +229,7 @@ class Index implements FeedInterface
             [
                 'name' => 'exp.vue',
                 'color' => 'green',
-                'text' => 'Vue.js <@2 years>',
+                'text' => 'Vue.js <@3 years>',
                 'dialog' => [
                     'title' => 'Vue.js',
                     'content' => [
@@ -653,7 +675,7 @@ class Index implements FeedInterface
             'I am a web software engineer based in Batumi, Republic of Georgia. I am currently open to job opportunities and exciting new projects.',
             'With <exp.general> in software engineering, I have spent the last <@16 years> specializing in <exp.web>.',
             'My tech stack focuses on backend development with <exp.php>, utilizing <exp.yii>, as well as <exp.laravel>. I also have hands-on experience with <exp.symfony>.',
-            'My frontend development expertise is built on a solid foundation of <exp.frontend> with extensive use of <exp.js> and the <exp.bootstrap>.  Recently, I have been extensively using <exp.vue> .',
+            'My frontend development expertise is built on a solid foundation of <exp.frontend> with extensive use of <exp.js> and the <exp.bootstrap> and <exp.tailwind>.  Recently, I have been extensively using <exp.vue> .',
             'Throughout my extensive experience in desktop and web application development, I have honed my skills in <exp.database> on a large scale. I have also consistently demonstrated proficiency in working with a diverse range of <exp.instruments>.',
             'The project development basically is conducted in local environment provided by the <exp.docker> with the extensive use of Git flow and CI/CD tools.',
             'My development practice is grounded in <exp.solid> principles and follows widely accepted design patterns that are central to contemporary programming. The use of the <exp.mvc> in frameworks enables the creation of clear, maintainable code while preserving the flexibility of the technology.',
