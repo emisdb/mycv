@@ -91,10 +91,27 @@ class ProjectController extends Controller
     public function projEdit($id)
     {
         $proj = Project::with(['ideas'=> function ($query) {
-            $query->select(['ideas.id','ideas.topic_id'])
+            $query->select(['ideas.id','name','ideas.topic_id'])
                 ->with(['topic' => function ($query) {
                     $query->select(['topics.id','topics.topic_id'])
-                       ; }])
+                    ; }])
+            ;}])->select(['id'])->find($id);
+        $rep = new IdeaRepository();
+
+        return response()->json(
+            [
+                'data' => $proj->toArray(),
+                'dics' => $rep->getDropdown('employment_type')
+            ]
+        );
+    }
+    public function projProject($id)
+    {
+        $proj = Project::with(['ideas'=> function ($query) {
+            $query->select(['ideas.id','name','ideas.topic_id'])
+                ->with(['topic' => function ($query) {
+                    $query->select(['topics.id','topics.topic_id'])
+                    ; }])
             ;}])->select(['id'])->find($id);
         $rep = new IdeaRepository();
 
