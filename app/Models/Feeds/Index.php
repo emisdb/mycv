@@ -191,7 +191,7 @@ class Index implements FeedInterface
             [
                 'name' => 'exp.bootstrap',
                 'color' => 'light-green',
-                'text' => 'Bootstrap <@8 years> and Tailwind <@2 years>',
+                'text' => 'Bootstrap <@8 years> and Tailwind <@3 years>',
                 'dialog' => [
                     'title' => 'Bootstrap framework',
                     'content' => [
@@ -207,7 +207,7 @@ class Index implements FeedInterface
             [
                 'name' => 'exp.vue',
                 'color' => 'green',
-                'text' => 'Vue.js <@2 years>',
+                'text' => 'Vue.js <@3 years>',
                 'dialog' => [
                     'title' => 'Vue.js',
                     'content' => [
