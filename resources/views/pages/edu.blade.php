@@ -50,7 +50,7 @@
                  ?>
                 <h3>{{$item['c_desc']}}</h3>
             @endif
-            <button onclick="accFunction('t{{$item['id']}}')" class="w3-button w3-large w3-block w3-dark-grey w3-left-align w3-bottombar wow wobble animated"
+            <div onclick="accFunction('t{{$item['id']}}')" class="w3-button w3-large w3-block w3-dark-grey w3-left-align w3-bottombar wow wobble animated"
                     style="visibility: visible;">
                 <div class="flex-container">
                     <div class="flex-left">
@@ -74,7 +74,7 @@
                         @endisset
                     </div>
                 </div>
-            </button>
+            </div>
             <div id="t{{$item['id']}}" class="w3-hide <?php echo ($counter++)%2 ? "w3-animate-left" : "w3-animate-right"; ?> w3-white accordion">
                     {!! $item['description'] !!}
              </div>

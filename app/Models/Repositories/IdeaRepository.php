@@ -69,9 +69,11 @@ class IdeaRepository extends MultiLevelDictRepository
     public function getDropdown($sysname)
     {
         $ids = $this->getIndexId($sysname);
+ //       dd($ids);
         if ($ids) {
             if(count($ids)==1){
-                $ideas = Idea::where('topic_id', $ids[0])->select(['id','name','description'])->get();
+ //               $ideas = Idea::where('topic_id', $ids[0])->select(['id','name','description'])->get();
+                $ideas = Idea::where('topic_id', $ids[0])->pluck('description','id');
                 return $ideas->toArray();
             }
         }
@@ -81,20 +83,21 @@ class IdeaRepository extends MultiLevelDictRepository
     {
         $values = config('sys.proj.' . $sysname);
 
+
         if (empty($values)) {
             throw new \Exception('Configuration sys.index is empty');
         }
 
-        $query = Topic::select('id')->where('name', array_shift($values));
+        $query = Topic::select(['id'])->where('name', array_shift($values));
 
-// Dynamically nest where conditions for each level
         foreach ($values as $value) {
-            $query = Topic::select(['id','description'])
+            $query = Topic::select(['id', 'description'])
                 ->where('name', $value)
-                ->where('topic_id', function ($subQuery) use ($query) {
-                    $subQuery->select('id')->fromSub($query, 'sub');                });
+                ->whereIn('topic_id', function ($subQuery) use ($query) {
+                    $subQuery->select('id')->fromSub($query, 'sub');
+                });
         }
-        return $query->pluck('id')->toArray();
+        return $query->pluck('description')->toArray();
     }
 
     public function setData(Request $request, $id = 0): bool

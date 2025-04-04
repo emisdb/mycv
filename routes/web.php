@@ -124,9 +124,7 @@ Route::group(['prefix' => '/api', 'as' => 'api.', 'namespace' => 'api'],  static
 
 });
 Route::group(['prefix' => '/api/v2', 'as' => 'api.v2'],  static function (Router $router) {
-
     Route::get('/projs/{type?}', [ApiV2ProjectController::class,'index'])->name('api2-projs');
-
 });
 
 require __DIR__.'/auth.php';

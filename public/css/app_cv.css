@@ -7,6 +7,31 @@
     #contact-table td {
         padding: 2px; /* Reduce padding for better fit */
     }
+ }
+@media (max-width: 768px) {
+    .flex-left {
+        flex-basis: 100%; /* Forces full width on small screens */
+        text-align: left; /* Aligns text properly */
+    }
+}
+@media (max-width: 490px) {
+    span.animated {
+        font-size: 12px; /* Reduce font size for mobile only */
+    }
+
+}
+.flex-container {
+    display: flex;
+    flex-wrap: wrap; /* Allows items to wrap on small screens */
+    gap: 10px; /* Optional: Adds spacing between items */
+}
+
+.flex-left {
+    flex: 1; /* Allows the element to take up available space */
+    min-width: 0; /* Prevents flex children from overflowing */
+    word-wrap: break-word; /* Ensures long words break */
+    white-space: normal; /* Allows text to wrap */
+    overflow-wrap: break-word; /* Ensures wrapping on all browsers */
 }
 
 div.w3-main {
