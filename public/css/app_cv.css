@@ -14,9 +14,12 @@
         text-align: left; /* Aligns text properly */
     }
 }
-@media (max-width: 490px) {
+@media (max-width: 520px) {
     span.animated {
         font-size: 12px; /* Reduce font size for mobile only */
+    }
+   .flex-container,  .flex-container h2, .flex-container h4 {
+        font-size: 80%; /* Reduce font size for mobile only */
     }
 
 }
