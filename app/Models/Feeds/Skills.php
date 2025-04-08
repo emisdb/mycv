@@ -21,7 +21,10 @@ class Skills implements FeedInterface
         $topics = TopicRepository::getSubIds($id);
         $ideas = Idea::query()
             ->with(['topic' => function ($query) {
-                $query->select('id', 'name', 'description')->orderBy('id', 'asc');
+                $query->select('id', 'name', 'description')
+                    ->with(['ideas' => function ($quer) {
+                        $quer->where('name', 'sort')->select('description', 'topic_id');
+                    }])->orderBy('id', 'asc');
             }])
             ->with(['text' => function ($query) {
                 $query->where('language_id', '=', 1);
@@ -30,6 +33,7 @@ class Skills implements FeedInterface
                 $query->with(['topic']);
             }])
             ->whereIn('topic_id', $topics)
+            ->where('name', '<>', 'sort')
 //            ->select(['id','name'])
             ->get()->sortBy([['topic.id', 'asc'], ['id', 'asc']])->toArray();
 
@@ -49,6 +53,11 @@ class Skills implements FeedInterface
             $result['c_id'] = $idea['topic']['id'];
             $result['c_name'] = $idea['topic']['name'];
             $result['c_desc'] = $idea['topic']['description'];
+            if (isset($idea['topic']['ideas'][0])) {
+                $result['sort'] = $idea['topic']['ideas'][0]['description'];
+            } else {
+                $result['sort'] = null;
+            }
             if (isset($idea['ideas'])) {
                 foreach ($idea['ideas'] as $idea_) {
                     if ($idea_['topic']['name'] == self::PICTURE) {
@@ -64,12 +73,13 @@ class Skills implements FeedInterface
             })->min('start');
             if (($max > 0) && ($min > 0)) {
                 $result['start'] = DateFormat::getDate($min);
-                $result['length'] = DateFormat::getLength($max-$min);
+                $result['length'] = DateFormat::getLength($max - $min);
             } else {
 
             }
             $return[] = $result;
         }
+ //       dd($return);
         return $return;
     }
 

@@ -30,7 +30,7 @@ class MainController extends Controller
     {
         $skills= new Skills();
         $res = $skills->getData();
-        dd($res);
+//        dd($res);
         return view('pages.skills', ['model' => $res]);
     }
     public function edu()
