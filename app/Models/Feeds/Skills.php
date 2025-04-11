@@ -22,9 +22,13 @@ class Skills implements FeedInterface
         $ideas = Idea::query()
             ->with(['topic' => function ($query) {
                 $query->select('id', 'name', 'description')
-                    ->with(['ideas' => function ($quer) {
-                        $quer->where('name', 'sort')->select('description', 'topic_id');
-                    }])->orderBy('id', 'asc');
+                    ->addSelect([
+                        'sort' => Idea::select('description')
+                            ->whereColumn('topic_id', 'topics.id')
+                            ->where('name', 'sort')
+                            ->limit(1)
+                    ])
+                    ->orderBy('id', 'asc');
             }])
             ->with(['text' => function ($query) {
                 $query->where('language_id', '=', 1);
@@ -36,6 +40,7 @@ class Skills implements FeedInterface
             ->where('name', '<>', 'sort')
 //            ->select(['id','name'])
             ->get()->sortBy([['topic.id', 'asc'], ['id', 'asc']])->toArray();
+//        dd($ideas);
 
         return $this->formatData($ideas);
 
@@ -53,12 +58,8 @@ class Skills implements FeedInterface
             $result['c_id'] = $idea['topic']['id'];
             $result['c_name'] = $idea['topic']['name'];
             $result['c_desc'] = $idea['topic']['description'];
-            if (isset($idea['topic']['ideas'][0])) {
-                $result['sort'] = $idea['topic']['ideas'][0]['description'];
-            } else {
-                $result['sort'] = null;
-            }
-            if (isset($idea['ideas'])) {
+            $result['sort'] = $idea['topic']['sort'];
+             if (isset($idea['ideas'])) {
                 foreach ($idea['ideas'] as $idea_) {
                     if ($idea_['topic']['name'] == self::PICTURE) {
                         $result['pic'] = $idea_['description'];
@@ -73,14 +74,19 @@ class Skills implements FeedInterface
             })->min('start');
             if (($max > 0) && ($min > 0)) {
                 $result['start'] = DateFormat::getDate($min);
+                $result['len'] = $max - $min;
                 $result['length'] = DateFormat::getLength($max - $min);
             } else {
 
             }
             $return[] = $result;
         }
- //       dd($return);
-        return $return;
+        $sorted = collect($return)->sortBy([
+            ['sort', 'asc'],
+            ['len', 'desc'],
+        ])->values()->toArray();
+//        dd($sorted);
+        return $sorted;
     }
 
     public function getText(): array

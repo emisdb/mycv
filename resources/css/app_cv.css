@@ -111,6 +111,11 @@ body, h1, h2, h3, h4, h5, h6 {
     background-position-x: -80px;
 }
 
+#contact-table {
+    margin: auto;
+}
+
+
 #contact-table td
 {
     padding: 5px;
