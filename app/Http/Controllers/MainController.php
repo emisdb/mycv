@@ -22,8 +22,7 @@ class MainController extends Controller
     {
         $parser = new DataParser($feed);
         $result = $parser->handle();
-//        dd($result);
-        return view('pages.index', ['model' => $result[0],'dialogs' => $result[1]]);
+        return view('pages.indexx', ['model' => $result[0],'dialogs' => $result[1]]);
    }
 
     public function skills()

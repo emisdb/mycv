@@ -1,7 +1,8 @@
 <div class="time-container time-{{$side}}" onclick="openDialog('{{$proj['id']}}','{{$side}}')"
      style="cursor:pointer;">
     <div class="time-content w3-{{$techs[$proj['tech']]['color'][0]}} w3-hover-{{$techs[$proj['tech']]['color'][1]}}
-        w3-border w3-border-{{$techs[$proj['tech']]['color'][1]}} w3-round-small w3-padding-small wow wobble animated">
+        w3-border w3-border-{{$techs[$proj['tech']]['color'][1]}} w3-round-small w3-padding-small animated"
+         data-aos="fade-up" data-aos-delay="200">
         <h5> @include('pages.proj_time') </h5>
         <ul class="w3-ul  w3-card-4 w3-margin-bottom">
          <li>   @include('pages.proj_detail') </li>

@@ -8,6 +8,8 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src='https://kit.fontawesome.com/1e9e0910f4.js' crossorigin='anonymous'></script>
+    <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
     <link rel="stylesheet" href="{{ asset('css/w3.css') }}">
     <link rel="stylesheet" href="{{ asset('css/app_cv.css') }}">
     <link rel="stylesheet" href="{{ asset('css/animate.css') }}">
@@ -71,6 +73,7 @@
             x.className = x.className.replace(" w3-show", "");
         }
     }
+    AOS.init();
 </script>
 </body>
 </html>

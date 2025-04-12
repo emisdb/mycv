@@ -1,4 +1,4 @@
-@extends('layouts.main')
+@extends('layouts.main-x')
 @include('inc.cv-button')
 @include('inc.menu-button')
 {{--@include('inc.modals_index')--}}
@@ -27,13 +27,13 @@
         <!-- Portfolio Section -->
         <div class="w3-padding-32 w3-content" id="portfolio">
             <h2 class="w3-text-grey">About me</h2>
-            @foreach($model as $rec)
-                <div>
-                    @foreach($rec as $ph)
-                        @include('pages.paragraph',['ph'=>$ph] )
-                    @endforeach
-                </div>
-            @endforeach
+                @foreach($model as $rec)
+                    <div data-aos="fade-up" data-aos-delay="200">
+                        @foreach($rec as $ph)
+                            @include('pages.paragraph',['ph'=>$ph] )
+                        @endforeach
+                    </div>
+                @endforeach
             @include('pages.popups2' )
             <hr class="w3-opacity">
         </div>

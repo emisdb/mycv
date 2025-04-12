@@ -1,5 +1,6 @@
 @extends('layouts.main')
 @include('inc.cv-button')
+@include('inc.menu-button')
 @section('title-text')
     My CV
 @endsection
@@ -12,11 +13,7 @@
 
 @section('content')
     <div class="w3-main w3-padding-large  skill-bg" style="min-height: 100vh; ">
-
-        <!-- Menu icon to open sidebar -->
-        <span class="w3-button w3-top w3-white w3-xxlarge w3-text-grey w3-hover-text-black" style="width:auto;right:0;" onclick="openNav()"><i class="fa fa-bars"></i></span>
-
-        <!-- Header -->
+        @yield('menu-button')
         <!-- Header -->
         <header class="w3-container w3-center  w3-animate-zoom" style="padding:128px 16px" id="home">
             <h1 class="w3-jumbo"><b>Contact</b></h1>

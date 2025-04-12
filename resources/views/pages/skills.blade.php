@@ -1,5 +1,6 @@
-@extends('layouts.main')
+@extends('layouts.main-x')
 @include('inc.cv-button')
+@include('inc.menu-button')
 @section('title-text')
     My skills
 @endsection
@@ -12,12 +13,7 @@
 
 @section('content')
     <div class="w3-main w3-padding-large sunrise-bg">
-
-        <!-- Menu icon to open sidebar -->
-        <span class="w3-button w3-top w3-white w3-xxlarge w3-text-grey w3-hover-text-black"
-              style="width:auto;right:0;" onclick="openNav()">
-            <i class="fa fa-bars"></i></span>
-
+        @yield('menu-button')
         <!-- Header -->
         <header class="w3-container w3-center w3-animate-zoom w3-ho" style="padding:128px 16px" id="home">
             <h1 class="w3-jumbo"><b>Skills</b></h1>
@@ -27,6 +23,7 @@
         <?php
         $topic = 0;
         $counter = 0;
+        $open = 1;
         ?>
         <div class="w3-button w3-large w3-block w3-light-gray w3-left-align w3-bottombar w3-header" >
             <div class="flex-container">
@@ -47,10 +44,15 @@
                 <?php
                 $topic = $item['c_id'];
                  ?>
+                @if($open == 0)
+                    </div>
+                @endif
+                <?php $open = 0; ?>
+                <div data-aos="fade-up" data-aos-delay="200">
                 <h3>{{$item['c_desc']}}</h3>
             @endif
-            <button onclick="accFunction('t{{$item['id']}}')" class="w3-button w3-large w3-block w3-dark-grey w3-left-align w3-bottombar wow wobble animated"
-                    style="visibility: visible;">
+            <button onclick="accFunction('t{{$item['id']}}')" class="w3-button w3-large w3-block w3-dark-grey w3-left-align w3-bottombar animated"
+                     style="visibility: visible;">
                 <div class="flex-container">
                     <div class="flex-left">
                         @if(isset($item['pic']))
@@ -78,5 +80,6 @@
                     {!! $item['description'] !!}
              </div>
         @endforeach
+        </div>
      </div>
 @endsection
