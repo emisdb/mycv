@@ -122,19 +122,12 @@ class Projects implements FeedInterface
     }
     protected function getClients($details)
     {
-        $address = ['name', 'link', 'location'];
+        $address = ['name', 'link', 'location', 'industry'];
         $vals = [];
         $valsa = [];
         foreach($details as $detail){
             if (in_array($detail['name'], $address)) {
                 $vals[$detail['name']] = $detail['description'];
-                if(($detail['name']=='name')&&(isset($detail['ideas']))){
-                    foreach ($detail['ideas'] as $value){
-                        if($value['topic_id']==self::INDUSTRIES){
-                            $vals['industry'] = $value['description'];
-                        }
-                    }
-                }
             }
             else
                 $valsa[$detail['name']] = $detail['description'];
