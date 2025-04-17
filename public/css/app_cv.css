@@ -148,7 +148,8 @@ body, h1, h2, h3, h4, h5, h6 {
 }
 
 .front-bg {
-    background-image: linear-gradient(to bottom left, rgba(0, 0, 255, 0.5), rgba(255, 255, 255, 0.5));
+    background-image: linear-gradient(to bottom right,#fefefe, rgba(0, 0, 255, 0.5));
+    /*background-image: linear-gradient(to bottom left, rgba(0, 0, 255, 0.5), rgba(255, 255, 255, 0.5));*/
     margin-left: 40%;
 }
 
@@ -197,12 +198,14 @@ body, h1, h2, h3, h4, h5, h6 {
     line-height: 1.8;
     margin-bottom: 15px;
     background: rgba(255, 255, 255, 0.3); /* Light translucent background */
-    border-left: 4px solid #0c84ff; /* Subtle accent line */
     border-radius: 8px;
     padding: 10px 15px;
-    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
-    font-weight: 500;
-    color: #333; /* Better readability */
+        color: #333; /* Better readability */
+        box-shadow: 0 0 2px #aaa;
+        border-bottom: 3px solid #0c84ff;
+}
+#portfolio > div:hover {
+    box-shadow: 0 0 20px #cfcfcf;
 }
 
 #portfolio span.badge {
@@ -543,7 +546,8 @@ ul.breadcrumb li a:hover {
 }
 
 div.w3-modal-content h4 {
-    background-color: #5aa885;
+    background-color: #00bcd4;
+    box-shadow: 0 4px 6px 0 rgba(0,0,0,0.2),0 4px 20px 0 rgba(0,0,0,0.19);
     color: #edf2f7;
 }
 
