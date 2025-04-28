@@ -2,7 +2,7 @@
 
     <div class="w3-container">
         <div class="w3-dropdown-click cv-dropdown  w3-margin-top">
-            <button onclick="CvFunction()" class="w3-button w3-light-grey w3-padding-large w3-border">
+            <button onclick="CvFunction()" class="w3-button btn-3d w3-light-grey w3-padding-large w3-border">
                 <i class="fa fa-download"></i> Download Resume
             </button>
             <div id="cv_button" class="w3-dropdown-content w3-bar-block w3-border">

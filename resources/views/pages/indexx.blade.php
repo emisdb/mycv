@@ -34,9 +34,9 @@
                         @endforeach
                     </div>
                 @endforeach
-            @include('pages.popups2' )
             <hr class="w3-opacity">
         </div>
+        @include('pages.popups2' )
     </div>
 @endsection
 

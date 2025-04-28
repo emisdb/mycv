@@ -214,14 +214,6 @@ body, h1, h2, h3, h4, h5, h6 {
     background: rgba(30, 30, 50, 1); /* Slightly lighter on hover */
 }
 
-
-/* Optional: nicer typography */
-#portfolio > div h3 {
-    font-size: 1.4em;
-    margin-bottom: 10px;
-    color: #0c84ff;
-}
-
 #portfolio span.badge {
     margin-left: 3px;
 }
@@ -243,6 +235,32 @@ body, h1, h2, h3, h4, h5, h6 {
 
 #modal-content div li {
     list-style: none;
+}
+.btn-3d {
+    background: linear-gradient(to bottom, #f0f0f0, #d0d0d0);
+    border: 1px solid #999;
+    border-radius: 8px;
+    padding: 12px 24px;
+    font-size: 16px;
+    color: #333;
+    box-shadow: 0 5px 0 #999, 0 8px 15px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+/* Hover - Lift the button slightly */
+.btn-3d:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 7px 0 #999, 0 10px 20px rgba(0, 0, 0, 0.4);
+}
+
+/* Active - Pressed down effect */
+.btn-3d:active {
+    transform: translateY(4px);
+    box-shadow: 0 1px 0 #999, 0 4px 6px rgba(0, 0, 0, 0.2);
 }
 
 /* The actual timeline (the vertical ruler) */

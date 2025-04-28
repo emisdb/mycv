@@ -34,10 +34,10 @@
                     @endforeach
                 </div>
             @endforeach
-            @include('pages.popups2' )
             <hr class="w3-opacity">
         </div>
     </div>
+    @include('pages.popups2' )
 @endsection
 
 {{--@yield('modals_index')--}}
