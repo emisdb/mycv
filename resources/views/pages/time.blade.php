@@ -16,7 +16,7 @@
         @yield('menu-button')
         <!-- Header -->
         <header class="w3-container w3-center   w3-animate-zoom" style="padding:128px 16px" id="home">
-            <h1 class="w3-jumbo"><b>Portfolio of personal work</b></h1>
+            <h1 class="w3-jumbo"><b>My individual projects</b></h1>
             <p>Timeline of the acomplished projects</p>
             @yield('cv-button')
         </header>
