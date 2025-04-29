@@ -49,6 +49,9 @@ class Index implements FeedInterface
                 'dialog' => [
                     'title' => 'PHP experience',
                     'content' => [
+                        ['PHP technological environment',
+                            '<img src="images/assets/techs.png" style="width:100%">',
+                        ],
                         ['Story',
                             'There was some period of building static web resources on pure HTML with Javascript implementation.',
                             'I started in 2008 with the PHP 5.6 version for small dynamic web-site construction',

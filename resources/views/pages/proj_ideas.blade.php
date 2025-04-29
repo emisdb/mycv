@@ -23,7 +23,7 @@
         <h5>{{$detail['description']}}</h5>
         <ul class="w3-ul  w3-card-4 w3-margin-bottom">
             @foreach($detail[$name] as $det)
-                <li>{{$det}}</li>
+                <li>{{$det['description']}}</li>
             @endforeach
         </ul>
     @endif

@@ -114,8 +114,13 @@ class Projects implements FeedInterface
         foreach($details as $key => $detail){
             if(substr($detail['name'],-6)=='_ideas'){
                 $name = substr($detail['name'],0,strlen($detail['name'])-6);
-                $idea = Idea::query()->with('ideas')->find($detail['id'])->toArray();
-                $details[$key][$name] = array_column($idea['ideas'],'name');
+                $idea = Idea::with('ideas')->find($detail['id']);
+                $details[$key][$name] = $idea->ideas->map(function ($item) {
+                    return [
+                        'name' => $item->name,
+                        'description' => $item->description,
+                    ];
+                })->toArray();
             }
         }
         return $details;
