@@ -10,12 +10,12 @@ class Index implements FeedInterface
             [
                 'name' => 'exp.general',
                 'color' => 'deep-orange',
-                'text' => '<@26 years> of experience',
+                'text' => '<@27 years> of experience',
                 'dialog' => ['title' => 'Software engineering',
                     'content' => [
                         ['My experience',
                             'Since 1995 when I started my computer science study at the University of Alabama in USA I am entirely in the programming in different fields of computerized system development on different platforms.',
-                            '26 years, 30 project, including 18 individual and 12 big corporate team projects',
+                            '27 years, 30 project, including 18 individual and 12 big corporate team projects',
                         ],
                         ['Fields of expertise', 'web application development', 'database design and maintenance', 'desktop applications for accounting, warehouse and business control and operations', 'embedded systems', 'equipment control systems',]
                     ]
@@ -37,7 +37,7 @@ class Index implements FeedInterface
                         ['Achievements ',
                             '7 big team collaborations on scalable advanced corporate projects ',
                             '9 individual projects for the customers in different industries',
-                            '9 individual projects for the customers in different industries',
+                            '6 working multipurpose web-based systems of my own architecture and implementation',
                         ]
                     ]
                 ]
@@ -45,7 +45,7 @@ class Index implements FeedInterface
             [
                 'name' => 'exp.php',
                 'color' => 'indigo',
-                'text' => 'PHP <@16 years>',
+                'text' => 'PHP <@17 years>',
                 'dialog' => [
                     'title' => 'PHP experience',
                     'content' => [
@@ -103,12 +103,12 @@ class Index implements FeedInterface
             [
                 'name' => 'exp.laravel',
                 'color' => 'pink',
-                'text' => 'Laravel <@4 years>',
+                'text' => 'Laravel <@5 years>',
                 'dialog' => [
                     'title' => 'Advanced MVC framework use',
                     'content' => [
                         ['',
-                            'For last 4 years I extensively use Laravel as my preferable framework.',
+                            'For last 5 years I extensively use Laravel as my preferable framework.',
                             'I was impressed by the invincible advance of this system. How quickly it came by the leading role in the PHP technological industry.',
                             'I like to employ the most auspicious technologies that this framework provides. Often incorporate Laravel elements in the other technological environments. ',
                         ],
@@ -125,12 +125,12 @@ class Index implements FeedInterface
             [
                 'name' => 'exp.symfony',
                 'color' => 'dark-gray',
-                'text' => 'Symfony <@2 years>',
+                'text' => 'Symfony <@3 years>',
                 'dialog' => [
                     'title' => 'Advanced MVC framework',
                     'content' => [
                         ['Symfony Framework experience',
-                            'For the last 2 years, I have been working with Symfony on individual projects, leveraging its powerful features and best practices.',
+                            'For the last 3 years, I have been working with Symfony on individual projects, leveraging its powerful features and best practices.',
                             'MVC Architecture – Utilizing Symfony’s structured approach to keep code clean, scalable, and maintainable.',
                             'I like to employ Doctrine ORM! Its powerful entity management, seamless migrations, and flexible repositories make database interactions both efficient and enjoyable.',
                             'Symfony Console – Automating tasks, running commands, and handling cron jobs',
@@ -150,7 +150,7 @@ class Index implements FeedInterface
             [
                 'name' => 'exp.frontend',
                 'color' => 'yellow',
-                'text' => 'HTML, CSS <@25 years>',
+                'text' => 'HTML, CSS <@27 years>',
                 'dialog' => [
                     'title' => 'My frontend practices',
                     'content' => [
@@ -167,7 +167,7 @@ class Index implements FeedInterface
             [
                 'name' => 'exp.js',
                 'color' => 'silver',
-                'text' => 'JS, TS with jQuery <@15 years>',
+                'text' => 'JS, TS with jQuery <@16 years>',
                 'dialog' => [
                     'title' => 'Javascript and Typescript',
                     'content' => [
@@ -229,14 +229,14 @@ class Index implements FeedInterface
             [
                 'name' => 'exp.vue',
                 'color' => 'green',
-                'text' => 'Vue.js <@3 years>',
+                'text' => 'Vue.js <@4 years>',
                 'dialog' => [
                     'title' => 'Vue.js',
                     'content' => [
                         ['Vue.js practical usage',
                             'While working on the Laravel project I used Vue.js as a frontend template.',
                             'I had experience of implementing Vue.js with Inertia.js.',
-                            'Most of my personal web projects during last 3 years I built on the Vue.js basis',
+                            'Most of my personal web projects during last 4 years I built on the Vue.js basis',
                         ],
                     ]
                 ],
@@ -283,7 +283,7 @@ class Index implements FeedInterface
             [
                 'name' => 'exp.database',
                 'color' => 'amber',
-                'text' => 'database design and maintenance<@26 years>',
+                'text' => 'database design and maintenance<@27 years>',
                 'dialog' => [
                     'title' => 'Database design and maintenance',
                     'content' => [
