@@ -30,6 +30,7 @@ Route::middleware('logRequest')->group(function () {
     Route::get('/skills', [MainController::class,'skills'])->name('skills');
     Route::get('/edu', [MainController::class,'edu'])->name('edu');
     Route::get('/projects/{type}', [MainController::class,'projects'])->name('projects');
+    Route::get('/project/{id}', [MainController::class,'project'])->name('projects');
     Route::redirect('/projectsp', '/projects/1')->name('projectsp');
     Route::redirect('/projectst', '/projects/0')->name('projectst');
     Route::get('/skill', function () { return view('skills-accordion');});

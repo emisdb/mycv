@@ -26,94 +26,114 @@ class Projects implements FeedInterface
     protected $details;
     protected $clients;
 
-    public function __construct($type = 0)
+    public function __construct()
+    {
+        $this->details = array_column(Topic::query()->select(['id'])->where('topic_id', self::DETAILS)->get()->toArray(), 'id');
+        $this->clients = array_column(Topic::query()->select(['id'])->where('topic_id', self::CLIENTS)->get()->toArray(), 'id');
+    }
+
+    public function setType($type = 0)
     {
         if ($type) {
             $this->type = self::INDI;
         } else {
             $this->type = self::TEAM;
-       }
-        $this->details = array_column(Topic::query()->select(['id'])->where('topic_id',self::DETAILS)->get()->toArray(),'id');
-        $this->clients = array_column(Topic::query()->select(['id'])->where('topic_id',self::CLIENTS)->get()->toArray(),'id');
+        }
     }
 
     public function getData(): array
     {
         $projects = Project::query()->select(['id', 'name', 'start', 'finish'])
             ->whereHas('ideas', function ($query) {
-                $query->where('topic_id',self::TYPE)->where('ideas.name',$this->type);})
-            ->with(['ideas' => function ($query){ $query->with(['topic',
-                'ideas'=>function ($query){$query->where("topic_id",self::SHORTS);}])
-            ;}])->orderBy('start', 'desc')->get()->toArray();
-        //with(['topic'])->with(['ideas'=> function ($query) {
-        //                    $query->with(['topic'])
-        //                        ->
-  // ->where("topic_id",self::SHORTS);}])
-        /*        $id = ($arr=$topic->select('id')->where('name',self::TECHNOLOGY)->whereNull('topic_id')->get()->toArray()) ?? $arr[0]['id'];
-                $topics = TopicRepository::getSubIds($id);
-                $ideas = Idea::query()
-                    ->with(['topic' => function ($query) { $query->select('id', 'name','description')->orderBy('id','asc'); }])
-                    ->with(['text' => function ($query){ $query->where('language_id','=', 1);}])
-                    ->whereIn('topic_id',$topics)
-        //            ->select(['id','name'])
-                    ->get()->sortBy([['topic.id','asc'],['id','asc']])->toArray();
-        */
-        return $this->formatData($projects);
-        //       return $projects;
+                $query->where('topic_id', self::TYPE)->where('ideas.name', $this->type);
+            })
+            ->with(['ideas' => function ($query) {
+                $query->with(['topic',
+                    'ideas' => function ($query) {
+                        $query->where("topic_id", self::SHORTS);
+                    }]);
+            }])->orderBy('start', 'desc')->get()->toArray();
 
+        return $this->formatProjects($projects);
     }
 
-    private function formatData($ideas): array
+    public function getProject($id): array
+    {
+        $projects = Project::query()->select(['id', 'name', 'start', 'finish'])
+            ->with(['ideas' => function ($query) {
+                $query->with(['topic',
+                    'ideas' => function ($query) {
+                        $query->where("topic_id", self::SHORTS);
+                    }]);
+            }])
+ //           ->where('id', $id)
+            ->find($id)->toArray();
+        return $this->formatData($projects);
+    }
+
+    private function formatProjects($projects): array
     {
         $return = [];
         $techs = [];
-        foreach ($ideas as $idea) {
-            $result = [];
-            $details = [];
-            $topics = [];
-            $clients = [];
-            $tech = '';
-            if (isset($idea['ideas'])) {
-
-                foreach ($idea['ideas'] as $key => $idea_) {
-                    if ($idea_['topic_id'] == self::TECH) {
-                        $tech = $idea_['name'];
-                        $techs[$idea_['name']]['name']= $idea_['description'];
-
-                  }
-                    if(!empty($idea_['ideas'])){
-                        $result['techs'][] = [$idea_['ideas'][0]['name'],$idea_['ideas'][0]['description'],$idea_['description']];
-                   }
-                    if(in_array($idea_['topic']['topic_id'],$this->details)){
-                        $details = Idea::query()->where('topic_id',$idea_['topic_id'])->get()->toArray();
-                        $topics = Topic::query()->where('topic_id',$idea_['topic_id'])->with('ideas')->get()->toArray();
-                    }
-                    if(in_array($idea_['topic_id'],$this->clients)){
-                        $clients = Idea::query()->with('ideas')->where('topic_id',$idea_['topic_id'])->get()->toArray();
-                    }
-                    unset($idea['ideas'][$key]);
-                }
-            } else continue;
-            $details = $this->getIdeas($details);
-            $clients = $this->getClients($clients);
-            usort($result['techs'],function ($a,$b){ return (int)$a[1]>$b[1];});
-             $result['id'] = $idea['id'];
-            $result['name'] = $idea['name'];
-            $result['start'] = DateFormat::getDate($idea['start']);
-            $result['finish'] = DateFormat::getDate($idea['finish']);
-            $result['tech'] = $tech;
-            $result['details'] = $details;
-            $result['topics'] = $topics;
-            $result['client'] = $clients;
-            $return[] = $result;
+        foreach ($projects as $project) {
+            $ret = $this->formatData($project);
+            $techs[$ret['tech']]['name'] = $ret['tech_type'];
+            $return[] = $ret;
         }
-        return ['data' => $return, 'techs' => $this->setColor($techs)];
+         return ['data' => $return, 'techs' => $this->setColor($techs)];
     }
+    private function formatData($idea): array
+    {
+        $result = [];
+        $details = [];
+        $topics = [];
+        $clients = [];
+        $tech = '';
+        $techType = '';
+        if (isset($idea['ideas'])) {
+
+            foreach ($idea['ideas'] as $key => $idea_) {
+                if ($idea_['topic_id'] == self::TECH) {
+                    $tech = $idea_['name'];
+                    $techType = $idea_['description'];
+//                    $techs[$idea_['name']]['name'] = $idea_['description'];
+
+                }
+                if (!empty($idea_['ideas'])) {
+                    $result['techs'][] = [$idea_['ideas'][0]['name'], $idea_['ideas'][0]['description'], $idea_['description']];
+                }
+                if (in_array($idea_['topic']['topic_id'], $this->details)) {
+                    $details = Idea::query()->where('topic_id', $idea_['topic_id'])->get()->toArray();
+                    $topics = Topic::query()->where('topic_id', $idea_['topic_id'])->with('ideas')->get()->toArray();
+                }
+                if (in_array($idea_['topic_id'], $this->clients)) {
+                    $clients = Idea::query()->with('ideas')->where('topic_id', $idea_['topic_id'])->get()->toArray();
+                }
+                unset($idea['ideas'][$key]);
+            }
+        } ;
+        $details = $this->getIdeas($details);
+        $clients = $this->getClients($clients);
+        usort($result['techs'], function ($a, $b) {
+            return (int)$a[1] > $b[1];
+        });
+        $result['id'] = $idea['id'];
+        $result['name'] = $idea['name'];
+        $result['start'] = DateFormat::getDate($idea['start']);
+        $result['finish'] = DateFormat::getDate($idea['finish']);
+        $result['tech'] = $tech;
+        $result['tech_type'] = $techType;
+        $result['details'] = $details;
+        $result['topics'] = $topics;
+        $result['client'] = $clients;
+        return $result;
+    }
+
     protected function getIdeas($details)
     {
-        foreach($details as $key => $detail){
-            if(substr($detail['name'],-6)=='_ideas'){
-                $name = substr($detail['name'],0,strlen($detail['name'])-6);
+        foreach ($details as $key => $detail) {
+            if (substr($detail['name'], -6) == '_ideas') {
+                $name = substr($detail['name'], 0, strlen($detail['name']) - 6);
                 $idea = Idea::with('ideas')->find($detail['id']);
                 $details[$key][$name] = $idea->ideas->map(function ($item) {
                     return [
@@ -125,16 +145,16 @@ class Projects implements FeedInterface
         }
         return $details;
     }
+
     protected function getClients($details)
     {
         $address = ['name', 'link', 'location', 'industry'];
         $vals = [];
         $valsa = [];
-        foreach($details as $detail){
+        foreach ($details as $detail) {
             if (in_array($detail['name'], $address)) {
                 $vals[$detail['name']] = $detail['description'];
-            }
-            else
+            } else
                 $valsa[$detail['name']] = $detail['description'];
         }
         return ['names' => $vals, 'other' => $valsa];
@@ -142,12 +162,12 @@ class Projects implements FeedInterface
 
     protected function setColor($arr)
     {
-        $colors = [ ['pale-blue','blue'], ['pale-green','light-green'], ['sand','khaki'], ['pale-yellow',"yellow"],['pale-red','red'] ,['light-gray','gray']];
+        $colors = [['pale-blue', 'blue'], ['pale-green', 'light-green'], ['sand', 'khaki'], ['pale-yellow', "yellow"], ['pale-red', 'red'], ['light-gray', 'gray']];
         $counter = 0;
-        foreach ($arr as $name => $value){
+        foreach ($arr as $name => $value) {
             $arr[$name]['color'] = $colors[$counter++];
-            if ($counter>3) $counter = 0;
-       }
+            if ($counter > 3) $counter = 0;
+        }
         return $arr;
     }
 

@@ -41,7 +41,8 @@ class MainController extends Controller
     }
     public function projects($type = 0)
     {
-        $proj= new Projects($type);
+        $proj= new Projects();
+        $proj->setType($type);
         $res = $proj->getData();
         if($type == 100) dd($res);
         if($type) {
@@ -50,6 +51,12 @@ class MainController extends Controller
             return view('pages.team', ['model' => $res]);
 
         }
+    }
+    public function project($id)
+    {
+        $proj= new Projects();
+        $res = $proj->getProject($id);
+        return view('pages.project', ['model' => $res, 'id' => $id]);
     }
 
     public function form($tab, $id)
