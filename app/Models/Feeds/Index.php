@@ -542,7 +542,7 @@ class Index implements FeedInterface
             [
                 'name' => 'exp.api',
                 'color' => 'blue',
-                'text' => 'REST APIs',
+                'text' => 'REST API and GraphQL',
                 'dialog' => [
                     'title' => 'REST API development and third-party API integrating',
                     'content' => [
@@ -557,6 +557,7 @@ class Index implements FeedInterface
                             'Integrating with external services like CRMs, ERP systems, and marketing platforms to automate workflows and streamline processes',
                             'Documenting APIs using tools like Swagger or Postman to ensure ease of use and collaboration across teams',
                             'Maintaining API security by preventing vulnerabilities such as SQL injection, cross-site scripting (XSS), and cross-site request forgery (CSRF)',
+                            'I have solid experience working with GraphQL, including designing schemas, optimizing queries, and integrating GraphQL APIs into PHP-based backends and frontend applications.'
                        ],
                     ]
                 ],

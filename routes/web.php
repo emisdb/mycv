@@ -11,7 +11,7 @@ use App\Http\Controllers\api\V2\ProjectController as ApiV2ProjectController;
 use App\Http\Controllers\api\TopicController as ApiTopicController;
 use App\Http\Controllers\api\IdeaController as ApiIdeaController;
 //use App\Http\Livewire\Counter;
-//use App\Http\Controllers\DictController;
+use App\Http\Controllers\DictController;
 use App\Http\Controllers\LanguageController;
 
 /*
@@ -83,8 +83,8 @@ Route::get('/delete/{tab}/{id}', [MainController::class,'form'])->name('dict.del
 Route::get('/edit/{tab}', [MainController::class,'edit']);
 Route::get('/topic/{id}', [MainController::class,'topic']);
 Route::post('/edit/features', [MainController::class,'features']);
-Route::resource('main', 'MainController')->only(['index', 'store']);
-Route::resource('lang', 'LanguageController');
+Route::resource('main', MainController::class)->only(['index', 'store']);
+Route::resource('lang', LanguageController::class);
 //Route::resource('topic', TopicController::class);
 
 Route::controller(DictController::class)->middleware(['auth'])->group(function () {
@@ -111,7 +111,7 @@ Route::get('/logs/{id}', [FileController::class,'showLog'])->middleware(['auth']
 Route::redirect('/logq', '/logs/0')->name('logq');
 Route::redirect('/logd', '/logs/1')->name('logd');
 
-Route::group(['prefix' => '/api', 'as' => 'api.', 'namespace' => 'api'],  static function (Router $router) {
+Route::group(['prefix' => '/api', 'as' => 'api.'],  static function (Router $router) {
 
    Route::get('/projs/{type?}', [ApiProjectController::class,'index'])->name('api-projs');
     Route::get('/proj/{id}', [ApiProjectController::class,'proj'])->name('api-proj');

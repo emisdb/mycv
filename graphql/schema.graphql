@@ -1,0 +1,24 @@
+"A datetime string with format `Y-m-d H:i:s`, e.g. `2018-05-23 13:43:32`."
+scalar DateTime @scalar(class: "Nuwave\\Lighthouse\\Schema\\Types\\Scalars\\DateTime")
+
+type Query {
+    topics: [Topic!]! @all
+    topic(id: ID!): Topic @find
+}
+
+type Topic {
+    id: ID!
+    name: String
+    description: String
+    topic_id: Int
+    created_at: DateTime
+
+    topic: Topic @belongsTo
+    topics: [Topic!]! @hasMany
+    descendants: [Topic!]! @hasMany(relation: "descendants")
+    descend_counts: [Topic!]! @hasMany(relation: "descend_counts")
+    descend_ideas: [Topic!]! @hasMany(relation: "descend_ideas")
+
+    ideas: [Idea!]! @hasMany
+}
+
