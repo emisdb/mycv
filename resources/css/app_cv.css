@@ -9,14 +9,65 @@
     }
 }
 
+@media (max-width: 768px) {
+    .flex-left {
+        flex-basis: 100%; /* Forces full width on small screens */
+        text-align: left; /* Aligns text properly */
+    }
+}
+
+@media (max-width: 520px) {
+    span.animated {
+        font-size: 12px; /* Reduce font size for mobile only */
+    }
+
+    .flex-container, .flex-container h2, .flex-container h4 {
+        font-size: 80%; /* Reduce font size for mobile only */
+    }
+
+}
+
+.flex-container {
+    display: flex;
+    flex-wrap: wrap; /* Allows items to wrap on small screens */
+    gap: 10px; /* Optional: Adds spacing between items */
+}
+
+.flex-left {
+    flex: 1; /* Allows the element to take up available space */
+    min-width: 0; /* Prevents flex children from overflowing */
+    word-wrap: break-word; /* Ensures long words break */
+    white-space: normal; /* Allows text to wrap */
+    overflow-wrap: break-word; /* Ensures wrapping on all browsers */
+}
+
+.tech-label {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #333;
+}
+.tech-label:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 6px 24px rgba(0, 0, 0, 0.1);
+}
+.badge {
+    background-color: #00bcd4;
+    color: white;
+    padding: 0.3rem 0.7rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: bold;
+}
 div.w3-main {
     background-color: #cbd5e0;
 }
+
 .fa, .fab {
-    color:#6b7280;
+    color: #6b7280;
     background-color: #cbd5e0;
     padding: 3px;
 }
+
 * {
     box-sizing: border-box;
 }
@@ -25,6 +76,7 @@ body {
     background-color: #474e5d;
     font-family: Helvetica, sans-serif;
 }
+
 body, h1, h2, h3, h4, h5, h6 {
     font-family: "Montserrat", sans-serif
 }
@@ -33,77 +85,97 @@ body, h1, h2, h3, h4, h5, h6 {
     margin-bottom: 12px
 }
 
-.w3-content a{
+.w3-content a {
     background-color: #777;
-    color:#edf2f7;
+    color: #edf2f7;
 }
-.w3-content a:hover{
+
+.w3-content a:hover {
     background-color: #edf2f7;
-    color:#777;
+    color: #777;
 }
+
 .w3-white.accordion {
     padding: 5px;
 }
+
 .bgimg {
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    background-image: url('img/my_batum_2.jpg');
+    background-image: url(/images/my_batum_2.jpg?e263c985cdb88893e9e5986282bf2579);
     min-height: 100%;
 }
+
 .skill {
-    background-image: url('img/myimg.jpg');
+    background-image: url(/images/myimg.jpg?45816d61aa555126ab73590df412330a);
 }
+
 .edu {
-     background-image: url('img/alma.png');
- }
+    background-image: url(/images/alma.png?e699ae08471868ba7887c84623ef88af);
+}
+
 .time {
-    background-image: url('img/haifa.jpg');
+    background-image: url(/images/haifa.jpg?245bb0855af212b4309bae639a03d084);
 }
+
 .team {
-    background-image: url('img/gang.jpg');
+    background-image: url(/images/gang.jpg?61b3e3ed5910b0c0b0d277f08256942e);
 }
+
 .team-over {
-    background-image: url('img/gang_on_rails.jpg');
+    background-image: url(/images/gang_on_rails.jpg?d7469f81adb81dcc05b759886697d4f3);
 }
+
 .contact {
-    background-image: url('img/grin.jpg');
+    background-image: url(/images/grin.jpg?60482bf2e0d11aeb93868fb374680790);
 }
+
 .toes {
-    background-image: url('img/toes.jpg');
+    background-image: url(/images/toes.jpg?e32d956564a78b11342eeb4d4810e371);
 }
+
 .legs {
-    background-image: url('img/legs.jpg');
+    background-image: url(/images/legs.jpg?9b6ce2bfd3dbc9af2e077d849b1aebe2);
 }
+
 .dear {
-    background-image: url('img/dear.jpg');
+    background-image: url(/images/dear.jpg?5554627718fbd5a60ab4a17019519735);
 }
+
 .dear2 {
-    background-image: url('img/dear2.jpg');
+    background-image: url(/images/dear2.jpg?94a9a38583893f63db9c5e927addaf0c);
 }
+
 .front-bg {
-    background-image: linear-gradient(to bottom left,rgba(0, 0, 255, 0.5), rgba(255, 255, 255, 0.5));
-    margin-left:40%;
+    background-image: linear-gradient(to bottom right, #fefefe, #d0e0ff);
+    margin-left: 40%;
+    min-height: 100vh; /* Full height to feel more open */
+    padding: 40px;
 }
 .cool-bg {
     background: linear-gradient(to bottom left, #8fa1b6, #cbd5e0, #7a54c9);
-    margin-left:40%;
+    margin-left: 40%;
 }
+
 .modern-bg {
     background: linear-gradient(to bottom left, #cbd5e0, #a86ee8, #ff66b2);
-    margin-left:40%;
+    margin-left: 40%;
 }
+
 .warm-bg {
     background: linear-gradient(to bottom left, #cbd5e0, #f0b3a0, #ff5792);
-    margin-left:40%;
+    margin-left: 40%;
 }
+
 .skill-bg {
     background: linear-gradient(to bottom left, #cbd5e0, #e2c1f0, #f8aacb);
-    margin-left:40%;
+    margin-left: 40%;
 }
+
 .sunrise-bg {
     background: linear-gradient(to bottom left, #cbd5e0, #e8d6f0, #fcd4e3);
-    margin-left:40%;
+    margin-left: 40%;
 }
 
 .skill2 {
@@ -115,29 +187,37 @@ body, h1, h2, h3, h4, h5, h6 {
     margin: auto;
 }
 
-
-#contact-table td
-{
+#contact-table td {
     padding: 5px;
     font-size: 1.2em;
     font-weight: bolder;
 
 }
-#portfolio>div {
+
+#portfolio > div {
     line-height: 1.8;
-    margin-bottom: 15px;
-    background: rgba(255, 255, 255, 0.3); /* Light translucent background */
-    border-left: 4px solid #0c84ff; /* Subtle accent line */
-    border-radius: 8px;
-    padding: 10px 15px;
-    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
-    font-weight: 500;
-    color: #333; /* Better readability */
+    margin-bottom: 20px;
+    background: rgba(20, 20, 30, 0.9); /* Dark semi-transparent */
+    border-radius: 16px; /* More roundness */
+    padding: 20px 25px;
+    color: #f0f0f0; /* Light text */
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+    border: none;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    font-size: 1em;
 }
 
-#portfolio span.badge{
+/* Add hover effect to make blocks interactive */
+#portfolio > div:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.5);
+    background: rgba(30, 30, 50, 1); /* Slightly lighter on hover */
+}
+
+#portfolio span.badge {
     margin-left: 3px;
 }
+
 /* Ensures spans align well within the paragraph */
 #portfolio div span {
     display: inline-flex; /* Align like inline elements but respect spacing */
@@ -145,14 +225,44 @@ body, h1, h2, h3, h4, h5, h6 {
     vertical-align: middle; /* Align with surrounding text */
     padding: 2px 6px; /* Reduce padding so it doesn't break line spacing */
     font-weight: 500;
+    border-width: 2px !important;
+    border-style: solid; /* <-- ADD this */
 }
 
 #portfolio div li {
     list-style: circle;
 }
+
 #modal-content div li {
     list-style: none;
 }
+.btn-3d {
+    background: linear-gradient(to bottom, #f0f0f0, #d0d0d0);
+    border: 1px solid #999;
+    border-radius: 8px;
+    padding: 12px 24px;
+    font-size: 16px;
+    color: #333;
+    box-shadow: 0 5px 0 #999, 0 8px 15px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+/* Hover - Lift the button slightly */
+.btn-3d:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 7px 0 #999, 0 10px 20px rgba(0, 0, 0, 0.4);
+}
+
+/* Active - Pressed down effect */
+.btn-3d:active {
+    transform: translateY(4px);
+    box-shadow: 0 1px 0 #999, 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
 /* The actual timeline (the vertical ruler) */
 .timeline {
     position: relative;
@@ -244,13 +354,14 @@ body, h1, h2, h3, h4, h5, h6 {
     position: relative;
     border-radius: 6px;
 }
+
 .time-content.w3-pale-blue a,
 .time-content.w3-pale-green a,
-.time-content.w3-sand a
-{
+.time-content.w3-sand a {
 
     font-weight: bolder;
 }
+
 .time-content.w3-pale-blue a:hover,
 .time-content.w3-pale-green a:hover,
 .time-content.w3-sand a:hover {
@@ -259,22 +370,25 @@ body, h1, h2, h3, h4, h5, h6 {
     color: #fff;
     text-decoration: none;
 }
-.time-content.w3-pale-blue a:hover{
+
+.time-content.w3-pale-blue a:hover {
     background-color: blue;
 }
-.time-content.w3-pale-green a:hover{
+
+.time-content.w3-pale-green a:hover {
     background-color: green;
 }
+
 .time-content.w3-sand a:hover {
-background-color: khaki;
+    background-color: khaki;
 }
 
 .time-content.w3-pale-blue i,
 .time-content.w3-pale-green i,
-.time-content.w3-sand i
-{
+.time-content.w3-sand i {
     background-color: transparent;
 }
+
 .flip-box {
     background-color: transparent;
     /*    width: 300px; */
@@ -300,7 +414,6 @@ background-color: khaki;
     position: absolute;
     width: 100%;
     height: 100%;
-    -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
 }
 
@@ -314,46 +427,54 @@ background-color: khaki;
     color: white;
     transform: rotateX(180deg);
 }
+
 .tech-term {
     font-style: italic;
     font-weight: bold;
 }
-table.w3-card-4 td,table.w3-card-4 th {
+
+table.w3-card-4 td, table.w3-card-4 th {
     padding: 4px 16px;
     border-bottom: 1px solid #ddd;
 }
-.flex-container{
+
+.flex-container {
     display: flex;
     justify-content: left;
 }
-div.flex-container>div {
+
+div.flex-container > div {
     padding: 2px 10px;
     border-left: solid #cbd5e0 1px;
 }
-div.flex-container>div.flex-left {
+
+div.flex-container > div.flex-left {
     margin-right: auto;
     border: none;
 }
+
 div.flex-dd {
-    font-style:italic;
+    font-style: italic;
     font-size: .8em;
-}
-div.flex-dd {
     font-weight: bold;
     margin-right: auto;
 }
+
 div.flex-definition i {
-    margin:2px 5px;
+    margin: 2px 5px;
 }
+
 div.flex-container i {
     margin-right: 5px;
 }
+
 .fontawesomesvg {
     width: 34px;
     margin-right: 5px;
-   background-color: #cbd5e0;
+    background-color: #cbd5e0;
     vertical-align: text-bottom;
 }
+
 /* Breadcrumbs
 ================================== */
 ul.breadcrumb {
@@ -361,20 +482,24 @@ ul.breadcrumb {
     list-style: none;
     background-color: #eee;
 }
+
 ul.breadcrumb li {
     display: inline;
     font-size: 18px;
 }
-ul.breadcrumb li+li:before {
+
+ul.breadcrumb li + li:before {
     padding: 8px;
     font-size: 1.5em;
     color: black;
     content: "/\00a0";
 }
+
 ul.breadcrumb li a {
     color: #0275d8;
     text-decoration: none;
 }
+
 ul.breadcrumb li a:hover {
     color: #01447e;
     text-decoration: underline;
@@ -388,6 +513,7 @@ ul.breadcrumb li a:hover {
     margin: 0 0 3em 0;
     padding: 0;
 }
+
 .Rtable-cell {
     box-sizing: border-box;
     flex-grow: 1;
@@ -397,29 +523,49 @@ ul.breadcrumb li a:hover {
     list-style: none;
     border: solid 3px white;
 }
-.Rtable-cell> h1, > h2, > h3, > h4, > h5, > h6 { margin: 0; }
+
+.Rtable-cell > h1, > h2, > h3, > h4, > h5, > h6 {
+    margin: 0;
+}
 
 
 /* Table column sizing
 ================================== */
-.Rtable--2cols > .Rtable-cell  { width: 50%; }
-.Rtable--3cols > .Rtable-cell  { width: 33.3%; }
-.Rtable--4cols > .Rtable-cell  { width: 25%; }
-.Rtable--5cols > .Rtable-cell  { width: 20%; }
-.Rtable--6cols > .Rtable-cell  { width: 16.6%; }
-.Rtable > .Rtable-cell.rc-last  {
+.Rtable--2cols > .Rtable-cell {
+    width: 50%;
+}
+
+.Rtable--3cols > .Rtable-cell {
+    width: 33.3%;
+}
+
+.Rtable--4cols > .Rtable-cell {
+    width: 25%;
+}
+
+.Rtable--5cols > .Rtable-cell {
+    width: 20%;
+}
+
+.Rtable--6cols > .Rtable-cell {
+    width: 16.6%;
+}
+
+.Rtable > .Rtable-cell.rc-last {
     width: 10%;
     padding: .8em .3em;
 }
 
-.Rtable > .Rtable-cell.Rtable-header  {
+.Rtable > .Rtable-cell.Rtable-header {
     background-color: #4a5568;
-    color:#f1f1f1;
+    color: #f1f1f1;
 }
-.Rtable > .Rtable-cell.Rtable-header.rc-last  {
+
+.Rtable > .Rtable-cell.Rtable-header.rc-last {
     text-align: center;
 }
-.Rtable > .Rtable-cell.rc-last > a  {
+
+.Rtable > .Rtable-cell.rc-last > a {
     color: inherit;
     background-color: transparent;
 }
@@ -427,38 +573,30 @@ ul.breadcrumb li a:hover {
 .Rtable-cell.rc-last span.badge {
     margin-left: -12px;
 }
+
 .Rtable > .Rtable-cell.rc-last > a > .fa:hover {
     color: #cbd5e0;
     background-color: #6b7280;
 }
+
 div.w3-modal-content h4 {
-    background-color: #5aa885;
-    color:#edf2f7;
+    background-color: #00bcd4;
+    box-shadow: 0 4px 6px 0 rgba(0,0,0,0.2),0 4px 20px 0 rgba(0,0,0,0.19);
+    color: #edf2f7;
 }
 
-.w3-display-topright {
-    border-radius: 10px;
-}
-div.w3-display-container {
-    padding-bottom: 8px ;
-    border-radius: 10px;
-}
-
-div.w3-modal-content{
-    box-shadow: 0 5px 15px rgba(0,0,0,.5);
-    border-right: 6px;
-    border-radius: 10px;
-}
 @media (min-width: 1200px) {
     .w3-modal-content {
         width: 1100px;
     }
 }
+
 @media (min-width: 1800px) {
     .proj-modal-content {
         width: 1600px;
     }
 }
+
 /* Media queries - Responsive timeline on screens less than 600px wide */
 @media screen and (max-width: 600px) {
     /* Place the timelime to the left */
@@ -492,6 +630,7 @@ div.w3-modal-content{
     }
 
 }
+
 /* slideshow */
 .CSSgal {
     position: relative;
@@ -531,28 +670,28 @@ div.w3-modal-content{
     height: 0;
 }
 
-.CSSgal .prevNext > div+div {
+.CSSgal .prevNext > div + div {
     visibility: hidden; /* Hide all but first P/N container */
 }
 
 .CSSgal .prevNext a {
     background: #fff;
     position: absolute;
-    width:       60px;
-    height:      60px;
+    width: 60px;
+    height: 60px;
     line-height: 60px; /* If you want to place numbers */
     text-align: center;
     opacity: 0.7;
-    -webkit-transition: 0.3s;
     transition: 0.3s;
-    -webkit-transform: translateY(-50%);
     transform: translateY(-50%);
     left: 0;
 }
+
 .CSSgal .prevNext a:hover {
     opacity: 1;
 }
-.CSSgal .prevNext a+a {
+
+.CSSgal .prevNext a + a {
     left: auto;
     right: 0;
 }
@@ -567,50 +706,98 @@ div.w3-modal-content{
     width: 100%;
     text-align: center;
 }
+
 .CSSgal .bullets > a {
     display: inline-block;
-    width:       30px;
-    height:      30px;
+    width: 30px;
+    height: 30px;
     line-height: 30px;
     text-decoration: none;
     text-align: center;
     background: rgba(255, 255, 255, 1);
-    -webkit-transition: 0.3s;
     transition: 0.3s;
 }
-.CSSgal .bullets > a+a {
+
+.CSSgal .bullets > a + a {
     background: rgba(255, 255, 255, 0.5); /* Dim all but first */
 }
+
 .CSSgal .bullets > a:hover {
     background: rgba(255, 255, 255, 0.7) !important;
 }
 
 /* NAVIGATION BUTTONS */
 /* ALL: */
-.CSSgal >s:target ~ .bullets >* {      background: rgba(255, 255, 255, 0.5);}
+.CSSgal > s:target ~ .bullets > * {
+    background: rgba(255, 255, 255, 0.5);
+}
+
 /* ACTIVE */
-#s1:target ~ .bullets >*:nth-child(1) {background: rgba(255, 255, 255,   1);}
-#s2:target ~ .bullets >*:nth-child(2) {background: rgba(255, 255, 255,   1);}
-#s3:target ~ .bullets >*:nth-child(3) {background: rgba(255, 255, 255,   1);}
-#s4:target ~ .bullets >*:nth-child(4) {background: rgba(255, 255, 255,   1);}
+#s1:target ~ .bullets > *:nth-child(1) {
+    background: rgba(255, 255, 255, 1);
+}
+
+#s2:target ~ .bullets > *:nth-child(2) {
+    background: rgba(255, 255, 255, 1);
+}
+
+#s3:target ~ .bullets > *:nth-child(3) {
+    background: rgba(255, 255, 255, 1);
+}
+
+#s4:target ~ .bullets > *:nth-child(4) {
+    background: rgba(255, 255, 255, 1);
+}
+
 /* More slides? Add here more rules */
 
 /* PREV/NEXT CONTAINERS VISIBILITY */
 /* ALL: */
-.CSSgal >s:target ~ .prevNext >* {      visibility: hidden;}
+.CSSgal > s:target ~ .prevNext > * {
+    visibility: hidden;
+}
+
 /* ACTIVE: */
-#s1:target ~ .prevNext >*:nth-child(1) {visibility: visible;}
-#s2:target ~ .prevNext >*:nth-child(2) {visibility: visible;}
-#s3:target ~ .prevNext >*:nth-child(3) {visibility: visible;}
-#s4:target ~ .prevNext >*:nth-child(4) {visibility: visible;}
+#s1:target ~ .prevNext > *:nth-child(1) {
+    visibility: visible;
+}
+
+#s2:target ~ .prevNext > *:nth-child(2) {
+    visibility: visible;
+}
+
+#s3:target ~ .prevNext > *:nth-child(3) {
+    visibility: visible;
+}
+
+#s4:target ~ .prevNext > *:nth-child(4) {
+    visibility: visible;
+}
+
 /* More slides? Add here more rules */
 
 /* SLIDER ANIMATION POSITIONS */
 
-#s1:target ~ .slider {transform: translateX(   0%); -webkit-transform: translateX(   0%);}
-#s2:target ~ .slider {transform: translateX(-100%); -webkit-transform: translateX(-100%);}
-#s3:target ~ .slider {transform: translateX(-200%); -webkit-transform: translateX(-200%);}
-#s4:target ~ .slider {transform: translateX(-300%); -webkit-transform: translateX(-300%);}
+#s1:target ~ .slider {
+    transform: translateX(0%);
+    -webkit-transform: translateX(0%);
+}
+
+#s2:target ~ .slider {
+    transform: translateX(-100%);
+    -webkit-transform: translateX(-100%);
+}
+
+#s3:target ~ .slider {
+    transform: translateX(-200%);
+    -webkit-transform: translateX(-200%);
+}
+
+#s4:target ~ .slider {
+    transform: translateX(-300%);
+    -webkit-transform: translateX(-300%);
+}
+
 /* More slides? Add here more rules */
 
 
@@ -619,10 +806,11 @@ div.w3-modal-content{
    All above was mainly to get it working :)
    CSSgal CUSTOM STYLES / OVERRIDES HERE: */
 
-.CSSgal{
+.CSSgal {
     color: #fff;
     text-align: center;
 }
+
 .CSSgal .slider h2 {
     margin-top: 40vh;
     font-weight: 200;
@@ -630,12 +818,14 @@ div.w3-modal-content{
     word-spacing: 0.2em;
     font-size: 3em;
 }
+
 .CSSgal a {
     border-radius: 50%;
     margin: 0 3px;
-    color: rgba(0,0,0,0.8);
+    color: rgba(0, 0, 0, 0.8);
     text-decoration: none;
 }
+
 .slider-2 {
     width: 500px;
     height: 300px;
@@ -646,36 +836,40 @@ div.w3-modal-content{
     text-align: center;
     overflow: hidden;
 }
+
 .image-container-slider2 {
     width: 100%;
     background-color: pink;
     height: 100%;
     clear: both;
     position: relative;
-    -webkit-transition: left 2s;
-    -moz-transition: left 2s;
-    -o-transition: left 2s;
     transition: left 2s;
 }
+
 .slide-slider2 {
     float: left;
     margin: 0px;
     padding: 0px;
     position: relative;
 }
+
 #slide-1:target ~ .image-container-slider2 {
     left: 0px;
 }
+
 #slide-2:target ~ .image-container-slider2 {
     left: -500px;
 }
+
 #slide-3:target ~ .image-container-slider2 {
     left: -1000px;
 }
+
 .buttons-slider2 {
     position: relative;
     top: -20px;
 }
+
 .buttons-slider2 a {
     display: inline-block;
     height: 15px;
@@ -683,11 +877,16 @@ div.w3-modal-content{
     border-radius: 50px;
     background-color: lightgreen;
 }
-.mySlides {display:none;}
-.mySlides img {
-    width:100%;
+
+.mySlides {
+    display: none;
 }
-ul.treeview li{
+
+.mySlides img {
+    width: 100%;
+}
+
+ul.treeview li {
     display: block;
     list-style-type: disc;
     margin-block-start: 1em;
@@ -696,13 +895,16 @@ ul.treeview li{
     margin-inline-end: 0px;
     padding-inline-start: 40px;
 }
+
 ul.treeview {
     list-style: initial;
     padding-left: 15px;
 }
+
 div.cv-dropdown {
     position: static;
 }
+
 /* Remove default bullets */
 ul, #myUL {
     list-style-type: none;
@@ -717,6 +919,8 @@ ul, #myUL {
 /* Style the caret/arrow */
 .caret {
     cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
     user-select: none; /* Prevent text selection */
 }
 
@@ -742,6 +946,8 @@ ul, #myUL {
 .active {
     display: block;
 }
+
 .navbar .navbar-brand-wrapper .navbar-brand-inner-wrapper .navbar-brand img {
     width: 34px;
 }
+
