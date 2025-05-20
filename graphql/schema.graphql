@@ -2,8 +2,13 @@
 scalar DateTime @scalar(class: "Nuwave\\Lighthouse\\Schema\\Types\\Scalars\\DateTime")
 
 type Query {
-    topics: [Topic!]! @all
+    topics: [Topic!]! @paginate
     topic(id: ID!): Topic @find
+}
+
+type Mutation {
+    createTopic(name: String!, description: String!, topic_id: Int): Topic! @create
+    createIdea(name: String!, description: String!, topic_id: Int): Idea! @create
 }
 
 type Topic {
@@ -20,5 +25,15 @@ type Topic {
     descend_ideas: [Topic!]! @hasMany(relation: "descend_ideas")
 
     ideas: [Idea!]! @hasMany
+}
+
+type Idea {
+    id: ID!
+    name: String
+    description: String
+    topic_id: Int
+    created_at: DateTime
+
+    topic: Topic @belongsTo
 }
 

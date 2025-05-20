@@ -1,12 +1,4 @@
-// app.js
 import { createApp } from 'vue';
-import TopicTableComponent from './components/TopicTableComponent.vue';
+import App from './components/App.vue';
 
-const app = createApp({
-    // Options
-});
-
-app.component('toptab-component', TopicTableComponent);
-
-app.mount('#app');
-
+createApp(App).mount('#app');

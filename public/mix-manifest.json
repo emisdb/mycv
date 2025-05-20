@@ -1,7 +1,7 @@
 {
     "/js/app.js": "/js/app.js",
     "/js/wow.min.js": "/js/wow.min.js",
-    "/js/app_vue.js": "/js/app_vue.js",
+    "/js/vue.js": "/js/vue.js",
     "/css/animate.css": "/css/animate.css",
     "/css/app.css": "/css/app.css",
     "/css/app_cv.css": "/css/app_cv.css"
