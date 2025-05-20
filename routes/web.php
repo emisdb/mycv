@@ -75,6 +75,9 @@ Route::get('/greet', function () {
 Route::get('/home', function () {
     return view('index');
 });
+Route::get('/welcome', function () {
+    return view('vue');
+});
 // Route::get('/counter', Counter::class);
 
 Route::get('/skills/{type}', [MainController::class,'skills'])->name('skill');

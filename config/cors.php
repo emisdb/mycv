@@ -15,7 +15,11 @@ return [
     |
     */
 
-    'paths' => ['api/*', 'sanctum/csrf-cookie'],
+    'paths' => [
+        'api/*',
+        'graphql', // ← enable CORS for Lighthouse GraphQL endpoint
+        'sanctum/csrf-cookie',
+    ],
 
     'allowed_methods' => ['*'],
 
