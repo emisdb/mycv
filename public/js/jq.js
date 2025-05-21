@@ -86,7 +86,6 @@ $(document).ready(function () {
 
   function processQueue(elevator) {
     if (elevator.queue.length === 0) {
-      sound.play();
       elevator.isMoving = false;
       return;
     }
