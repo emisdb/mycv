@@ -13,7 +13,7 @@
         <!-- Scripts -->
         <link rel="stylesheet" href="{{ asset('css/app.css') }}">
         <script src="{{ asset('js/app.js') }}" defer></script>
-        <script src="{{ mix('js/app_vue.js') }}"></script>
+{{--        <script src="{{ mix('js/app_vue.js') }}"></script>--}}
         <link rel="stylesheet" href="{{ asset('css/app_cv.css') }}">
         <link rel="stylesheet" href="{{ asset('css/animate.css') }}">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>

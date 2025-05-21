@@ -1,0 +1,100 @@
+body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+}
+
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.elevator-layout {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  margin-top: 20px;
+}
+
+.floor-labels,
+.call-buttons {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0 10px;
+}
+
+.floor-label,
+.call-button {
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 6px;
+}
+
+.call-button {
+  width: 80px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.call-button.waiting {
+  background-color: #e74c3c;
+  cursor: not-allowed;
+}
+
+.call-button.arrived {
+  background-color: #2ecc71;
+  color: black;
+}
+
+.elevator-columns {
+  display: flex;
+}
+
+.elevator-column {
+  display: flex;
+  flex-direction: column;
+  margin: 0 5px;
+}
+
+.elevator-cell {
+  height: 50px;
+  width: 50px;
+  border: 1px solid #ccc;
+  position: relative;
+  margin-bottom: 4px;
+}
+
+.elevator-icon {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.elevator-icon.red {
+  filter: brightness(0) saturate(100%) invert(18%) sepia(94%) saturate(6101%) hue-rotate(357deg) brightness(97%) contrast(121%);
+}
+
+.elevator-icon.green {
+  filter: brightness(0) saturate(100%) invert(57%) sepia(94%) saturate(453%) hue-rotate(64deg) brightness(99%) contrast(87%);
+}
+
+.current-story {
+  background-color: #ccc;
+}
+
+.moving:not(.current-story) {
+  background-color: #ffe5e5;
+}
+
+.time-label {
+  position: absolute;
+  bottom: 2px;
+  right: 2px;
+  font-size: 14px;
+  color: #c0392b;
+}

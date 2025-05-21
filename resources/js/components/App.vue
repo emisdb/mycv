@@ -1,6 +1,6 @@
 <template>
     <div class="container">
-        <h2>Elevator Exercise</h2>
+        <h2>Elevator Simulation Vue.Js</h2>
         <div class="elevator-layout">
             <!-- Floor labels -->
             <div class="floor-labels">
@@ -16,13 +16,13 @@
                     :key="floor"
                     class="elevator-cell"
                     :class="{
-            'current-story': elevator.currentStory === floor,
+            'current-story': elevator.currentStorey === floor,
             'moving': elevator.isMoving,
-            'arrived-now': elevator._arrived && elevator.currentStory === floor,
+            'arrived-now': elevator._arrived && elevator.currentStorey === floor,
          }"
                 >
                     <img
-                        v-if="elevator.currentStory === floor"
+                        v-if="elevator.currentStorey === floor"
                         :src="elevatorIcon"
                         alt="Elevator"
                         class="elevator-icon"
@@ -66,7 +66,7 @@ const floors = Array.from({length: 10}, (_, i) => i);
 
 const elevators = reactive(
     Array.from({length: NUM_ELEVATORS}, () => ({
-        currentStory: 0,
+        currentStorey: 0,
         callingStory: null,
         isMoving: false,
         timerStart: null,
@@ -81,12 +81,12 @@ const callStates = reactive({}); // { floor: { status: 'waiting'|'arrived', labe
 const sound = new Audio('https://actions.google.com/sounds/v1/cartoon/clang_and_wobble.ogg');
 
 function handleCall(floor) {
-    const bestElevatorIndex = getBestElevatorIndex(floor);
+    const [bestElevatorIndex, time] = getBestElevatorIndex(floor);
     const elevator = elevators[bestElevatorIndex];
     elevator.queue.push(floor);
 
-    const etaSeconds = calculateETA(elevator, floor);
-    elevator.timerDisplay = `${etaSeconds} sec${etaSeconds > 1 ? 's' : ''}`;
+//    const etaSeconds = calculateETA(elevator, floor);
+    elevator.timerDisplay = `${time} sec${time > 1 ? 's' : ''}`;
 
     callStates[floor] = {status: 'waiting', label: 'Waiting'};
 
@@ -97,7 +97,7 @@ function handleCall(floor) {
 
 function calculateETA(elevator, targetFloor) {
     let eta = 0;
-    let current = elevator.currentStory;
+    let current = elevator.currentStorey;
     const queue = [...elevator.queue, targetFloor];
 
     for (let stop of queue) {
@@ -132,13 +132,13 @@ function getBestElevatorIndex(floor) {
         let distance = 0;
 
         if (!elevator.isMoving && elevator.queue.length === 0) {
-            distance = Math.abs(elevator.currentStory - floor);
+            distance = Math.abs(elevator.currentStorey - floor);
         } else {
-            let storyList = [elevator.currentStory, ...elevator.queue];
-            for (let i = 0; i < storyList.length - 1; i++) {
-                distance += Math.abs(storyList[i + 1] - storyList[i]);
+            let storeyList = [elevator.currentStorey, ...elevator.queue];
+            for (let i = 0; i < storeyList.length - 1; i++) {
+                distance += Math.abs(storeyList[i + 1] - storeyList[i]);
             }
-            const lastInQueue = elevator.queue.length > 0 ? elevator.queue[elevator.queue.length - 1] : elevator.currentStory;
+            const lastInQueue = elevator.queue.length > 0 ? elevator.queue[elevator.queue.length - 1] : elevator.currentStorey;
             distance += Math.abs(lastInQueue - floor) + 2;
         }
 
@@ -148,7 +148,7 @@ function getBestElevatorIndex(floor) {
         }
     });
 
-    return bestIndex;
+    return [bestIndex, minDistance];
 }
 
 async function processElevatorQueue(elevator, index) {
@@ -158,16 +158,16 @@ async function processElevatorQueue(elevator, index) {
         elevator.callingStory = nextFloor;
         elevator.isMoving = true;
 
-        const distance = Math.abs(elevator.currentStory - nextFloor);
+        const distance = Math.abs(elevator.currentStorey - nextFloor);
         const waitTime = distance + 2; // movement time + 2s arrival wait
         for (let i = waitTime; i > distance; i--) {
             elevator.timerDisplay = `${i} sec${i > 1 ? 's' : ''}`;
             await wait(1000);
         }
 
-        while (elevator.currentStory !== nextFloor) {
-            elevator.timerDisplay = `${Math.abs(elevator.currentStory - nextFloor)} sec${Math.abs(elevator.currentStory - nextFloor) > 1 ? 's' : ''}`;
-            elevator.currentStory += elevator.currentStory < nextFloor ? 1 : -1;
+        while (elevator.currentStorey !== nextFloor) {
+            elevator.timerDisplay = `${Math.abs(elevator.currentStorey - nextFloor)} sec${Math.abs(elevator.currentStorey - nextFloor) > 1 ? 's' : ''}`;
+            elevator.currentStorey += elevator.currentStorey < nextFloor ? 1 : -1;
             await wait(1000);
         }
 
@@ -222,6 +222,10 @@ function wait(ms) {
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+.floor-label {
+    margin-bottom: 4px;
 }
 
 .call-button {

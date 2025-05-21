@@ -13,8 +13,9 @@ const mix = require('laravel-mix');
 
 mix.js('resources/js/app.js', 'public/js')
     .js('resources/js/wow.min.js', 'public/js')
+//    .js('resources/js/app_vue.js', 'public/js').vue()
     .js('resources/js/vue.js', 'public/js').vue()
- //   .js('resources/js/mycv.js', 'public/js')
+    //   .js('resources/js/mycv.js', 'public/js')
     .postCss('resources/css/app_cv.css', 'public/css', [
     ])
     .postCss('resources/css/app.css', 'public/css', [

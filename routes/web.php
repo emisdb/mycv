@@ -75,8 +75,11 @@ Route::get('/greet', function () {
 Route::get('/home', function () {
     return view('index');
 });
-Route::get('/welcome', function () {
-    return view('vue');
+Route::get('/appvue', function () {
+    return view('app.vue');
+});
+Route::get('/appjq', function () {
+    return view('app.jq');
 });
 // Route::get('/counter', Counter::class);
 
