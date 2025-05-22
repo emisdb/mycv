@@ -98,3 +98,21 @@ body {
   font-size: 14px;
   color: #c0392b;
 }
+.elevator-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 1px; /* space between icon and symbol */
+    width: 40px; /* adjust as needed */
+    height: 48px;
+
+}
+
+.elevator-icon {
+    width: 40px; /* adjust as needed */
+    height: auto;
+}
+
+.elevator-symbol {
+    font-size: 25px; /* or use an image/icon */
+    color: #007bff;
+}
