@@ -102,14 +102,14 @@ $(document).ready(function () {
         const moveDirection = targetFloor > elevator.currentFloor ? 1 : -1;
 
         const $icon = elevator.$icon;
-        $icon.removeClass('green').addClass('red');
+        $icon.find('img').removeClass('green').addClass('red');
 
         const step = () => {
             if (elevator.currentFloor === targetFloor) {
                 // Arrived
                 const $targetCell = elevator.$column.find(`.elevator-cell[data-floor="${elevator.currentFloor}"]`);
                 $targetCell.append($icon);
-                $icon.removeClass('red').addClass('green');
+                $icon.find('img').removeClass('red').addClass('green');
 
                 // Remove time label when elevator arrives
                 $targetCell.find('.time-label').remove();
@@ -118,7 +118,7 @@ $(document).ready(function () {
                 sound.play();
 
                 setTimeout(() => {
-                    $icon.removeClass('green');
+                    $icon.find('img').removeClass('green');
                     $button.removeClass('arrived').text('Call');
                     setTimeout(() => processQueue(elevator), stopDelay); // Move to next in queue
                 }, stopDelay);
