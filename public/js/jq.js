@@ -21,6 +21,7 @@ $(document).ready(function () {
         const elevator = {
             id: i,
             currentFloor: 1,
+            targetFloor: 0,
             queue: [],
             isMoving: false,
             $column: $('<div class="elevator-column"></div>'),
@@ -72,6 +73,9 @@ $(document).ready(function () {
         elevators.forEach(elevator => {
             let simFloor = elevator.currentFloor;
             let time = 0;
+            if(elevator.isMoving) {
+                time = Math.abs(simFloor - elevator.targetFloor) * floorTime;
+            }
 
             elevator.queue.forEach(q => {
                 time += Math.abs(simFloor - q.floor) * floorTime + stopDelay;
@@ -97,15 +101,15 @@ $(document).ready(function () {
 
         elevator.isMoving = true;
         const next = elevator.queue.shift();
-        const targetFloor = next.floor;
+        elevator.targetFloor = next.floor;
         const $button = next.button;
-        const moveDirection = targetFloor > elevator.currentFloor ? 1 : -1;
+        const moveDirection = elevator.targetFloor > elevator.currentFloor ? 1 : -1;
 
         const $icon = elevator.$icon;
         $icon.find('img').removeClass('green').addClass('red');
 
         const step = () => {
-            if (elevator.currentFloor === targetFloor) {
+            if (elevator.currentFloor === elevator.targetFloor) {
                 // Arrived
                 const $targetCell = elevator.$column.find(`.elevator-cell[data-floor="${elevator.currentFloor}"]`);
                 $targetCell.append($icon);
